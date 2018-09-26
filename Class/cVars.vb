@@ -1,7 +1,7 @@
 ﻿Public Class cVars
     Public Enum ProcessingType
         ASCiiToGTiff
-        ASCiiToBMP
+        ASCiiToImg
         GTiffToASCii
         Rename
         RenameToDateTime
@@ -21,6 +21,8 @@
         AggAscFiles
         CutDecimalPart
     End Enum
+
+
 End Class
 
 

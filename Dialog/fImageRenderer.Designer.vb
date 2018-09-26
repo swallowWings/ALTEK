@@ -23,6 +23,56 @@ Partial Class fImageRenderer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbRenderer = New System.Windows.Forms.GroupBox()
+        Me.Label93 = New System.Windows.Forms.Label()
+        Me.Label92 = New System.Windows.Forms.Label()
+        Me.nudMin = New System.Windows.Forms.NumericUpDown()
+        Me.nudMax = New System.Windows.Forms.NumericUpDown()
+        Me.rbEqualinterval = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lb_ei_c18 = New System.Windows.Forms.Label()
+        Me.lb_ei_c19 = New System.Windows.Forms.Label()
+        Me.lb_ei_c20 = New System.Windows.Forms.Label()
+        Me.lb_ei_min = New System.Windows.Forms.Label()
+        Me.pb_ei_min = New System.Windows.Forms.PictureBox()
+        Me.lb_ei_max = New System.Windows.Forms.Label()
+        Me.lb_ei_c1 = New System.Windows.Forms.Label()
+        Me.lb_ei_c2 = New System.Windows.Forms.Label()
+        Me.pb_ei_max = New System.Windows.Forms.PictureBox()
+        Me.lb_ei_c3 = New System.Windows.Forms.Label()
+        Me.lb_ei_c4 = New System.Windows.Forms.Label()
+        Me.lb_ei_c5 = New System.Windows.Forms.Label()
+        Me.lb_ei_c6 = New System.Windows.Forms.Label()
+        Me.lb_ei_c7 = New System.Windows.Forms.Label()
+        Me.lb_ei_c8 = New System.Windows.Forms.Label()
+        Me.lb_ei_c9 = New System.Windows.Forms.Label()
+        Me.lb_ei_c10 = New System.Windows.Forms.Label()
+        Me.lb_ei_c12 = New System.Windows.Forms.Label()
+        Me.lb_ei_c11 = New System.Windows.Forms.Label()
+        Me.lb_ei_c13 = New System.Windows.Forms.Label()
+        Me.pb_ei_c1 = New System.Windows.Forms.PictureBox()
+        Me.lb_ei_c17 = New System.Windows.Forms.Label()
+        Me.lb_ei_c16 = New System.Windows.Forms.Label()
+        Me.lb_ei_c15 = New System.Windows.Forms.Label()
+        Me.lb_ei_c14 = New System.Windows.Forms.Label()
+        Me.pb_ei_c3 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c2 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c4 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c5 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c6 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c7 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c8 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c9 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c10 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c11 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c14 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c12 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c13 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c15 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c16 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c20 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c19 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c18 = New System.Windows.Forms.PictureBox()
+        Me.pb_ei_c17 = New System.Windows.Forms.PictureBox()
         Me.rb0_500 = New System.Windows.Forms.RadioButton()
         Me.rb0_200 = New System.Windows.Forms.RadioButton()
         Me.rb0_100 = New System.Windows.Forms.RadioButton()
@@ -212,6 +262,31 @@ Partial Class fImageRenderer
         Me.rbRisk = New System.Windows.Forms.RadioButton()
         Me.rbDepth = New System.Windows.Forms.RadioButton()
         Me.gbRenderer.SuspendLayout()
+        CType(Me.nudMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudMax, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.pb_ei_min, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_max, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_ei_c17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbRenderer0_500.SuspendLayout()
         CType(Me.pb_0_500_000, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_0_500_500, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -308,6 +383,13 @@ Partial Class fImageRenderer
         '
         'gbRenderer
         '
+        Me.gbRenderer.BackColor = System.Drawing.Color.White
+        Me.gbRenderer.Controls.Add(Me.Label93)
+        Me.gbRenderer.Controls.Add(Me.Label92)
+        Me.gbRenderer.Controls.Add(Me.nudMin)
+        Me.gbRenderer.Controls.Add(Me.nudMax)
+        Me.gbRenderer.Controls.Add(Me.rbEqualinterval)
+        Me.gbRenderer.Controls.Add(Me.GroupBox1)
         Me.gbRenderer.Controls.Add(Me.rb0_500)
         Me.gbRenderer.Controls.Add(Me.rb0_200)
         Me.gbRenderer.Controls.Add(Me.rb0_100)
@@ -318,14 +400,578 @@ Partial Class fImageRenderer
         Me.gbRenderer.Controls.Add(Me.gbRenderer0_1)
         Me.gbRenderer.Location = New System.Drawing.Point(12, 44)
         Me.gbRenderer.Name = "gbRenderer"
-        Me.gbRenderer.Size = New System.Drawing.Size(718, 445)
+        Me.gbRenderer.Size = New System.Drawing.Size(941, 445)
         Me.gbRenderer.TabIndex = 0
         Me.gbRenderer.TabStop = False
+        '
+        'Label93
+        '
+        Me.Label93.AutoSize = True
+        Me.Label93.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Label93.Location = New System.Drawing.Point(821, 38)
+        Me.Label93.Margin = New System.Windows.Forms.Padding(2)
+        Me.Label93.Name = "Label93"
+        Me.Label93.Size = New System.Drawing.Size(42, 12)
+        Me.Label93.TabIndex = 55
+        Me.Label93.Text = "Max. :"
+        Me.Label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label92
+        '
+        Me.Label92.AutoSize = True
+        Me.Label92.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Label92.Location = New System.Drawing.Point(712, 38)
+        Me.Label92.Margin = New System.Windows.Forms.Padding(2)
+        Me.Label92.Name = "Label92"
+        Me.Label92.Size = New System.Drawing.Size(38, 12)
+        Me.Label92.TabIndex = 54
+        Me.Label92.Text = "Min. :"
+        Me.Label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'nudMin
+        '
+        Me.nudMin.Location = New System.Drawing.Point(753, 34)
+        Me.nudMin.Name = "nudMin"
+        Me.nudMin.Size = New System.Drawing.Size(61, 21)
+        Me.nudMin.TabIndex = 53
+        '
+        'nudMax
+        '
+        Me.nudMax.Location = New System.Drawing.Point(866, 34)
+        Me.nudMax.Name = "nudMax"
+        Me.nudMax.Size = New System.Drawing.Size(61, 21)
+        Me.nudMax.TabIndex = 52
+        '
+        'rbEqualinterval
+        '
+        Me.rbEqualinterval.AutoSize = True
+        Me.rbEqualinterval.Location = New System.Drawing.Point(711, 15)
+        Me.rbEqualinterval.Name = "rbEqualinterval"
+        Me.rbEqualinterval.Size = New System.Drawing.Size(99, 16)
+        Me.rbEqualinterval.TabIndex = 48
+        Me.rbEqualinterval.TabStop = True
+        Me.rbEqualinterval.Text = "Equal interval"
+        Me.rbEqualinterval.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c18)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c19)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c20)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_min)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_min)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_max)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c1)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c2)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_max)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c3)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c4)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c5)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c6)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c7)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c8)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c9)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c10)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c12)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c11)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c13)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c1)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c17)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c16)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c15)
+        Me.GroupBox1.Controls.Add(Me.lb_ei_c14)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c3)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c2)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c4)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c5)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c6)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c7)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c8)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c9)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c10)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c11)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c14)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c12)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c13)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c15)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c16)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c20)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c19)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c18)
+        Me.GroupBox1.Controls.Add(Me.pb_ei_c17)
+        Me.GroupBox1.Location = New System.Drawing.Point(712, 55)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(215, 378)
+        Me.GroupBox1.TabIndex = 49
+        Me.GroupBox1.TabStop = False
+        '
+        'lb_ei_c18
+        '
+        Me.lb_ei_c18.AutoSize = True
+        Me.lb_ei_c18.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c18.Location = New System.Drawing.Point(68, 67)
+        Me.lb_ei_c18.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c18.Name = "lb_ei_c18"
+        Me.lb_ei_c18.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c18.TabIndex = 28
+        Me.lb_ei_c18.Text = "250 ≤ x < 300"
+        Me.lb_ei_c18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c19
+        '
+        Me.lb_ei_c19.AutoSize = True
+        Me.lb_ei_c19.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c19.Location = New System.Drawing.Point(68, 51)
+        Me.lb_ei_c19.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c19.Name = "lb_ei_c19"
+        Me.lb_ei_c19.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c19.TabIndex = 36
+        Me.lb_ei_c19.Text = "300 ≤ x < 400"
+        Me.lb_ei_c19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c20
+        '
+        Me.lb_ei_c20.AutoSize = True
+        Me.lb_ei_c20.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c20.Location = New System.Drawing.Point(68, 35)
+        Me.lb_ei_c20.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c20.Name = "lb_ei_c20"
+        Me.lb_ei_c20.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c20.TabIndex = 35
+        Me.lb_ei_c20.Text = "400 ≤ x < 500"
+        Me.lb_ei_c20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_min
+        '
+        Me.lb_ei_min.AutoSize = True
+        Me.lb_ei_min.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_min.Location = New System.Drawing.Point(68, 355)
+        Me.lb_ei_min.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_min.Name = "lb_ei_min"
+        Me.lb_ei_min.Size = New System.Drawing.Size(44, 12)
+        Me.lb_ei_min.TabIndex = 49
+        Me.lb_ei_min.Text = "  0 = x "
+        Me.lb_ei_min.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'pb_ei_min
+        '
+        Me.pb_ei_min.Location = New System.Drawing.Point(13, 354)
+        Me.pb_ei_min.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_min.Name = "pb_ei_min"
+        Me.pb_ei_min.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_min.TabIndex = 48
+        Me.pb_ei_min.TabStop = False
+        '
+        'lb_ei_max
+        '
+        Me.lb_ei_max.AutoSize = True
+        Me.lb_ei_max.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_max.Location = New System.Drawing.Point(68, 19)
+        Me.lb_ei_max.Margin = New System.Windows.Forms.Padding(2)
+        Me.lb_ei_max.Name = "lb_ei_max"
+        Me.lb_ei_max.Size = New System.Drawing.Size(48, 12)
+        Me.lb_ei_max.TabIndex = 38
+        Me.lb_ei_max.Text = "500 ≤ x"
+        Me.lb_ei_max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lb_ei_c1
+        '
+        Me.lb_ei_c1.AutoSize = True
+        Me.lb_ei_c1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c1.Location = New System.Drawing.Point(68, 339)
+        Me.lb_ei_c1.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c1.Name = "lb_ei_c1"
+        Me.lb_ei_c1.Size = New System.Drawing.Size(64, 12)
+        Me.lb_ei_c1.TabIndex = 37
+        Me.lb_ei_c1.Text = "  0 < x < 5"
+        Me.lb_ei_c1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c2
+        '
+        Me.lb_ei_c2.AutoSize = True
+        Me.lb_ei_c2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c2.Location = New System.Drawing.Point(68, 323)
+        Me.lb_ei_c2.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c2.Name = "lb_ei_c2"
+        Me.lb_ei_c2.Size = New System.Drawing.Size(72, 12)
+        Me.lb_ei_c2.TabIndex = 34
+        Me.lb_ei_c2.Text = "  5 ≤ x < 10"
+        Me.lb_ei_c2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'pb_ei_max
+        '
+        Me.pb_ei_max.Location = New System.Drawing.Point(13, 18)
+        Me.pb_ei_max.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_max.Name = "pb_ei_max"
+        Me.pb_ei_max.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_max.TabIndex = 24
+        Me.pb_ei_max.TabStop = False
+        '
+        'lb_ei_c3
+        '
+        Me.lb_ei_c3.AutoSize = True
+        Me.lb_ei_c3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c3.Location = New System.Drawing.Point(68, 307)
+        Me.lb_ei_c3.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c3.Name = "lb_ei_c3"
+        Me.lb_ei_c3.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c3.TabIndex = 31
+        Me.lb_ei_c3.Text = " 10 ≤ x < 15"
+        Me.lb_ei_c3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c4
+        '
+        Me.lb_ei_c4.AutoSize = True
+        Me.lb_ei_c4.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c4.Location = New System.Drawing.Point(68, 291)
+        Me.lb_ei_c4.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c4.Name = "lb_ei_c4"
+        Me.lb_ei_c4.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c4.TabIndex = 30
+        Me.lb_ei_c4.Text = " 15 ≤ x < 20"
+        Me.lb_ei_c4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c5
+        '
+        Me.lb_ei_c5.AutoSize = True
+        Me.lb_ei_c5.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c5.Location = New System.Drawing.Point(68, 275)
+        Me.lb_ei_c5.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c5.Name = "lb_ei_c5"
+        Me.lb_ei_c5.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c5.TabIndex = 33
+        Me.lb_ei_c5.Text = " 20 ≤ x < 25"
+        Me.lb_ei_c5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c6
+        '
+        Me.lb_ei_c6.AutoSize = True
+        Me.lb_ei_c6.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c6.Location = New System.Drawing.Point(68, 259)
+        Me.lb_ei_c6.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c6.Name = "lb_ei_c6"
+        Me.lb_ei_c6.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c6.TabIndex = 32
+        Me.lb_ei_c6.Text = " 25 ≤ x < 30"
+        Me.lb_ei_c6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c7
+        '
+        Me.lb_ei_c7.AutoSize = True
+        Me.lb_ei_c7.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c7.Location = New System.Drawing.Point(68, 243)
+        Me.lb_ei_c7.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c7.Name = "lb_ei_c7"
+        Me.lb_ei_c7.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c7.TabIndex = 44
+        Me.lb_ei_c7.Text = " 30 ≤ x < 40"
+        Me.lb_ei_c7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c8
+        '
+        Me.lb_ei_c8.AutoSize = True
+        Me.lb_ei_c8.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c8.Location = New System.Drawing.Point(68, 227)
+        Me.lb_ei_c8.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c8.Name = "lb_ei_c8"
+        Me.lb_ei_c8.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c8.TabIndex = 45
+        Me.lb_ei_c8.Text = " 40 ≤ x < 50"
+        Me.lb_ei_c8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c9
+        '
+        Me.lb_ei_c9.AutoSize = True
+        Me.lb_ei_c9.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c9.Location = New System.Drawing.Point(68, 211)
+        Me.lb_ei_c9.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c9.Name = "lb_ei_c9"
+        Me.lb_ei_c9.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c9.TabIndex = 47
+        Me.lb_ei_c9.Text = " 50 ≤ x < 60"
+        Me.lb_ei_c9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c10
+        '
+        Me.lb_ei_c10.AutoSize = True
+        Me.lb_ei_c10.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c10.Location = New System.Drawing.Point(68, 195)
+        Me.lb_ei_c10.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c10.Name = "lb_ei_c10"
+        Me.lb_ei_c10.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c10.TabIndex = 46
+        Me.lb_ei_c10.Text = " 60 ≤ x < 70"
+        Me.lb_ei_c10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c12
+        '
+        Me.lb_ei_c12.AutoSize = True
+        Me.lb_ei_c12.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c12.Location = New System.Drawing.Point(68, 163)
+        Me.lb_ei_c12.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c12.Name = "lb_ei_c12"
+        Me.lb_ei_c12.Size = New System.Drawing.Size(80, 12)
+        Me.lb_ei_c12.TabIndex = 43
+        Me.lb_ei_c12.Text = " 80 ≤ x < 100"
+        Me.lb_ei_c12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c11
+        '
+        Me.lb_ei_c11.AutoSize = True
+        Me.lb_ei_c11.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c11.Location = New System.Drawing.Point(68, 179)
+        Me.lb_ei_c11.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c11.Name = "lb_ei_c11"
+        Me.lb_ei_c11.Size = New System.Drawing.Size(74, 12)
+        Me.lb_ei_c11.TabIndex = 40
+        Me.lb_ei_c11.Text = " 70 ≤ x < 80"
+        Me.lb_ei_c11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c13
+        '
+        Me.lb_ei_c13.AutoSize = True
+        Me.lb_ei_c13.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c13.Location = New System.Drawing.Point(68, 147)
+        Me.lb_ei_c13.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c13.Name = "lb_ei_c13"
+        Me.lb_ei_c13.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c13.TabIndex = 39
+        Me.lb_ei_c13.Text = "100 ≤ x < 120"
+        Me.lb_ei_c13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'pb_ei_c1
+        '
+        Me.pb_ei_c1.Location = New System.Drawing.Point(13, 338)
+        Me.pb_ei_c1.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c1.Name = "pb_ei_c1"
+        Me.pb_ei_c1.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c1.TabIndex = 12
+        Me.pb_ei_c1.TabStop = False
+        '
+        'lb_ei_c17
+        '
+        Me.lb_ei_c17.AutoSize = True
+        Me.lb_ei_c17.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c17.Location = New System.Drawing.Point(68, 83)
+        Me.lb_ei_c17.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c17.Name = "lb_ei_c17"
+        Me.lb_ei_c17.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c17.TabIndex = 42
+        Me.lb_ei_c17.Text = "200 ≤ x < 250"
+        Me.lb_ei_c17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c16
+        '
+        Me.lb_ei_c16.AutoSize = True
+        Me.lb_ei_c16.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c16.Location = New System.Drawing.Point(68, 99)
+        Me.lb_ei_c16.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c16.Name = "lb_ei_c16"
+        Me.lb_ei_c16.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c16.TabIndex = 41
+        Me.lb_ei_c16.Text = "160 ≤ x < 200"
+        Me.lb_ei_c16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c15
+        '
+        Me.lb_ei_c15.AutoSize = True
+        Me.lb_ei_c15.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c15.Location = New System.Drawing.Point(68, 115)
+        Me.lb_ei_c15.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c15.Name = "lb_ei_c15"
+        Me.lb_ei_c15.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c15.TabIndex = 29
+        Me.lb_ei_c15.Text = "140 ≤ x < 160"
+        Me.lb_ei_c15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lb_ei_c14
+        '
+        Me.lb_ei_c14.AutoSize = True
+        Me.lb_ei_c14.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.lb_ei_c14.Location = New System.Drawing.Point(68, 131)
+        Me.lb_ei_c14.Margin = New System.Windows.Forms.Padding(0)
+        Me.lb_ei_c14.Name = "lb_ei_c14"
+        Me.lb_ei_c14.Size = New System.Drawing.Size(82, 12)
+        Me.lb_ei_c14.TabIndex = 27
+        Me.lb_ei_c14.Text = "120 ≤ x < 140"
+        Me.lb_ei_c14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'pb_ei_c3
+        '
+        Me.pb_ei_c3.Location = New System.Drawing.Point(13, 306)
+        Me.pb_ei_c3.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c3.Name = "pb_ei_c3"
+        Me.pb_ei_c3.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c3.TabIndex = 13
+        Me.pb_ei_c3.TabStop = False
+        '
+        'pb_ei_c2
+        '
+        Me.pb_ei_c2.Location = New System.Drawing.Point(13, 322)
+        Me.pb_ei_c2.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c2.Name = "pb_ei_c2"
+        Me.pb_ei_c2.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c2.TabIndex = 14
+        Me.pb_ei_c2.TabStop = False
+        '
+        'pb_ei_c4
+        '
+        Me.pb_ei_c4.Location = New System.Drawing.Point(13, 290)
+        Me.pb_ei_c4.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c4.Name = "pb_ei_c4"
+        Me.pb_ei_c4.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c4.TabIndex = 16
+        Me.pb_ei_c4.TabStop = False
+        '
+        'pb_ei_c5
+        '
+        Me.pb_ei_c5.Location = New System.Drawing.Point(13, 274)
+        Me.pb_ei_c5.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c5.Name = "pb_ei_c5"
+        Me.pb_ei_c5.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c5.TabIndex = 15
+        Me.pb_ei_c5.TabStop = False
+        '
+        'pb_ei_c6
+        '
+        Me.pb_ei_c6.Location = New System.Drawing.Point(13, 258)
+        Me.pb_ei_c6.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c6.Name = "pb_ei_c6"
+        Me.pb_ei_c6.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c6.TabIndex = 11
+        Me.pb_ei_c6.TabStop = False
+        '
+        'pb_ei_c7
+        '
+        Me.pb_ei_c7.Location = New System.Drawing.Point(13, 242)
+        Me.pb_ei_c7.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c7.Name = "pb_ei_c7"
+        Me.pb_ei_c7.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c7.TabIndex = 7
+        Me.pb_ei_c7.TabStop = False
+        '
+        'pb_ei_c8
+        '
+        Me.pb_ei_c8.Location = New System.Drawing.Point(13, 226)
+        Me.pb_ei_c8.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c8.Name = "pb_ei_c8"
+        Me.pb_ei_c8.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c8.TabIndex = 6
+        Me.pb_ei_c8.TabStop = False
+        '
+        'pb_ei_c9
+        '
+        Me.pb_ei_c9.Location = New System.Drawing.Point(13, 210)
+        Me.pb_ei_c9.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c9.Name = "pb_ei_c9"
+        Me.pb_ei_c9.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c9.TabIndex = 8
+        Me.pb_ei_c9.TabStop = False
+        '
+        'pb_ei_c10
+        '
+        Me.pb_ei_c10.Location = New System.Drawing.Point(13, 194)
+        Me.pb_ei_c10.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c10.Name = "pb_ei_c10"
+        Me.pb_ei_c10.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c10.TabIndex = 10
+        Me.pb_ei_c10.TabStop = False
+        '
+        'pb_ei_c11
+        '
+        Me.pb_ei_c11.Location = New System.Drawing.Point(13, 178)
+        Me.pb_ei_c11.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c11.Name = "pb_ei_c11"
+        Me.pb_ei_c11.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c11.TabIndex = 9
+        Me.pb_ei_c11.TabStop = False
+        '
+        'pb_ei_c14
+        '
+        Me.pb_ei_c14.Location = New System.Drawing.Point(13, 130)
+        Me.pb_ei_c14.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c14.Name = "pb_ei_c14"
+        Me.pb_ei_c14.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c14.TabIndex = 23
+        Me.pb_ei_c14.TabStop = False
+        '
+        'pb_ei_c12
+        '
+        Me.pb_ei_c12.Location = New System.Drawing.Point(13, 162)
+        Me.pb_ei_c12.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c12.Name = "pb_ei_c12"
+        Me.pb_ei_c12.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c12.TabIndex = 22
+        Me.pb_ei_c12.TabStop = False
+        '
+        'pb_ei_c13
+        '
+        Me.pb_ei_c13.Location = New System.Drawing.Point(13, 146)
+        Me.pb_ei_c13.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c13.Name = "pb_ei_c13"
+        Me.pb_ei_c13.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c13.TabIndex = 26
+        Me.pb_ei_c13.TabStop = False
+        '
+        'pb_ei_c15
+        '
+        Me.pb_ei_c15.Location = New System.Drawing.Point(13, 114)
+        Me.pb_ei_c15.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c15.Name = "pb_ei_c15"
+        Me.pb_ei_c15.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c15.TabIndex = 25
+        Me.pb_ei_c15.TabStop = False
+        '
+        'pb_ei_c16
+        '
+        Me.pb_ei_c16.Location = New System.Drawing.Point(13, 98)
+        Me.pb_ei_c16.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c16.Name = "pb_ei_c16"
+        Me.pb_ei_c16.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c16.TabIndex = 18
+        Me.pb_ei_c16.TabStop = False
+        '
+        'pb_ei_c20
+        '
+        Me.pb_ei_c20.Location = New System.Drawing.Point(13, 34)
+        Me.pb_ei_c20.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c20.Name = "pb_ei_c20"
+        Me.pb_ei_c20.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c20.TabIndex = 17
+        Me.pb_ei_c20.TabStop = False
+        '
+        'pb_ei_c19
+        '
+        Me.pb_ei_c19.Location = New System.Drawing.Point(13, 50)
+        Me.pb_ei_c19.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c19.Name = "pb_ei_c19"
+        Me.pb_ei_c19.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c19.TabIndex = 19
+        Me.pb_ei_c19.TabStop = False
+        '
+        'pb_ei_c18
+        '
+        Me.pb_ei_c18.Location = New System.Drawing.Point(13, 66)
+        Me.pb_ei_c18.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c18.Name = "pb_ei_c18"
+        Me.pb_ei_c18.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c18.TabIndex = 21
+        Me.pb_ei_c18.TabStop = False
+        '
+        'pb_ei_c17
+        '
+        Me.pb_ei_c17.Location = New System.Drawing.Point(13, 82)
+        Me.pb_ei_c17.Margin = New System.Windows.Forms.Padding(2)
+        Me.pb_ei_c17.Name = "pb_ei_c17"
+        Me.pb_ei_c17.Size = New System.Drawing.Size(50, 12)
+        Me.pb_ei_c17.TabIndex = 20
+        Me.pb_ei_c17.TabStop = False
         '
         'rb0_500
         '
         Me.rb0_500.AutoSize = True
-        Me.rb0_500.Location = New System.Drawing.Point(548, 34)
+        Me.rb0_500.Location = New System.Drawing.Point(539, 34)
         Me.rb0_500.Name = "rb0_500"
         Me.rb0_500.Size = New System.Drawing.Size(64, 16)
         Me.rb0_500.TabIndex = 1
@@ -336,7 +982,7 @@ Partial Class fImageRenderer
         'rb0_200
         '
         Me.rb0_200.AutoSize = True
-        Me.rb0_200.Location = New System.Drawing.Point(378, 34)
+        Me.rb0_200.Location = New System.Drawing.Point(369, 34)
         Me.rb0_200.Name = "rb0_200"
         Me.rb0_200.Size = New System.Drawing.Size(64, 16)
         Me.rb0_200.TabIndex = 1
@@ -347,7 +993,7 @@ Partial Class fImageRenderer
         'rb0_100
         '
         Me.rb0_100.AutoSize = True
-        Me.rb0_100.Location = New System.Drawing.Point(200, 34)
+        Me.rb0_100.Location = New System.Drawing.Point(195, 34)
         Me.rb0_100.Name = "rb0_100"
         Me.rb0_100.Size = New System.Drawing.Size(64, 16)
         Me.rb0_100.TabIndex = 1
@@ -359,7 +1005,7 @@ Partial Class fImageRenderer
         '
         Me.rb0_1.AutoSize = True
         Me.rb0_1.Checked = True
-        Me.rb0_1.Location = New System.Drawing.Point(24, 34)
+        Me.rb0_1.Location = New System.Drawing.Point(15, 34)
         Me.rb0_1.Name = "rb0_1"
         Me.rb0_1.Size = New System.Drawing.Size(68, 16)
         Me.rb0_1.TabIndex = 1
@@ -369,6 +1015,7 @@ Partial Class fImageRenderer
         '
         'gbRenderer0_500
         '
+        Me.gbRenderer0_500.BackColor = System.Drawing.Color.White
         Me.gbRenderer0_500.Controls.Add(Me.Label58)
         Me.gbRenderer0_500.Controls.Add(Me.Label52)
         Me.gbRenderer0_500.Controls.Add(Me.Label53)
@@ -883,6 +1530,7 @@ Partial Class fImageRenderer
         '
         'gbRenderer0_200
         '
+        Me.gbRenderer0_200.BackColor = System.Drawing.Color.White
         Me.gbRenderer0_200.Controls.Add(Me.Label39)
         Me.gbRenderer0_200.Controls.Add(Me.Label40)
         Me.gbRenderer0_200.Controls.Add(Me.Label64)
@@ -1397,6 +2045,7 @@ Partial Class fImageRenderer
         '
         'gbRenderer0_100
         '
+        Me.gbRenderer0_100.BackColor = System.Drawing.Color.White
         Me.gbRenderer0_100.Controls.Add(Me.Label88)
         Me.gbRenderer0_100.Controls.Add(Me.pb_0_100_000)
         Me.gbRenderer0_100.Controls.Add(Me.Label66)
@@ -1911,7 +2560,7 @@ Partial Class fImageRenderer
         '
         'gbRenderer0_1
         '
-        Me.gbRenderer0_1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.gbRenderer0_1.BackColor = System.Drawing.Color.White
         Me.gbRenderer0_1.Controls.Add(Me.Label87)
         Me.gbRenderer0_1.Controls.Add(Me.pb_0_1_000)
         Me.gbRenderer0_1.Controls.Add(Me.Label3)
@@ -2426,16 +3075,16 @@ Partial Class fImageRenderer
         '
         'btOK
         '
-        Me.btOK.Location = New System.Drawing.Point(549, 499)
+        Me.btOK.Location = New System.Drawing.Point(671, 501)
         Me.btOK.Name = "btOK"
-        Me.btOK.Size = New System.Drawing.Size(75, 23)
+        Me.btOK.Size = New System.Drawing.Size(129, 23)
         Me.btOK.TabIndex = 47
         Me.btOK.Text = "OK"
         Me.btOK.UseVisualStyleBackColor = True
         '
         'btCancel
         '
-        Me.btCancel.Location = New System.Drawing.Point(655, 499)
+        Me.btCancel.Location = New System.Drawing.Point(831, 501)
         Me.btCancel.Name = "btCancel"
         Me.btCancel.Size = New System.Drawing.Size(75, 23)
         Me.btCancel.TabIndex = 48
@@ -2469,14 +3118,13 @@ Partial Class fImageRenderer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(739, 536)
+        Me.ClientSize = New System.Drawing.Size(965, 536)
         Me.Controls.Add(Me.rbDepth)
         Me.Controls.Add(Me.rbRisk)
         Me.Controls.Add(Me.btOK)
         Me.Controls.Add(Me.btCancel)
         Me.Controls.Add(Me.gbRenderer)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(755, 575)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(755, 540)
         Me.Name = "fImageRenderer"
@@ -2484,6 +3132,32 @@ Partial Class fImageRenderer
         Me.Text = "Select renderer"
         Me.gbRenderer.ResumeLayout(False)
         Me.gbRenderer.PerformLayout()
+        CType(Me.nudMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudMax, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.pb_ei_min, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_max, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_ei_c17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbRenderer0_500.ResumeLayout(False)
         Me.gbRenderer0_500.PerformLayout()
         CType(Me.pb_0_500_000, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2773,4 +3447,54 @@ Partial Class fImageRenderer
     Friend WithEvents btCancel As System.Windows.Forms.Button
     Friend WithEvents rbRisk As RadioButton
     Friend WithEvents rbDepth As RadioButton
+    Friend WithEvents rbEqualinterval As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents lb_ei_c18 As Label
+    Friend WithEvents lb_ei_c19 As Label
+    Friend WithEvents lb_ei_c20 As Label
+    Friend WithEvents lb_ei_min As Label
+    Friend WithEvents pb_ei_min As PictureBox
+    Friend WithEvents lb_ei_max As Label
+    Friend WithEvents lb_ei_c1 As Label
+    Friend WithEvents lb_ei_c2 As Label
+    Friend WithEvents pb_ei_max As PictureBox
+    Friend WithEvents lb_ei_c3 As Label
+    Friend WithEvents lb_ei_c4 As Label
+    Friend WithEvents lb_ei_c5 As Label
+    Friend WithEvents lb_ei_c6 As Label
+    Friend WithEvents lb_ei_c7 As Label
+    Friend WithEvents lb_ei_c8 As Label
+    Friend WithEvents lb_ei_c9 As Label
+    Friend WithEvents lb_ei_c10 As Label
+    Friend WithEvents lb_ei_c12 As Label
+    Friend WithEvents lb_ei_c11 As Label
+    Friend WithEvents lb_ei_c13 As Label
+    Friend WithEvents pb_ei_c1 As PictureBox
+    Friend WithEvents lb_ei_c17 As Label
+    Friend WithEvents lb_ei_c16 As Label
+    Friend WithEvents lb_ei_c15 As Label
+    Friend WithEvents lb_ei_c14 As Label
+    Friend WithEvents pb_ei_c3 As PictureBox
+    Friend WithEvents pb_ei_c2 As PictureBox
+    Friend WithEvents pb_ei_c4 As PictureBox
+    Friend WithEvents pb_ei_c5 As PictureBox
+    Friend WithEvents pb_ei_c6 As PictureBox
+    Friend WithEvents pb_ei_c7 As PictureBox
+    Friend WithEvents pb_ei_c8 As PictureBox
+    Friend WithEvents pb_ei_c9 As PictureBox
+    Friend WithEvents pb_ei_c10 As PictureBox
+    Friend WithEvents pb_ei_c11 As PictureBox
+    Friend WithEvents pb_ei_c14 As PictureBox
+    Friend WithEvents pb_ei_c12 As PictureBox
+    Friend WithEvents pb_ei_c13 As PictureBox
+    Friend WithEvents pb_ei_c15 As PictureBox
+    Friend WithEvents pb_ei_c16 As PictureBox
+    Friend WithEvents pb_ei_c20 As PictureBox
+    Friend WithEvents pb_ei_c19 As PictureBox
+    Friend WithEvents pb_ei_c18 As PictureBox
+    Friend WithEvents pb_ei_c17 As PictureBox
+    Friend WithEvents nudMin As NumericUpDown
+    Friend WithEvents nudMax As NumericUpDown
+    Friend WithEvents Label93 As Label
+    Friend WithEvents Label92 As Label
 End Class

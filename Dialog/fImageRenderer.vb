@@ -11,6 +11,34 @@
         End If
 
         Call DrawRendererClass(rendereType)
+        Me.nudMax.Enabled = False
+        Me.nudMin.Enabled = False
+        InitEqualintervalclassText()
+    End Sub
+
+    Private Sub InitEqualintervalclassText()
+        Me.lb_ei_min.Text = " = x"
+        Me.lb_ei_c1.Text = " < x <"
+        Me.lb_ei_c2.Text = " ≤ x <"
+        Me.lb_ei_c3.Text = " ≤ x <"
+        Me.lb_ei_c4.Text = " ≤ x <"
+        Me.lb_ei_c5.Text = " ≤ x <"
+        Me.lb_ei_c6.Text = " ≤ x <"
+        Me.lb_ei_c7.Text = " ≤ x <"
+        Me.lb_ei_c8.Text = " ≤ x <"
+        Me.lb_ei_c9.Text = " ≤ x <"
+        Me.lb_ei_c10.Text = " ≤ x <"
+        Me.lb_ei_c11.Text = " ≤ x <"
+        Me.lb_ei_c12.Text = " ≤ x <"
+        Me.lb_ei_c13.Text = " ≤ x <"
+        Me.lb_ei_c14.Text = " ≤ x <"
+        Me.lb_ei_c15.Text = " ≤ x <"
+        Me.lb_ei_c16.Text = " ≤ x <"
+        Me.lb_ei_c17.Text = " ≤ x <"
+        Me.lb_ei_c18.Text = " ≤ x <"
+        Me.lb_ei_c19.Text = " ≤ x <"
+        Me.lb_ei_c20.Text = " ≤ x <"
+        Me.lb_ei_max.Text = " ≤ x"
     End Sub
 
     Private Sub DrawRendererClass(rendererType As cImg.RendererType)
@@ -110,6 +138,30 @@
         pb_0_500_300.BackColor = distRenderer.iniColor(19)
         pb_0_500_400.BackColor = distRenderer.iniColor(20)
         pb_0_500_500.BackColor = distRenderer.iniColor(21)
+
+        '0 to 500
+        pb_ei_min.BackColor = distRenderer.iniColor(0)
+        pb_ei_c1.BackColor = distRenderer.iniColor(1)
+        pb_ei_c2.BackColor = distRenderer.iniColor(2)
+        pb_ei_c3.BackColor = distRenderer.iniColor(3)
+        pb_ei_c4.BackColor = distRenderer.iniColor(4)
+        pb_ei_c5.BackColor = distRenderer.iniColor(5)
+        pb_ei_c6.BackColor = distRenderer.iniColor(6)
+        pb_ei_c7.BackColor = distRenderer.iniColor(7)
+        pb_ei_c8.BackColor = distRenderer.iniColor(8)
+        pb_ei_c9.BackColor = distRenderer.iniColor(9)
+        pb_ei_c10.BackColor = distRenderer.iniColor(10)
+        pb_ei_c11.BackColor = distRenderer.iniColor(11)
+        pb_ei_c12.BackColor = distRenderer.iniColor(12)
+        pb_ei_c13.BackColor = distRenderer.iniColor(13)
+        pb_ei_c14.BackColor = distRenderer.iniColor(14)
+        pb_ei_c15.BackColor = distRenderer.iniColor(15)
+        pb_ei_c16.BackColor = distRenderer.iniColor(16)
+        pb_ei_c17.BackColor = distRenderer.iniColor(17)
+        pb_ei_c18.BackColor = distRenderer.iniColor(18)
+        pb_ei_c19.BackColor = distRenderer.iniColor(19)
+        pb_ei_c20.BackColor = distRenderer.iniColor(20)
+        pb_ei_max.BackColor = distRenderer.iniColor(21)
     End Sub
 
     Private Sub btOK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btOK.Click
@@ -129,4 +181,102 @@
     Private Sub rbDepth_CheckedChanged(sender As Object, e As EventArgs) Handles rbDepth.CheckedChanged
         Call DrawRendererClass(cImg.RendererType.WaterDepth)
     End Sub
+
+
+    Private Sub rbEqualinterval_CheckedChanged(sender As Object, e As EventArgs) Handles rbEqualinterval.CheckedChanged
+        If Me.rbEqualinterval.Checked Then
+            Me.nudMax.Enabled = True
+            Me.nudMin.Enabled = True
+        Else
+            Me.nudMax.Enabled = False
+            Me.nudMin.Enabled = False
+        End If
+    End Sub
+
+    Private Sub nudMin_ValueChanged(sender As Object, e As EventArgs) Handles nudMin.ValueChanged, nudMin.TextChanged
+        If nudMin.Value < nudMax.Value Then
+            changeRendererClassValue()
+        End If
+    End Sub
+
+    Private Sub nudMax_ValueChanged(sender As Object, e As EventArgs) Handles nudMax.ValueChanged, nudMax.TextChanged
+        If nudMin.Value < nudMax.Value Then
+            changeRendererClassValue()
+        End If
+    End Sub
+
+    Private Sub changeRendererClassValue()
+        Dim minv As Single = CSng(Me.nudMin.Value)
+        Dim maxv As Single = CSng(Me.nudMax.Value)
+        Dim multiple As Single = 400 / maxv
+        Dim upBound As Single
+        Dim lowBound As Single
+        Dim incremental As Single = (maxv - minv) / 20
+        Me.lb_ei_min.Text = minv.ToString + " = x"
+        lowBound = minv
+        upBound = lowBound + incremental
+        Me.lb_ei_c1.Text = lowBound.ToString("F2") + " < x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c2.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c3.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c4.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c5.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c6.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c7.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c8.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c9.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c10.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c11.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c12.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c13.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c14.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c15.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c16.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c17.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c18.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c19.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_c20.Text = lowBound.ToString("F2") + " ≤ x <" + upBound.ToString("F2")
+        lowBound = upBound
+        upBound = lowBound + incremental
+        Me.lb_ei_max.Text = lowBound.ToString("F2") + " ≤ x"
+    End Sub
+
+
 End Class

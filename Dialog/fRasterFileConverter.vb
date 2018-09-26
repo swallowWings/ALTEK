@@ -12,7 +12,11 @@ Public Class fRasterFileConverter
     Private mdtSourceFile As New FilesDS.FilesDataTable
     Private meProcessingType As cVars.ProcessingType
     Private mRendererRangeType As gentle.cImg.RendererRange
+    Private mRendererIntervalType As gentle.cImg.RendererIntervalType
     Private mRendererType As cImg.RendererType = cImg.RendererType.Risk
+    'Private mRendererClassType As cImg.RendererClassType = cImg.RendererClassType.Differentinterval
+    Private mRendererMinValue As Double = 0
+    Private mRendererMaxValue As Double = 0
 
     Private mFilePattern As cFile.FilePattern
     Private mResamplingMethod As cGdal.GdalResamplingMethod
@@ -148,11 +152,12 @@ Public Class fRasterFileConverter
                         strProcessingMsg = "Converting"
                         resultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + ".asc"
                         Call cGdal.ConvertGTIFFtoASCII(sourceFPN, resultFPN, mBandN, oDataType)
-                    Case cVars.ProcessingType.ASCiiToBMP
+                    Case cVars.ProcessingType.ASCiiToImg
                         strProcessingMsg = "Converting"
                         resultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + ".png"
                         Dim imgMaker As New gentle.cImg(mRendererType)
-                        Call imgMaker.MakeImgFileUsingASCfileFromTL_InParallel(sourceFPN, resultFPN, mRendererRangeType)
+                        Call imgMaker.MakeImgFileUsingASCfileFromTL_InParallel(sourceFPN, resultFPN, mRendererIntervalType, mRendererRangeType, mRendererMinValue, mRendererMaxValue)
+
                     Case cVars.ProcessingType.ClipAndResample
                         strProcessingMsg = "Clipping"
                         If mFileFormatResampleClip = cGdal.GdalFormat.GTiff Then _
@@ -207,7 +212,7 @@ Public Class fRasterFileConverter
     Private Function GetProcessType() As cVars.ProcessingType
         Dim pt As cVars.ProcessingType = Nothing
         If Me.rbConvertASCiiToGTiff.Checked Then pt = cVars.ProcessingType.ASCiiToGTiff
-        If Me.rbConvertASCtoBMP.Checked Then pt = cVars.ProcessingType.ASCiiToBMP
+        If Me.rbConvertASCtoBMP.Checked Then pt = cVars.ProcessingType.ASCiiToImg
         If Me.rbConvertGTiffToASCii.Checked Then pt = cVars.ProcessingType.GTiffToASCii
         If Me.rbClipAndResample.Checked Then pt = cVars.ProcessingType.ClipAndResample
         If Me.rbResample.Checked Then pt = cVars.ProcessingType.Resample
@@ -435,6 +440,11 @@ Public Class fRasterFileConverter
             mRendererRangeType = gentle.cImg.RendererRange.RendererFrom0to200
         ElseIf frm.rb0_500.Checked Then
             mRendererRangeType = gentle.cImg.RendererRange.RendererFrom0to500
+        ElseIf frm.rbEqualinterval.Checked Then
+            mRendererRangeType = cImg.RendererRange.MinMax
+            mRendererIntervalType = cImg.RendererIntervalType.Equalinterval
+            mRendererMaxValue = frm.nudMax.Value
+            mRendererMinValue = frm.nudMin.Value
         End If
         If frm.rbDepth.Checked Then
             mRendererType = cImg.RendererType.WaterDepth
