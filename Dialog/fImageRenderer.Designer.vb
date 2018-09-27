@@ -430,6 +430,8 @@ Partial Class fImageRenderer
         '
         'nudMin
         '
+        Me.nudMin.DecimalPlaces = 2
+        Me.nudMin.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.nudMin.Location = New System.Drawing.Point(753, 34)
         Me.nudMin.Name = "nudMin"
         Me.nudMin.Size = New System.Drawing.Size(61, 21)
@@ -437,6 +439,8 @@ Partial Class fImageRenderer
         '
         'nudMax
         '
+        Me.nudMax.DecimalPlaces = 2
+        Me.nudMax.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.nudMax.Location = New System.Drawing.Point(866, 34)
         Me.nudMax.Name = "nudMax"
         Me.nudMax.Size = New System.Drawing.Size(61, 21)
