@@ -446,7 +446,7 @@ Public Class fCalculator
         str = str + " - In conditional expression, [condition] term has to contain 2 values (or variables) and one condtion operator." + vbCrLf
         str = str + "   And also, [true] and [false] terms have to contain 2 values (or variables) and one operator in each other." + vbCrLf
         str = str + " - In the algebraic and conditional expressions, the [operator] and [file or number] have to be separated with a space." + vbCrLf
-        str = str + " - All available operators are +, -, *, /, >, <, =, >=, or <=." + vbCrLf
+        str = str + " - Available operators are +, -, *, /, >, <, =, >=, or <=." + vbCrLf
         str = str + " - Files have to be applied using the characters A(or a), B(or b), or C(or c)." + vbCrLf
         str = str + " - Calculating nodata values as 0 is just applied to the algrebraic eqs. (algrebraic eqs. in conditional expression are included)," + vbCrLf
         str = str + "   nodata values in ascii raster files are converted into '0' automatically, and applied to calculation." + vbCrLf

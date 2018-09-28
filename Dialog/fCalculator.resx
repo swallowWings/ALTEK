@@ -123,7 +123,7 @@
  - In conditional expression, [condition] term has to contain 2 values (or variables) and one condtion operator.
    And also, [true] and [false] terms have to contain 2 values (or variables) and one operator in each other.
  - In the algebraic and conditional expressions, the [operator] and [file or number] have to be separated with a space.
- - All available operators are +, -, *, /, &gt;, &lt;, =, &gt;=, or &lt;=.
+ - Available operators are +, -, *, /, &gt;, &lt;, =, &gt;=, or &lt;=.
  - Files have to be applied using the characters A(or a), B(or b), or C(or c).
  - Calculating nodata values as 0 is just applied to the algrebraic eqs. (algrebraic eqs. in conditional expression are included)
     Nodata values in ascii raster files are converted into '0' automatically, and applied to calculation.
