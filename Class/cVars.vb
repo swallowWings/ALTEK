@@ -3,6 +3,7 @@
         ASCiiToGTiff
         ASCiiToImg
         GTiffToASCii
+        GribToASCii
         Rename
         RenameToDateTime
         ChangeFileExt

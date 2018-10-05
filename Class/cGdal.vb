@@ -5,6 +5,7 @@ Public Class cGdal
     Public Enum GdalFormat
         GTiff     ' GeoTIFF
         AAIGrid ' Arc/Info ASCII Grid
+        GRIB
     End Enum
 
     Public Enum GdalResamplingMethod
@@ -148,7 +149,10 @@ Public Class cGdal
                 Return GdalFormat.AAIGrid
             Case GdalFormat.GTiff.ToString
                 Return GdalFormat.GTiff
+            Case GdalFormat.GRIB.ToString
+                Return GdalFormat.GRIB
         End Select
+
         Return Nothing
     End Function
 
@@ -181,7 +185,7 @@ Public Class cGdal
         End Try
     End Function
 
-    Public Shared Function ConvertGTIFFtoASCII(sourceFPN As String, resultFPN As String, bandN As Integer, resultDataType As cGdal.GdalDataType) As Boolean
+    Public Shared Function ConvertGtiffAndGribToASCII(sourceFPN As String, resultFPN As String, bandN As Integer, resultDataType As cGdal.GdalDataType) As Boolean
         Try
             If resultFPN = "" OrElse sourceFPN = "" Then
                 MsgBox("Invalid source/result file name. ", MsgBoxStyle.Exclamation)
@@ -210,6 +214,37 @@ Public Class cGdal
             Return False
         End Try
     End Function
+
+
+    'Public Shared Function ConvertGRIBtoASCII(sourceFPN As String, resultFPN As String, bandN As Integer, resultDataType As cGdal.GdalDataType) As Boolean
+    '    Try
+    '        If resultFPN = "" OrElse sourceFPN = "" Then
+    '            MsgBox("Invalid source/result file name. ", MsgBoxStyle.Exclamation)
+    '            Return False
+    '            Exit Function
+    '        End If
+    '        '부동소수점 single 지정해도 double로 나온다..
+    '        Dim dtypeName As String = GetGdalDataTypeNameToApply(resultDataType)
+    '        Dim strGdalPath As String = Path.Combine(mGdalPath, "gdal_translate.exe")
+    '        Dim pGdalGrid As New Process()
+    '        pGdalGrid.StartInfo.FileName = strGdalPath
+    '        pGdalGrid.StartInfo.Arguments = " -of AAIGrid" + " -b " + bandN.ToString +
+    '                                                " -ot " + cComTools.SetDQ(dtypeName) +
+    '                                                 " -a_nodata " + CStr(-9999) +
+    '                                                 " --config GDAL_FILENAME_IS_UTF8 NO" +
+    '                                                 " " + cComTools.SetDQ(sourceFPN) +
+    '                                                 " " + cComTools.SetDQ(resultFPN)
+    '        pGdalGrid.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+    '        pGdalGrid.Start()
+    '        pGdalGrid.WaitForExit()
+    '        pGdalGrid.Dispose()
+    '        cTextFile.ReplaceTextInTextFile(resultFPN, vbLf, vbCrLf)
+    '        Return True
+    '    Catch ex As Exception
+    '        Throw ex
+    '        Return False
+    '    End Try
+    'End Function
 
 
     ''' <summary>
@@ -259,7 +294,7 @@ Public Class cGdal
             prGdalGrid.Dispose()
 
             If outFormat = GdalFormat.AAIGrid Then
-                cGdal.ConvertGTIFFtoASCII(fpnTemp, resultFPN, 1, outDataType)
+                cGdal.ConvertGtiffAndGribToASCII(fpnTemp, resultFPN, 1, outDataType)
                 cFile.DeleteFileFriends(resultFPN)
             End If
         Catch ex As Exception
@@ -302,7 +337,7 @@ Public Class cGdal
             prGdalGrid.WaitForExit()
             prGdalGrid.Dispose()
             If outFormat = GdalFormat.AAIGrid Then
-                cGdal.ConvertGTIFFtoASCII(fpnTemp, resultFPN, 1, outDataType)
+                cGdal.ConvertGtiffAndGribToASCII(fpnTemp, resultFPN, 1, outDataType)
                 cFile.DeleteFileFriends(resultFPN)
             End If
         Catch ex As Exception

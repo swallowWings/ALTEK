@@ -83,8 +83,8 @@ Public Class fRasterFileConverter
         If Me.cbResamplingMethod.Enabled = True Then _
             mResamplingMethod = cGdal.GetGdalResamplingMethodByText(Me.cbResamplingMethod.Text.Trim)
         mFileFormatResampleClip = Nothing
-        If Me.cbFileFormat.Enabled = True Then _
-            mFileFormatResampleClip = cGdal.GetGdalFileFormatByText(Me.cbFileFormat.Text.Trim)
+        'If Me.cbFileFormat.Enabled = True Then _
+        '    mFileFormatResampleClip = cGdal.GetGdalFileFormatByText(Me.cbFileFormat.Text.Trim)
 
         If Me.dgvRainfallFileList.RowCount > 0 Then
             Call DataProcessingManager()
@@ -148,10 +148,11 @@ Public Class fRasterFileConverter
                         strProcessingMsg = "Converting"
                         resultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + ".tif"
                         Call cGdal.ConvertASCIItoGTIFF(sourceFPN, resultFPN, oDataType)
-                    Case cVars.ProcessingType.GTiffToASCii
+                    Case cVars.ProcessingType.GTiffToASCii, cVars.ProcessingType.GribToASCii
                         strProcessingMsg = "Converting"
                         resultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + ".asc"
-                        Call cGdal.ConvertGTIFFtoASCII(sourceFPN, resultFPN, mBandN, oDataType)
+                        Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, resultFPN, mBandN, oDataType)
+
                     Case cVars.ProcessingType.ASCiiToImg
                         strProcessingMsg = "Converting"
                         resultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + ".png"
@@ -211,9 +212,10 @@ Public Class fRasterFileConverter
 
     Private Function GetProcessType() As cVars.ProcessingType
         Dim pt As cVars.ProcessingType = Nothing
+        If Me.rbConvertGTiffToASCii.Checked Then pt = cVars.ProcessingType.GTiffToASCii
+        If Me.rbConvertGribToASCii.Checked Then pt = cVars.ProcessingType.GribToASCii
         If Me.rbConvertASCiiToGTiff.Checked Then pt = cVars.ProcessingType.ASCiiToGTiff
         If Me.rbConvertASCtoBMP.Checked Then pt = cVars.ProcessingType.ASCiiToImg
-        If Me.rbConvertGTiffToASCii.Checked Then pt = cVars.ProcessingType.GTiffToASCii
         If Me.rbClipAndResample.Checked Then pt = cVars.ProcessingType.ClipAndResample
         If Me.rbResample.Checked Then pt = cVars.ProcessingType.Resample
         Return pt
@@ -239,8 +241,8 @@ Public Class fRasterFileConverter
 
 
     Private Sub InitializeComboBox()
-        cbFileFormat.DataSource = [Enum].GetNames(GetType(cGdal.GdalFormat))
-        cbFileFormat.Text = cGdal.GdalFormat.GTiff.ToString 'cGdal.GetGdalFormatName(cGdal.GdalFormat.GTiff)
+        'cbFileFormat.DataSource = [Enum].GetNames(GetType(cGdal.GdalFormat))
+        'cbFileFormat.Text = cGdal.GdalFormat.GTiff.ToString 'cGdal.GetGdalFormatName(cGdal.GdalFormat.GTiff)
         cbResamplingMethod.DataSource = [Enum].GetNames(GetType(cGdal.GdalResamplingMethod))
         cbResamplingMethod.Text = cGdal.GdalResamplingMethod.bilinear.ToString ' cGdal.GetGdalResamplingMethodName(cGdal.GdalResamplingMethod.bilinear)
         cbODataType.DataSource = [Enum].GetNames(GetType(cData.DataType))
@@ -349,7 +351,7 @@ Public Class fRasterFileConverter
         Me.txtResampleCellSize.Enabled = True
         Me.btOpenDestinationFolder.Enabled = True
         Me.txtDestinationFolderPath.Enabled = True
-        Me.cbFileFormat.Enabled = True
+        'Me.cbFileFormat.Enabled = True
         Me.cbResamplingMethod.Enabled = True
         Me.cbODataType.Enabled = True
         Me.tbBandN.Text = ""
@@ -363,7 +365,7 @@ Public Class fRasterFileConverter
             Me.chkResampleSize.Enabled = False
             Me.chkResampleSize.Checked = False
             Me.txtResampleCellSize.Enabled = False
-            Me.cbFileFormat.Enabled = False
+            'Me.cbFileFormat.Enabled = False
             Me.cbResamplingMethod.Enabled = False
             Me.tbBandN.Text = ""
             Me.tbBandN.Enabled = False
@@ -375,7 +377,7 @@ Public Class fRasterFileConverter
             Me.chkResampleSize.Enabled = False
             Me.chkResampleSize.Checked = False
             Me.txtResampleCellSize.Enabled = False
-            Me.cbFileFormat.Enabled = False
+            'Me.cbFileFormat.Enabled = False
             Me.cbResamplingMethod.Enabled = False
             Me.tbBandN.Text = ""
             Me.tbBandN.Enabled = False
@@ -388,7 +390,18 @@ Public Class fRasterFileConverter
             Me.chkResampleSize.Enabled = False
             Me.chkResampleSize.Checked = False
             Me.txtResampleCellSize.Enabled = False
-            Me.cbFileFormat.Enabled = False
+            'Me.cbFileFormat.Enabled = False
+            Me.cbResamplingMethod.Enabled = False
+        End If
+        If Me.rbConvertGribToASCii.Checked = True Then
+            mFilePattern = cFile.FilePattern.GRIBFILE
+            Me.btSelectRenderer.Enabled = False
+            Me.chkBaseGrid.Checked = False
+            Me.chkBaseGrid.Enabled = False
+            Me.chkResampleSize.Enabled = False
+            Me.chkResampleSize.Checked = False
+            Me.txtResampleCellSize.Enabled = False
+            'Me.cbFileFormat.Enabled = False
             Me.cbResamplingMethod.Enabled = False
         End If
         If Me.rbClipAndResample.Checked = True OrElse Me.rbResample.Checked = True Then
@@ -402,20 +415,25 @@ Public Class fRasterFileConverter
         End If
     End Sub
 
-    Private Sub cbFileFormat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFileFormat.SelectedIndexChanged, cbFileFormat.EnabledChanged
-        If cbFileFormat.Enabled = True AndAlso cbFileFormat.Text.Trim <> "" Then
-            Select Case cbFileFormat.Text.Trim
-                Case cGdal.GdalFormat.GTiff.ToString
-                    mFilePattern = cFile.FilePattern.TIFFILE
-                Case cGdal.GdalFormat.AAIGrid.ToString
-                    mFilePattern = cFile.FilePattern.ASCFILE
-                Case Else
-                    mFilePattern = Nothing
-            End Select
-        End If
-    End Sub
+    'Private Sub cbFileFormat_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If cbFileFormat.Enabled = True AndAlso cbFileFormat.Text.Trim <> "" Then
+    '        Select Case cbFileFormat.Text.Trim
+    '            Case cGdal.GdalFormat.GTiff.ToString
+    '                mFilePattern = cFile.FilePattern.TIFFILE
+    '            Case cGdal.GdalFormat.AAIGrid.ToString
+    '                mFilePattern = cFile.FilePattern.ASCFILE
+    '            Case Else
+    '                mFilePattern = Nothing
+    '        End Select
+    '    End If
+    'End Sub
 
     Private Sub rbConvertGridToASCii_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbConvertGTiffToASCii.CheckedChanged
+        Call Me.SetProcessingOptionalIU()
+    End Sub
+
+
+    Private Sub rbConvertGribToASCii_CheckedChanged(sender As Object, e As EventArgs) Handles rbConvertGribToASCii.CheckedChanged
         Call Me.SetProcessingOptionalIU()
     End Sub
 
@@ -518,4 +536,5 @@ Public Class fRasterFileConverter
     Private Sub mProcess_StopProcess(ByVal sender As fProgressBar) Handles mfPrograssBar.StopProcess
         mStopProgress = True
     End Sub
+
 End Class

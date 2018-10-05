@@ -22,10 +22,9 @@ Partial Class fRasterFileConverter
     '코드 편집기를 사용하여 수정하지 마십시오.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(fRasterFileConverter))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvRainfallFileList = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbFileNameFilter = New System.Windows.Forms.TextBox()
@@ -59,9 +58,7 @@ Partial Class fRasterFileConverter
         Me.rbConvertGTiffToASCii = New System.Windows.Forms.RadioButton()
         Me.rbConvertASCiiToGTiff = New System.Windows.Forms.RadioButton()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.cbResamplingMethod = New System.Windows.Forms.ComboBox()
-        Me.cbFileFormat = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.tbBandN = New System.Windows.Forms.TextBox()
@@ -75,6 +72,7 @@ Partial Class fRasterFileConverter
         Me.Label1 = New System.Windows.Forms.Label()
         Me.chkResampleSize = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.rbConvertGribToASCii = New System.Windows.Forms.RadioButton()
         CType(Me.dgvRainfallFileList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -86,33 +84,33 @@ Partial Class fRasterFileConverter
         'dgvRainfallFileList
         '
         Me.dgvRainfallFileList.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvRainfallFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgvRainfallFileList.Location = New System.Drawing.Point(9, 22)
         Me.dgvRainfallFileList.Name = "dgvRainfallFileList"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
         Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 261)
@@ -329,6 +327,7 @@ Partial Class fRasterFileConverter
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbConvertGribToASCii)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Label6)
@@ -348,7 +347,7 @@ Partial Class fRasterFileConverter
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(403, 63)
+        Me.Label3.Location = New System.Drawing.Point(403, 66)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(212, 12)
         Me.Label3.TabIndex = 216
@@ -378,7 +377,7 @@ Partial Class fRasterFileConverter
         '
         'btSelectRenderer
         '
-        Me.btSelectRenderer.Location = New System.Drawing.Point(640, 22)
+        Me.btSelectRenderer.Location = New System.Drawing.Point(747, 22)
         Me.btSelectRenderer.Name = "btSelectRenderer"
         Me.btSelectRenderer.Size = New System.Drawing.Size(90, 23)
         Me.btSelectRenderer.TabIndex = 20
@@ -388,18 +387,17 @@ Partial Class fRasterFileConverter
         'rbConvertASCtoBMP
         '
         Me.rbConvertASCtoBMP.AutoSize = True
-        Me.rbConvertASCtoBMP.Location = New System.Drawing.Point(462, 25)
+        Me.rbConvertASCtoBMP.Location = New System.Drawing.Point(569, 25)
         Me.rbConvertASCtoBMP.Name = "rbConvertASCtoBMP"
-        Me.rbConvertASCtoBMP.Size = New System.Drawing.Size(168, 16)
+        Me.rbConvertASCtoBMP.Size = New System.Drawing.Size(161, 16)
         Me.rbConvertASCtoBMP.TabIndex = 20
-        Me.rbConvertASCtoBMP.TabStop = True
-        Me.rbConvertASCtoBMP.Text = "Convert ASCIIs to images"
+        Me.rbConvertASCtoBMP.Text = "Convert ASCII to images"
         Me.rbConvertASCtoBMP.UseVisualStyleBackColor = True
         '
         'rbResample
         '
         Me.rbResample.AutoSize = True
-        Me.rbResample.Location = New System.Drawing.Point(283, 62)
+        Me.rbResample.Location = New System.Drawing.Point(256, 61)
         Me.rbResample.Name = "rbResample"
         Me.rbResample.Size = New System.Drawing.Size(80, 16)
         Me.rbResample.TabIndex = 8
@@ -419,58 +417,41 @@ Partial Class fRasterFileConverter
         'rbConvertGTiffToASCii
         '
         Me.rbConvertGTiffToASCii.AutoSize = True
-        Me.rbConvertGTiffToASCii.Location = New System.Drawing.Point(284, 25)
+        Me.rbConvertGTiffToASCii.Checked = True
+        Me.rbConvertGTiffToASCii.Location = New System.Drawing.Point(119, 25)
         Me.rbConvertGTiffToASCii.Name = "rbConvertGTiffToASCii"
-        Me.rbConvertGTiffToASCii.Size = New System.Drawing.Size(159, 16)
+        Me.rbConvertGTiffToASCii.Size = New System.Drawing.Size(106, 16)
         Me.rbConvertGTiffToASCii.TabIndex = 4
-        Me.rbConvertGTiffToASCii.Text = "Convert GTiffs to ASCIIs"
+        Me.rbConvertGTiffToASCii.TabStop = True
+        Me.rbConvertGTiffToASCii.Text = "GTIFF to ASCII"
         Me.rbConvertGTiffToASCii.UseVisualStyleBackColor = True
         '
         'rbConvertASCiiToGTiff
         '
         Me.rbConvertASCiiToGTiff.AutoSize = True
-        Me.rbConvertASCiiToGTiff.Checked = True
-        Me.rbConvertASCiiToGTiff.Location = New System.Drawing.Point(119, 25)
+        Me.rbConvertASCiiToGTiff.Location = New System.Drawing.Point(405, 25)
         Me.rbConvertASCiiToGTiff.Name = "rbConvertASCiiToGTiff"
-        Me.rbConvertASCiiToGTiff.Size = New System.Drawing.Size(159, 16)
+        Me.rbConvertASCiiToGTiff.Size = New System.Drawing.Size(98, 16)
         Me.rbConvertASCiiToGTiff.TabIndex = 4
-        Me.rbConvertASCiiToGTiff.TabStop = True
-        Me.rbConvertASCiiToGTiff.Text = "Convert ASCIIs to GTiffs"
+        Me.rbConvertASCiiToGTiff.Text = "ASCII to GTiff"
         Me.rbConvertASCiiToGTiff.UseVisualStyleBackColor = True
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(205, 64)
+        Me.Label10.Location = New System.Drawing.Point(28, 65)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(126, 12)
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "Resampling method :"
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 64)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(87, 12)
-        Me.Label9.TabIndex = 21
-        Me.Label9.Text = "Outfile format :"
-        '
         'cbResamplingMethod
         '
         Me.cbResamplingMethod.FormattingEnabled = True
-        Me.cbResamplingMethod.Location = New System.Drawing.Point(335, 60)
+        Me.cbResamplingMethod.Location = New System.Drawing.Point(158, 61)
         Me.cbResamplingMethod.Name = "cbResamplingMethod"
         Me.cbResamplingMethod.Size = New System.Drawing.Size(98, 20)
         Me.cbResamplingMethod.TabIndex = 3
-        '
-        'cbFileFormat
-        '
-        Me.cbFileFormat.FormattingEnabled = True
-        Me.cbFileFormat.Location = New System.Drawing.Point(103, 60)
-        Me.cbFileFormat.Name = "cbFileFormat"
-        Me.cbFileFormat.Size = New System.Drawing.Size(92, 20)
-        Me.cbFileFormat.TabIndex = 4
         '
         'GroupBox4
         '
@@ -490,11 +471,9 @@ Partial Class fRasterFileConverter
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Controls.Add(Me.btSelectBaseRasterFile)
-        Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Controls.Add(Me.tbBaseGridFile)
         Me.GroupBox5.Controls.Add(Me.cbResamplingMethod)
         Me.GroupBox5.Controls.Add(Me.Label11)
-        Me.GroupBox5.Controls.Add(Me.cbFileFormat)
         Me.GroupBox5.Controls.Add(Me.cbODataType)
         Me.GroupBox5.Controls.Add(Me.chkBaseGrid)
         Me.GroupBox5.Controls.Add(Me.txtResampleCellSize)
@@ -509,7 +488,7 @@ Partial Class fRasterFileConverter
         '
         'tbBandN
         '
-        Me.tbBandN.Location = New System.Drawing.Point(560, 60)
+        Me.tbBandN.Location = New System.Drawing.Point(485, 60)
         Me.tbBandN.Name = "tbBandN"
         Me.tbBandN.Size = New System.Drawing.Size(43, 21)
         Me.tbBandN.TabIndex = 218
@@ -517,7 +496,7 @@ Partial Class fRasterFileConverter
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(456, 64)
+        Me.Label12.Location = New System.Drawing.Point(381, 64)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(101, 12)
         Me.Label12.TabIndex = 219
@@ -606,6 +585,16 @@ Partial Class fRasterFileConverter
         Me.Label2.TabIndex = 211
         Me.Label2.Text = "** Korean is not allowed in the file path and name."
         '
+        'rbConvertGribToASCii
+        '
+        Me.rbConvertGribToASCii.AutoSize = True
+        Me.rbConvertGribToASCii.Location = New System.Drawing.Point(256, 25)
+        Me.rbConvertGribToASCii.Name = "rbConvertGribToASCii"
+        Me.rbConvertGribToASCii.Size = New System.Drawing.Size(140, 16)
+        Me.rbConvertGribToASCii.TabIndex = 217
+        Me.rbConvertGribToASCii.Text = "GRIB/GRIB2 to ASCII"
+        Me.rbConvertGribToASCii.UseVisualStyleBackColor = True
+        '
         'fRasterFileConverter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -619,7 +608,6 @@ Partial Class fRasterFileConverter
         Me.Controls.Add(Me.btStartProcess)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(890, 755)
         Me.Name = "fRasterFileConverter"
@@ -664,9 +652,7 @@ Partial Class fRasterFileConverter
     Friend WithEvents txtFolderPathSource As System.Windows.Forms.TextBox
     Friend WithEvents btOpenRfFolder As System.Windows.Forms.Button
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents cbResamplingMethod As System.Windows.Forms.ComboBox
-    Friend WithEvents cbFileFormat As System.Windows.Forms.ComboBox
     Friend WithEvents tbExtensionFilter As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As GroupBox
@@ -688,4 +674,5 @@ Partial Class fRasterFileConverter
     Friend WithEvents Label8 As Label
     Friend WithEvents tbBandN As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents rbConvertGribToASCii As RadioButton
 End Class
