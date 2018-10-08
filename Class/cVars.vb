@@ -21,6 +21,7 @@
         AccAllAsc
         AggAscFiles
         CutDecimalPart
+        Gdalinfo
     End Enum
 
 

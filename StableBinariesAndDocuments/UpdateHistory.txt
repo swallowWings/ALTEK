@@ -51,6 +51,10 @@ Tok의 특징과 주요 기능은 아래와 같습니다.
 2018.10.05
   - Grib/Grib2 파일을 ascii로 변환하는 기능 추가. 밴드 지정 가능
 
+2018.10.08
+  -gdalinfo를 이용해서 raster 파일의 다양한 정보를 추출해서 파일로 저장하는 기능 추가
+
+
 
 파일 다운로드와 세팅 가이드는    https://github.com/floodmodel/Tok/tree/master/StableBinariesAndDocuments
    에서 gdal.zip, Tok.exe, Tok.exe.config, gentle.dll 4개를 다운로드 하시고, 

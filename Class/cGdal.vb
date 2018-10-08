@@ -156,6 +156,35 @@ Public Class cGdal
         Return Nothing
     End Function
 
+    Public Shared Function GetRasterInfo(sourceFPN As String, resultFPN As String) As Boolean
+        Try
+            If resultFPN = "" OrElse sourceFPN = "" Then
+                MsgBox("Invalid source/result file name. ", MsgBoxStyle.Exclamation)
+                Return False
+                Exit Function
+            End If
+            Dim strGdalPath As String = Path.Combine(mGdalPath, "gdalinfo.exe")
+            Dim pGdalGrid As New Process()
+            pGdalGrid.StartInfo.FileName = strGdalPath
+            pGdalGrid.StartInfo.Arguments = sourceFPN
+            pGdalGrid.StartInfo.UseShellExecute = False
+            pGdalGrid.StartInfo.RedirectStandardOutput = True
+            pGdalGrid.Start()
+            Dim result As String
+            Using reader As StreamReader = pGdalGrid.StandardOutput
+                result = reader.ReadToEnd()
+            End Using
+            File.AppendAllText(resultFPN, result)
+            pGdalGrid.WaitForExit()
+            pGdalGrid.Dispose()
+            Return True
+        Catch ex As Exception
+            Throw ex
+            Return False
+        End Try
+    End Function
+
+
     Public Shared Function ConvertASCIItoGTIFF(sourceFPN As String, resultFPN As String, resultDataType As cGdal.GdalDataType) As Boolean
         Try
             If resultFPN = "" OrElse sourceFPN = "" Then
@@ -184,6 +213,7 @@ Public Class cGdal
             Return False
         End Try
     End Function
+
 
     Public Shared Function ConvertGtiffAndGribToASCII(sourceFPN As String, resultFPN As String, bandN As Integer, resultDataType As cGdal.GdalDataType) As Boolean
         Try

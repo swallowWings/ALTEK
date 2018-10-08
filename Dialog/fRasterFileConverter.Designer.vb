@@ -48,11 +48,14 @@ Partial Class fRasterFileConverter
         Me.btRemoveSelected = New System.Windows.Forms.Button()
         Me.btRemoveAll = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbGdalinfo = New System.Windows.Forms.RadioButton()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.rbConvertGribToASCii = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btSelectRenderer = New System.Windows.Forms.Button()
-        Me.rbConvertASCtoBMP = New System.Windows.Forms.RadioButton()
+        Me.rbConvertASCtoImg = New System.Windows.Forms.RadioButton()
         Me.rbResample = New System.Windows.Forms.RadioButton()
         Me.rbClipAndResample = New System.Windows.Forms.RadioButton()
         Me.rbConvertGTiffToASCii = New System.Windows.Forms.RadioButton()
@@ -72,7 +75,6 @@ Partial Class fRasterFileConverter
         Me.Label1 = New System.Windows.Forms.Label()
         Me.chkResampleSize = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.rbConvertGribToASCii = New System.Windows.Forms.RadioButton()
         CType(Me.dgvRainfallFileList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -113,7 +115,7 @@ Partial Class fRasterFileConverter
         Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
-        Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 261)
+        Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 237)
         Me.dgvRainfallFileList.TabIndex = 16
         '
         'GroupBox2
@@ -128,9 +130,9 @@ Partial Class fRasterFileConverter
         Me.GroupBox2.Controls.Add(Me.btAddAllFiles)
         Me.GroupBox2.Controls.Add(Me.btAddSelectedFile)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 136)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 159)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 328)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 304)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
@@ -166,7 +168,7 @@ Partial Class fRasterFileConverter
         Me.lstRFfiles.Location = New System.Drawing.Point(10, 75)
         Me.lstRFfiles.Name = "lstRFfiles"
         Me.lstRFfiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstRFfiles.Size = New System.Drawing.Size(410, 208)
+        Me.lstRFfiles.Size = New System.Drawing.Size(410, 184)
         Me.lstRFfiles.TabIndex = 39
         '
         'txtFolderPathSource
@@ -198,7 +200,7 @@ Partial Class fRasterFileConverter
         'btAddAllFiles
         '
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 293)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 266)
         Me.btAddAllFiles.Name = "btAddAllFiles"
         Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
         Me.btAddAllFiles.TabIndex = 13
@@ -208,7 +210,7 @@ Partial Class fRasterFileConverter
         'btAddSelectedFile
         '
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 293)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 266)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
         Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
         Me.btAddSelectedFile.TabIndex = 14
@@ -308,7 +310,7 @@ Partial Class fRasterFileConverter
         'btRemoveSelected
         '
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(259, 293)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(259, 266)
         Me.btRemoveSelected.Name = "btRemoveSelected"
         Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveSelected.TabIndex = 18
@@ -318,7 +320,7 @@ Partial Class fRasterFileConverter
         'btRemoveAll
         '
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(111, 293)
+        Me.btRemoveAll.Location = New System.Drawing.Point(111, 266)
         Me.btRemoveAll.Name = "btRemoveAll"
         Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveAll.TabIndex = 17
@@ -327,27 +329,60 @@ Partial Class fRasterFileConverter
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbGdalinfo)
+        Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.rbConvertGribToASCii)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.btSelectRenderer)
-        Me.GroupBox3.Controls.Add(Me.rbConvertASCtoBMP)
+        Me.GroupBox3.Controls.Add(Me.rbConvertASCtoImg)
         Me.GroupBox3.Controls.Add(Me.rbResample)
         Me.GroupBox3.Controls.Add(Me.rbClipAndResample)
         Me.GroupBox3.Controls.Add(Me.rbConvertGTiffToASCii)
         Me.GroupBox3.Controls.Add(Me.rbConvertASCiiToGTiff)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 31)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(847, 92)
+        Me.GroupBox3.Size = New System.Drawing.Size(847, 115)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Select processing"
         '
+        'rbGdalinfo
+        '
+        Me.rbGdalinfo.AutoSize = True
+        Me.rbGdalinfo.Location = New System.Drawing.Point(119, 86)
+        Me.rbGdalinfo.Name = "rbGdalinfo"
+        Me.rbGdalinfo.Size = New System.Drawing.Size(69, 16)
+        Me.rbGdalinfo.TabIndex = 219
+        Me.rbGdalinfo.Text = "Gdalinfo"
+        Me.rbGdalinfo.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.SystemColors.Info
+        Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label9.Location = New System.Drawing.Point(10, 82)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(100, 23)
+        Me.Label9.TabIndex = 218
+        Me.Label9.Text = "Get raster info."
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'rbConvertGribToASCii
+        '
+        Me.rbConvertGribToASCii.AutoSize = True
+        Me.rbConvertGribToASCii.Location = New System.Drawing.Point(256, 25)
+        Me.rbConvertGribToASCii.Name = "rbConvertGribToASCii"
+        Me.rbConvertGribToASCii.Size = New System.Drawing.Size(140, 16)
+        Me.rbConvertGribToASCii.TabIndex = 217
+        Me.rbConvertGribToASCii.Text = "GRIB/GRIB2 to ASCII"
+        Me.rbConvertGribToASCii.UseVisualStyleBackColor = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(403, 66)
+        Me.Label3.Location = New System.Drawing.Point(403, 59)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(212, 12)
         Me.Label3.TabIndex = 216
@@ -357,7 +392,7 @@ Partial Class fRasterFileConverter
         '
         Me.Label7.BackColor = System.Drawing.SystemColors.Info
         Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label7.Location = New System.Drawing.Point(10, 59)
+        Me.Label7.Location = New System.Drawing.Point(10, 52)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(100, 23)
         Me.Label7.TabIndex = 20
@@ -384,20 +419,20 @@ Partial Class fRasterFileConverter
         Me.btSelectRenderer.Text = "Renderer"
         Me.btSelectRenderer.UseVisualStyleBackColor = True
         '
-        'rbConvertASCtoBMP
+        'rbConvertASCtoImg
         '
-        Me.rbConvertASCtoBMP.AutoSize = True
-        Me.rbConvertASCtoBMP.Location = New System.Drawing.Point(569, 25)
-        Me.rbConvertASCtoBMP.Name = "rbConvertASCtoBMP"
-        Me.rbConvertASCtoBMP.Size = New System.Drawing.Size(161, 16)
-        Me.rbConvertASCtoBMP.TabIndex = 20
-        Me.rbConvertASCtoBMP.Text = "Convert ASCII to images"
-        Me.rbConvertASCtoBMP.UseVisualStyleBackColor = True
+        Me.rbConvertASCtoImg.AutoSize = True
+        Me.rbConvertASCtoImg.Location = New System.Drawing.Point(569, 25)
+        Me.rbConvertASCtoImg.Name = "rbConvertASCtoImg"
+        Me.rbConvertASCtoImg.Size = New System.Drawing.Size(161, 16)
+        Me.rbConvertASCtoImg.TabIndex = 20
+        Me.rbConvertASCtoImg.Text = "Convert ASCII to images"
+        Me.rbConvertASCtoImg.UseVisualStyleBackColor = True
         '
         'rbResample
         '
         Me.rbResample.AutoSize = True
-        Me.rbResample.Location = New System.Drawing.Point(256, 61)
+        Me.rbResample.Location = New System.Drawing.Point(256, 54)
         Me.rbResample.Name = "rbResample"
         Me.rbResample.Size = New System.Drawing.Size(80, 16)
         Me.rbResample.TabIndex = 8
@@ -407,7 +442,7 @@ Partial Class fRasterFileConverter
         'rbClipAndResample
         '
         Me.rbClipAndResample.AutoSize = True
-        Me.rbClipAndResample.Location = New System.Drawing.Point(119, 62)
+        Me.rbClipAndResample.Location = New System.Drawing.Point(119, 55)
         Me.rbClipAndResample.Name = "rbClipAndResample"
         Me.rbClipAndResample.Size = New System.Drawing.Size(104, 16)
         Me.rbClipAndResample.TabIndex = 7
@@ -458,9 +493,9 @@ Partial Class fRasterFileConverter
         Me.GroupBox4.Controls.Add(Me.dgvRainfallFileList)
         Me.GroupBox4.Controls.Add(Me.btRemoveAll)
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
-        Me.GroupBox4.Location = New System.Drawing.Point(448, 136)
+        Me.GroupBox4.Location = New System.Drawing.Point(448, 159)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(411, 328)
+        Me.GroupBox4.Size = New System.Drawing.Size(411, 304)
         Me.GroupBox4.TabIndex = 15
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -585,16 +620,6 @@ Partial Class fRasterFileConverter
         Me.Label2.TabIndex = 211
         Me.Label2.Text = "** Korean is not allowed in the file path and name."
         '
-        'rbConvertGribToASCii
-        '
-        Me.rbConvertGribToASCii.AutoSize = True
-        Me.rbConvertGribToASCii.Location = New System.Drawing.Point(256, 25)
-        Me.rbConvertGribToASCii.Name = "rbConvertGribToASCii"
-        Me.rbConvertGribToASCii.Size = New System.Drawing.Size(140, 16)
-        Me.rbConvertGribToASCii.TabIndex = 217
-        Me.rbConvertGribToASCii.Text = "GRIB/GRIB2 to ASCII"
-        Me.rbConvertGribToASCii.UseVisualStyleBackColor = True
-        '
         'fRasterFileConverter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -644,7 +669,7 @@ Partial Class fRasterFileConverter
     Friend WithEvents rbConvertASCiiToGTiff As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents rbConvertGTiffToASCii As System.Windows.Forms.RadioButton
-    Friend WithEvents rbConvertASCtoBMP As System.Windows.Forms.RadioButton
+    Friend WithEvents rbConvertASCtoImg As System.Windows.Forms.RadioButton
     Friend WithEvents btSelectRenderer As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -675,4 +700,6 @@ Partial Class fRasterFileConverter
     Friend WithEvents tbBandN As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents rbConvertGribToASCii As RadioButton
+    Friend WithEvents rbGdalinfo As RadioButton
+    Friend WithEvents Label9 As Label
 End Class
