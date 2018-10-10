@@ -166,7 +166,7 @@ Public Class cGdal
             Dim strGdalPath As String = Path.Combine(mGdalPath, "gdalinfo.exe")
             Dim pGdalGrid As New Process()
             pGdalGrid.StartInfo.FileName = strGdalPath
-            pGdalGrid.StartInfo.Arguments = sourceFPN
+            pGdalGrid.StartInfo.Arguments = cComTools.SetDQ(sourceFPN)
             pGdalGrid.StartInfo.UseShellExecute = False
             pGdalGrid.StartInfo.RedirectStandardOutput = True
             pGdalGrid.Start()
