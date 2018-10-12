@@ -68,7 +68,7 @@ Public Class fRasterFileConverter
                 Exit Sub
             End If
         End If
-        If Me.rbConvertGTiffToASCii.Checked AndAlso Me.tbBandN.Enabled = True Then
+        If (Me.rbConvertGTiffToASCii.Checked OrElse Me.rbConvertGribToASCii.Checked) AndAlso Me.tbBandN.Enabled = True Then
             If Me.tbBandN.Text.Trim <> "" Then
                 Dim outv As Integer
                 If Integer.TryParse(Me.tbBandN.Text.Trim, outv) = True Then
