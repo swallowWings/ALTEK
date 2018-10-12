@@ -188,7 +188,7 @@ Public Class fExtractValue
                             mArrayToAcc = cTextFile.addTwoDimArrayOfASCraster(mArrayToAcc, ascfile.ValuesFromTL, mNodataValue, mbAllowNegative)
                         End If
 
-                        If mNextFileOrderToStartAgg - 1 = r.FileOrder Then
+                        If mNextFileOrderToStartAgg - 1 = r.FileOrder OrElse r.FileOrder = mdtSourceFile.Rows.Count Then
                             resultFPN = mDestinationFolderPath + "\" + resultFNWithoutExtension + IO.Path.GetExtension(r.FileName)
                             cTextFile.MakeASCTextFile(resultFPN, mHeaderStringAll, mArrayToAcc, -1, mNodataValue)
                         End If
@@ -245,10 +245,14 @@ Public Class fExtractValue
 
     Private Function GetProcessType() As cVars.ProcessingType
         Dim pt As cVars.ProcessingType = Nothing
-        If Me.rbExtractFromAcell.Checked Then Return cVars.ProcessingType.ExtractAcellValueFromASCIIFile
-        If Me.rbExtractCellsAverage.Checked Then Return cVars.ProcessingType.ExtractCellsAverageFromASCIIfile
-        If rbAccAllFiles.Checked Then Return cVars.ProcessingType.AccAllAsc
-        If rbAggregate.Checked Then Return cVars.ProcessingType.AggAscFiles
+        If Me.rbValueFromASCIIFiles.Checked Then
+            If Me.rbExtractFromAcell.Checked Then Return cVars.ProcessingType.ExtractAcellValueFromASCIIFile
+            If Me.rbExtractCellsAverage.Checked Then Return cVars.ProcessingType.ExtractCellsAverageFromASCIIfile
+        End If
+        If rbAccAscRaster.Checked Then
+            If rbAccAllFiles.Checked Then Return cVars.ProcessingType.AccAllAsc
+            If rbAggregate.Checked Then Return cVars.ProcessingType.AggAscFiles
+        End If
         If Me.rbValueFromTextFile.Checked Then Return cVars.ProcessingType.ExtractValueFromTextFile
         Return pt
     End Function
