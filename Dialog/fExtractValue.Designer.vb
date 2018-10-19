@@ -22,9 +22,9 @@ Partial Class fExtractValue
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dgvRainfallFileList = New System.Windows.Forms.DataGridView()
         Me.btRemoveAll = New System.Windows.Forms.Button()
@@ -115,33 +115,33 @@ Partial Class fExtractValue
         Me.dgvRainfallFileList.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvRainfallFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle14
         Me.dgvRainfallFileList.Location = New System.Drawing.Point(9, 22)
         Me.dgvRainfallFileList.Name = "dgvRainfallFileList"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
         Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 221)
@@ -500,9 +500,10 @@ Partial Class fExtractValue
         Me.rbValueFromTextFile.AutoSize = True
         Me.rbValueFromTextFile.Location = New System.Drawing.Point(12, 491)
         Me.rbValueFromTextFile.Name = "rbValueFromTextFile"
-        Me.rbValueFromTextFile.Size = New System.Drawing.Size(471, 16)
+        Me.rbValueFromTextFile.Size = New System.Drawing.Size(532, 16)
         Me.rbValueFromTextFile.TabIndex = 46
-        Me.rbValueFromTextFile.Text = "Extract text from the files contain values separated by comma, tab, and space."
+        Me.rbValueFromTextFile.Text = "Extract text in a column from the files contain values separated by comma, tab, o" &
+    "r space."
         Me.rbValueFromTextFile.UseVisualStyleBackColor = True
         '
         'gbExtractFromTextFile
@@ -558,6 +559,7 @@ Partial Class fExtractValue
         Me.tbColidxInTextFile.Name = "tbColidxInTextFile"
         Me.tbColidxInTextFile.Size = New System.Drawing.Size(78, 21)
         Me.tbColidxInTextFile.TabIndex = 221
+        Me.tbColidxInTextFile.Text = "0"
         '
         'GroupBox5
         '
@@ -631,6 +633,7 @@ Partial Class fExtractValue
         Me.tbEndingLineidx.Name = "tbEndingLineidx"
         Me.tbEndingLineidx.Size = New System.Drawing.Size(75, 21)
         Me.tbEndingLineidx.TabIndex = 222
+        Me.tbEndingLineidx.Text = "-1"
         '
         'tbStartingLineidx
         '
@@ -638,6 +641,7 @@ Partial Class fExtractValue
         Me.tbStartingLineidx.Name = "tbStartingLineidx"
         Me.tbStartingLineidx.Size = New System.Drawing.Size(78, 21)
         Me.tbStartingLineidx.TabIndex = 221
+        Me.tbStartingLineidx.Text = "-1"
         '
         'Label3
         '
@@ -662,9 +666,10 @@ Partial Class fExtractValue
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(13, 23)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(227, 12)
+        Me.Label10.Size = New System.Drawing.Size(478, 12)
         Me.Label10.TabIndex = 218
-        Me.Label10.Text = "If not defined, all lines will be scanned."
+        Me.Label10.Text = "If text conditions are not defined or the line indices are -1, all lines will be " &
+    "scanned."
         '
         'rbAccAscRaster
         '

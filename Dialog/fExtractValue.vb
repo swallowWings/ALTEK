@@ -53,6 +53,7 @@ Public Class fExtractValue
             If Me.rbExtractFromAcell.Checked Then
                 mDestinationFolderPath = ""
                 mDestinationFPN = Me.tbDest_FP_or_FPN.Text.Trim
+                If File.Exists(mDestinationFPN) = True Then File.Delete(mDestinationFPN)
                 mcolx = Me.tbcolx.Text.Trim
                 mrowy = Me.tbrowy.Text.Trim
                 msb = New StringBuilder
@@ -68,6 +69,7 @@ Public Class fExtractValue
                 msb = New StringBuilder
                 mbAllowNegative = Me.chkAllowNegativeInCalCellAverage.Checked
                 mDestinationFPN = Me.tbDest_FP_or_FPN.Text.Trim
+                If File.Exists(mDestinationFPN) = True Then File.Delete(mDestinationFPN)
             End If
         End If
 
@@ -76,6 +78,7 @@ Public Class fExtractValue
             If rbAccAllFiles.Checked Then
                 mfileNagg = 0
                 mDestinationFPN = Me.tbDest_FP_or_FPN.Text.Trim
+                If File.Exists(mDestinationFPN) = True Then File.Delete(mDestinationFPN)
             End If
             If rbAggregate.Checked Then
                 mfileNagg = Me.tbFileNumToAgg.Text.Trim
@@ -93,8 +96,17 @@ Public Class fExtractValue
 
             If Me.rbStartingIndex.Checked Then
                 mUsingLineIndex = True
-                mstartingLineIndex = CInt(Me.tbStartingLineidx.Text.Trim)
-                mendingLindIndex = CInt(Me.tbEndingLineidx.Text.Trim)
+                If Me.tbStartingLineidx.Text.Trim = "" Then
+                    mstartingLineIndex = 0
+                Else
+                    mstartingLineIndex = CInt(Me.tbStartingLineidx.Text.Trim)
+                End If
+
+                If Me.tbEndingLineidx.Text.Trim = "" Then
+                    mendingLindIndex = 0
+                Else
+                    mendingLindIndex = CInt(Me.tbEndingLineidx.Text.Trim)
+                End If
                 mstartingLineText = ""
                 mendingLindText = ""
             End If
@@ -106,7 +118,12 @@ Public Class fExtractValue
                 mendingLindText = Me.tbEndingLineText.Text
             End If
             mNumericOnly = Me.chkOnlyNumericValue.Checked
-            mColidxInTextFile = CInt(Me.tbColidxInTextFile.Text.Trim)
+            If Me.tbColidxInTextFile.Text.Trim = "" Then
+                mColidxInTextFile = 0
+            Else
+                mColidxInTextFile = CInt(Me.tbColidxInTextFile.Text.Trim)
+            End If
+
             If Directory.Exists(mDestinationFolderPath) = False Then
                 MsgBox("Destination folder is not exist!!!  ", MsgBoxStyle.Exclamation)
                 Exit Sub
@@ -194,11 +211,11 @@ Public Class fExtractValue
                         End If
 
                     Case cVars.ProcessingType.ExtractValueFromTextFile
-                        resultFPN = mDestinationFolderPath + "\" + resultFNWithoutExtension + IO.Path.GetExtension(r.FileName)
+                        resultFPN = mDestinationFolderPath + "\" + resultFNWithoutExtension + ".out"
                         If mUsingLineIndex = True Then
-                            cTextFile.getTextInTextFile(sourceFPN, resultFPN, mstartingLineIndex, mendingLindIndex, mColidxInTextFile, mNumericOnly)
+                            cTextFile.MakeTextFileUisngTextInTextFile(sourceFPN, resultFPN, mstartingLineIndex, mendingLindIndex, mColidxInTextFile, mNumericOnly)
                         Else
-                            cTextFile.getTextInTextFile(sourceFPN, resultFPN, mstartingLineText, mendingLindText, mColidxInTextFile, mNumericOnly)
+                            cTextFile.MakeTextFileUisngTextInTextFile(sourceFPN, resultFPN, mstartingLineText, mendingLindText, mColidxInTextFile, mNumericOnly)
                         End If
                     Case Else
                         strProcessingMsg = ""
@@ -239,6 +256,7 @@ Public Class fExtractValue
             MsgBox(ex.ToString, MsgBoxStyle.Critical)
         End Try
     End Sub
+
 
 
 
@@ -568,5 +586,9 @@ Public Class fExtractValue
 
     Private Sub mProcess_StopProcess(ByVal sender As fProgressBar) Handles mfPrograssBar.StopProcess
         mStopProgress = True
+    End Sub
+
+    Private Sub tbColidxInTextFile_TextChanged(sender As Object, e As EventArgs) Handles tbColidxInTextFile.TextChanged
+
     End Sub
 End Class
