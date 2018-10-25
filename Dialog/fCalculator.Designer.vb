@@ -45,6 +45,7 @@ Partial Class fCalculator
         Me.chkNodataToZeroASC3 = New System.Windows.Forms.CheckBox()
         Me.tbDecimalPartN = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.chkMultiFiles = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'btSelectAscFileA
@@ -61,7 +62,7 @@ Partial Class fCalculator
         '
         Me.tbInFileA.Location = New System.Drawing.Point(42, 34)
         Me.tbInFileA.Name = "tbInFileA"
-        Me.tbInFileA.Size = New System.Drawing.Size(501, 21)
+        Me.tbInFileA.Size = New System.Drawing.Size(411, 21)
         Me.tbInFileA.TabIndex = 220
         '
         'Label1
@@ -155,16 +156,16 @@ Partial Class fCalculator
         Me.btResultFPN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btResultFPN.Location = New System.Drawing.Point(19, 419)
         Me.btResultFPN.Name = "btResultFPN"
-        Me.btResultFPN.Size = New System.Drawing.Size(97, 21)
+        Me.btResultFPN.Size = New System.Drawing.Size(139, 21)
         Me.btResultFPN.TabIndex = 233
         Me.btResultFPN.Text = "Result file"
         Me.btResultFPN.UseVisualStyleBackColor = True
         '
         'tbResultFPN
         '
-        Me.tbResultFPN.Location = New System.Drawing.Point(122, 419)
+        Me.tbResultFPN.Location = New System.Drawing.Point(164, 419)
         Me.tbResultFPN.Name = "tbResultFPN"
-        Me.tbResultFPN.Size = New System.Drawing.Size(678, 21)
+        Me.tbResultFPN.Size = New System.Drawing.Size(636, 21)
         Me.tbResultFPN.TabIndex = 232
         '
         'Label4
@@ -242,11 +243,22 @@ Partial Class fCalculator
         Me.Label5.TabIndex = 241
         Me.Label5.Text = "Decimal part num. : "
         '
+        'chkMultiFiles
+        '
+        Me.chkMultiFiles.AutoSize = True
+        Me.chkMultiFiles.Location = New System.Drawing.Point(459, 36)
+        Me.chkMultiFiles.Name = "chkMultiFiles"
+        Me.chkMultiFiles.Size = New System.Drawing.Size(82, 16)
+        Me.chkMultiFiles.TabIndex = 242
+        Me.chkMultiFiles.Text = "Multi. files"
+        Me.chkMultiFiles.UseVisualStyleBackColor = True
+        '
         'fCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(818, 493)
+        Me.Controls.Add(Me.chkMultiFiles)
         Me.Controls.Add(Me.tbDecimalPartN)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.chkNodataToZeroASC3)
@@ -302,4 +314,5 @@ Partial Class fCalculator
     Friend WithEvents chkNodataToZeroASC3 As CheckBox
     Friend WithEvents tbDecimalPartN As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents chkMultiFiles As CheckBox
 End Class
