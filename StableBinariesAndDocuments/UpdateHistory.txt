@@ -63,6 +63,10 @@ Tok의 특징과 주요 기능은 아래와 같습니다.
 2018.10.25
   - Raster calculator에서 A, B, C 중 하나를 폴더 지정해서 여러개 파일을 적용할 수 있는 기능 추가
 
+2018.12.24
+  - Raster calculator에서 공백으로 구분하는 조건 삭제. 즉, 수식에서 공백으로 구분하지 않아도 됨
+  - 거듭제곱 연산 추가
+
 
 파일 다운로드와 세팅 가이드는    https://github.com/floodmodel/Tok/tree/master/StableBinariesAndDocuments
    에서 gdal.zip, Tok.exe, Tok.exe.config, gentle.dll 4개를 다운로드 하시고, 

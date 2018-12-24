@@ -135,7 +135,7 @@ Partial Class fCalculator
         '
         'btStartCalc
         '
-        Me.btStartCalc.Location = New System.Drawing.Point(334, 448)
+        Me.btStartCalc.Location = New System.Drawing.Point(334, 465)
         Me.btStartCalc.Name = "btStartCalc"
         Me.btStartCalc.Size = New System.Drawing.Size(324, 33)
         Me.btStartCalc.TabIndex = 230
@@ -144,7 +144,7 @@ Partial Class fCalculator
         '
         'btClose
         '
-        Me.btClose.Location = New System.Drawing.Point(668, 448)
+        Me.btClose.Location = New System.Drawing.Point(668, 465)
         Me.btClose.Name = "btClose"
         Me.btClose.Size = New System.Drawing.Size(132, 33)
         Me.btClose.TabIndex = 231
@@ -154,7 +154,7 @@ Partial Class fCalculator
         'btResultFPN
         '
         Me.btResultFPN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btResultFPN.Location = New System.Drawing.Point(19, 419)
+        Me.btResultFPN.Location = New System.Drawing.Point(19, 436)
         Me.btResultFPN.Name = "btResultFPN"
         Me.btResultFPN.Size = New System.Drawing.Size(139, 21)
         Me.btResultFPN.TabIndex = 233
@@ -163,7 +163,7 @@ Partial Class fCalculator
         '
         'tbResultFPN
         '
-        Me.tbResultFPN.Location = New System.Drawing.Point(164, 419)
+        Me.tbResultFPN.Location = New System.Drawing.Point(164, 436)
         Me.tbResultFPN.Name = "tbResultFPN"
         Me.tbResultFPN.Size = New System.Drawing.Size(636, 21)
         Me.tbResultFPN.TabIndex = 232
@@ -184,13 +184,13 @@ Partial Class fCalculator
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(781, 256)
+        Me.TextBox1.Size = New System.Drawing.Size(781, 273)
         Me.TextBox1.TabIndex = 235
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
         'btHeip
         '
-        Me.btHeip.Location = New System.Drawing.Point(18, 448)
+        Me.btHeip.Location = New System.Drawing.Point(18, 465)
         Me.btHeip.Name = "btHeip"
         Me.btHeip.Size = New System.Drawing.Size(111, 33)
         Me.btHeip.TabIndex = 236
@@ -257,7 +257,7 @@ Partial Class fCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 493)
+        Me.ClientSize = New System.Drawing.Size(818, 510)
         Me.Controls.Add(Me.chkMultiFiles)
         Me.Controls.Add(Me.tbDecimalPartN)
         Me.Controls.Add(Me.Label5)
@@ -282,7 +282,6 @@ Partial Class fCalculator
         Me.Controls.Add(Me.btSelectAscFileA)
         Me.Controls.Add(Me.tbInFileA)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(834, 532)
         Me.MinimumSize = New System.Drawing.Size(834, 532)
         Me.Name = "fCalculator"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide

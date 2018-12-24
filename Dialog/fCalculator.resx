@@ -121,22 +121,21 @@
     <value>
  - The algebraic equation has to contain 2 values (or variables) and one operator.
  - In conditional expression, [condition] term has to contain 2 values (or variables) and one condtion operator.
-   And also, [true] and [false] terms have to contain 2 values (or variables) and one operator in each other.
- - In the algebraic and conditional expressions, the [operator] and [file or number] have to be separated with a space.
- - Available operators are +, -, *, /, &gt;, &lt;, =, &gt;=, or &lt;=.
+   And also, [true] and [false] terms can contain up to 2 values (or variables) and one operator in each other.
+ - Available operators are +, -, *, /, ^, &gt;, &lt;, =, &gt;=, or &lt;=.
  - Files have to be applied using the characters A(or a), B(or b), or C(or c).
- - Calculating nodata values as 0 is just applied to the algrebraic eqs. (algrebraic eqs. in conditional expression are included)
-    Nodata values in ascii raster files are converted into '0' automatically, and applied to calculation.
-    All ascii raster files have to have the same nodata value.
+ - Calculating nodata values as 0 is just applied to the algrebraic equations (algrebraic eqs. in conditional expression are included).
+   If 'Calculate nodata as 0' option is checked, the nodata values in ascii raster files are converted into '0' automatically, 
+       and applied to calculation.
+   All ascii raster files have to have the same nodata value.
 
- (Usages)  
-   - [file or number][a space][operator][a space][file or number]
+ (Usages)  (*** FoN means 'file or number'.)
+   - [FoN][operator][FoN]
    - if(condition, true value, false value)
-     if([file or number][a space][condition][a space][file or number], 
-       [file or number][a space][operator][a space][file or number], [file or number][a space][operator][a space][file or number])
+     if([FoN][condition operator][FoN], [FoN][operator][FoN], [FoN][operator][FoN])
 
 (Examples)
-   - A + 1       A - B             A * B          A / 2
-   - if(A &gt; 1, 0, B)    if(A &gt;= 1, C, B)   if(a &lt; B, b, c)   if(A &lt; B, B + 1, C)   if(A &lt; B, B, C + 1)   if(A &lt; B, B + C, B - C)</value>
+   - A+1, A-B, A*B, A/2, A^3, etc.
+   - if(A&gt;1, 0, B),  if(A&gt;=1, C, B), if(a&lt;B, b, c), if(A&lt;B, B+1, C^2), if(A&lt;B, B, C+1), if(A&lt;B, B+C, B-C), etc.</value>
   </data>
 </root>

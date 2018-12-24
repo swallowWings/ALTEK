@@ -79,11 +79,10 @@ Public Class fCalculator
         mStopProgress = False
         Try
             mMathArg = Me.tbEq.Text.Trim
-            mMathArgEle = mMathArg.Split({" ", ",", "(", ")"}, StringSplitOptions.RemoveEmptyEntries)
+            mMathArgEle = mMathArg.Split({" ", ",", "(", ")", "+", "-", "*", "/", "^", "=", ">", "<", ">=", "<="}, StringSplitOptions.RemoveEmptyEntries)
             mNodataAsZeroASCa = Me.chkNodataToZeroASC1.Checked
             mNodataAsZeroASCb = Me.chkNodataToZeroASC2.Checked
             mNodataAsZeroASCc = Me.chkNodataToZeroASC3.Checked
-            'Dim bIf As Boolean = False
             Dim ifFirstAsc(,) As Double = Nothing
             Dim ifSecondAsc(,) As Double = Nothing
             Dim ifTrueAsc(,) As Double = Nothing
@@ -95,7 +94,7 @@ Public Class fCalculator
             Dim bIf1IsASC As Boolean = False
             Dim bIf2IsASC As Boolean = False
             Dim bIftrueIsASC As Boolean = False
-            Dim bIffalseIASC As Boolean = False
+            Dim bIffalseIsASC As Boolean = False
             Dim baseASC As cAscRasterReader = Nothing
             Dim lstFileA As New List(Of String)
             Dim FilePathForMultiFiles As String = ""
@@ -125,7 +124,6 @@ Public Class fCalculator
                 If File.Exists(mfpnOut) Then File.Delete(mfpnOut)
             End If
 
-
             Dim strProcessingMsg As String = ""
             mfPrograssBar.GRMToolsPrograssBar.Maximum = lstFileA.Count
             mfPrograssBar.GRMToolsPrograssBar.Style = ProgressBarStyle.Blocks
@@ -135,7 +133,6 @@ Public Class fCalculator
             System.Windows.Forms.Application.DoEvents()
 
             For fn As Integer = 0 To lstFileA.Count - 1
-                'If File.Exists(tbInFileA.Text.Trim) = True Then
                 If File.Exists(lstFileA(fn).Trim) = True Then
                     mAscA = New cAscRasterReader(lstFileA(fn).Trim)
                     baseASC = mAscA
@@ -175,280 +172,166 @@ Public Class fCalculator
                 Dim nv As Double = baseASC.Header.nodataValue
                 Dim resultArr(baseASC.Header.numberCols - 1, baseASC.Header.numberRows - 1) As Double
                 If mMathArgEle(0).ToLower = "if" Then
-                    If mMathArgEle.Length > 10 Then
-                        MsgBox("Maximum 9 elements are allowed in conditional expression.   ", MsgBoxStyle.Information)
-                        Exit Sub
-                    End If
-                    'bIf = True
+                    Dim ArgTwoPart As String() = mMathArg.Split({" ", "(", ")"}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim elementsInif As String() = ArgTwoPart(1).Split({" ", ","}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim elementsInCondition As String() = elementsInif(0).Split({" ", "=", ">", "<", ">=", "<="}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim elementsInTrue As String() = elementsInif(1).Split({" ", "+", "-", "*", "/", "^"}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim elementsInFalse As String() = elementsInif(2).Split({" ", "+", "-", "*", "/", "^"}, StringSplitOptions.RemoveEmptyEntries)
+
+                    '===== condition  부분
                     Dim vc As Double = 0
-                    If Double.TryParse(mMathArgEle(1), vc) = True Then
+                    Dim operatorInCondition As String = cCalculator.getOperatorFromString(elementsInif(0))
+                    If Double.TryParse(elementsInCondition(0), vc) = True Then
                         ifFirstV = vc
                     Else
-                        If mMathArgEle(1).ToLower = "a" Then ifFirstAsc = mAscA.ValuesFromTL
-                        If mMathArgEle(1).ToLower = "b" Then ifFirstAsc = mAscB.ValuesFromTL
-                        If mMathArgEle(1).ToLower = "c" Then ifFirstAsc = mAscC.ValuesFromTL
+                        If elementsInCondition(0).ToLower = "a" Then ifFirstAsc = mAscA.ValuesFromTL
+                        If elementsInCondition(0).ToLower = "b" Then ifFirstAsc = mAscB.ValuesFromTL
+                        If elementsInCondition(0).ToLower = "c" Then ifFirstAsc = mAscC.ValuesFromTL
                         bIf1IsASC = True
                     End If
-                    If Double.TryParse(mMathArgEle(3), vc) = True Then
+                    If Double.TryParse(elementsInCondition(1), vc) = True Then
                         ifSecondV = vc
                     Else
-                        If mMathArgEle(3).ToLower = "a" Then ifSecondAsc = mAscA.ValuesFromTL
-                        If mMathArgEle(3).ToLower = "b" Then ifSecondAsc = mAscB.ValuesFromTL
-                        If mMathArgEle(3).ToLower = "c" Then ifSecondAsc = mAscC.ValuesFromTL
+                        If elementsInCondition(1).ToLower = "a" Then ifSecondAsc = mAscA.ValuesFromTL
+                        If elementsInCondition(1).ToLower = "b" Then ifSecondAsc = mAscB.ValuesFromTL
+                        If elementsInCondition(1).ToLower = "c" Then ifSecondAsc = mAscC.ValuesFromTL
                         bIf2IsASC = True
                     End If
-                    If mMathArgEle.Length = 6 Then
-                        '        If (a < -9999, B, C)
-                        '        0   1 2    3    4    5
-                        If Double.TryParse(mMathArgEle(4), vc) = True Then
+                    '======================================
+
+                    '===== true 부분
+                    If elementsInTrue.Length = 1 Then 'A . 하나만 있는 경우
+                        If Double.TryParse(elementsInTrue(0), vc) = True Then
                             ifTrueV = vc
                         Else
-                            If mMathArgEle(4).ToLower = "a" Then ifTrueAsc = mAscA.ValuesFromTL
-                            If mMathArgEle(4).ToLower = "b" Then ifTrueAsc = mAscB.ValuesFromTL
-                            If mMathArgEle(4).ToLower = "c" Then ifTrueAsc = mAscC.ValuesFromTL
+                            If elementsInTrue(0).ToLower = "a" Then ifTrueAsc = mAscA.ValuesFromTL
+                            If elementsInTrue(0).ToLower = "b" Then ifTrueAsc = mAscB.ValuesFromTL
+                            If elementsInTrue(0).ToLower = "c" Then ifTrueAsc = mAscC.ValuesFromTL
                             bIftrueIsASC = True
-                        End If
-                        If Double.TryParse(mMathArgEle(5), vc) = True Then
-                            ifFalseV = vc
-                        Else
-                            If mMathArgEle(5).ToLower = "a" Then ifFalseAsc = mAscA.ValuesFromTL
-                            If mMathArgEle(5).ToLower = "b" Then ifFalseAsc = mAscB.ValuesFromTL
-                            If mMathArgEle(5).ToLower = "c" Then ifFalseAsc = mAscC.ValuesFromTL
-                            bIffalseIASC = True
                         End If
                     End If
 
-                    If mMathArgEle.Length = 8 Then
-                        If cCalculator.checkIsAlgebraicOperator(mMathArgEle(5)) = True Then
-                            '        If (a < -9999,  B + 1,  C)
-                            '        0   1 2    3     4  5  6  7
-
-                            Dim t1V As Double = 0
-                            Dim t1ASC(,) As Double = Nothing
-                            Dim bt1ASC As Boolean = False
-                            Dim t2V As Double = 0
-                            Dim t2ASC(,) As Double = Nothing
-                            Dim bt2ASC As Boolean = False
-                            Dim bASC1noDataZero As Boolean = False
-                            Dim bASC2noDataZero As Boolean = False
-
-                            If Double.TryParse(mMathArgEle(4), vc) = True Then
-                                t1V = vc
-                            Else
-                                If mMathArgEle(4).ToLower = "a" Then
-                                    t1ASC = mAscA.ValuesFromTL
-                                    bASC1noDataZero = mNodataAsZeroASCa
-                                End If
-                                If mMathArgEle(4).ToLower = "b" Then
-                                    t1ASC = mAscB.ValuesFromTL
-                                    bASC1noDataZero = mNodataAsZeroASCb
-                                End If
-                                If mMathArgEle(4).ToLower = "c" Then
-                                    t1ASC = mAscC.ValuesFromTL
-                                    bASC1noDataZero = mNodataAsZeroASCc
-                                End If
-                                bt1ASC = True
-                            End If
-
-                            If Double.TryParse(mMathArgEle(6), vc) = True Then
-                                t2V = vc
-                            Else
-                                If mMathArgEle(6).ToLower = "a" Then
-                                    t2ASC = mAscA.ValuesFromTL
-                                    bASC2noDataZero = mNodataAsZeroASCa
-                                End If
-                                If mMathArgEle(6).ToLower = "b" Then
-                                    t2ASC = mAscB.ValuesFromTL
-                                    bASC2noDataZero = mNodataAsZeroASCb
-                                End If
-                                If mMathArgEle(6).ToLower = "c" Then
-                                    t2ASC = mAscC.ValuesFromTL
-                                    bASC2noDataZero = mNodataAsZeroASCc
-                                End If
-                                bt2ASC = True
-                            End If
-                            '이 경우 true 값은 무조건 array 이다.
-                            ifTrueAsc = cCalculator.calculate2DArryUsing2TermAlgebra(mMathArgEle(5), bt1ASC, bt2ASC, bASC1noDataZero, bASC2noDataZero, t1ASC, t2ASC, t1V, t2V, nv)
-                            bIftrueIsASC = True
-                            If Double.TryParse(mMathArgEle(7), vc) = True Then
-                                ifFalseV = vc
-                            Else
-                                If mMathArgEle(7).ToLower = "a" Then ifFalseAsc = mAscA.ValuesFromTL
-                                If mMathArgEle(7).ToLower = "b" Then ifFalseAsc = mAscB.ValuesFromTL
-                                If mMathArgEle(7).ToLower = "c" Then ifFalseAsc = mAscC.ValuesFromTL
-                                bIffalseIASC = True
-                            End If
-                        End If
-
-                        If cCalculator.checkIsAlgebraicOperator(mMathArgEle(6)) = True Then
-                            '        If (a < -9999,  B, C  +  1)
-                            '        0   1 2    3     4   5  6  7
-                            Dim f1V As Double = 0
-                            Dim f1ASC(,) As Double = Nothing
-                            Dim bf1ASC As Boolean = False
-                            Dim f2V As Double = 0
-                            Dim f2ASC(,) As Double = Nothing
-                            Dim bf2ASC As Boolean = False
-                            Dim bASC1noDataZero As Boolean = False
-                            Dim bASC2noDataZero As Boolean = False
-
-
-                            If Double.TryParse(mMathArgEle(4), vc) = True Then
-                                ifTrueV = vc
-                            Else
-                                If mMathArgEle(4).ToLower = "a" Then ifTrueAsc = mAscA.ValuesFromTL
-                                If mMathArgEle(4).ToLower = "b" Then ifTrueAsc = mAscB.ValuesFromTL
-                                If mMathArgEle(4).ToLower = "c" Then ifTrueAsc = mAscC.ValuesFromTL
-                                bIftrueIsASC = True
-                            End If
-
-                            If Double.TryParse(mMathArgEle(5), vc) = True Then
-                                f1V = vc
-                            Else
-                                If mMathArgEle(5).ToLower = "a" Then
-                                    f1ASC = mAscA.ValuesFromTL
-                                    bASC1noDataZero = mNodataAsZeroASCa
-                                End If
-                                If mMathArgEle(5).ToLower = "b" Then
-                                    f1ASC = mAscB.ValuesFromTL
-                                    bASC1noDataZero = mNodataAsZeroASCb
-                                End If
-                                If mMathArgEle(5).ToLower = "c" Then
-                                    f1ASC = mAscC.ValuesFromTL
-                                    bASC1noDataZero = mNodataAsZeroASCc
-                                End If
-                                bf1ASC = True
-                            End If
-
-                            If Double.TryParse(mMathArgEle(7), vc) = True Then
-                                f2V = vc
-                            Else
-                                If mMathArgEle(7).ToLower = "a" Then
-                                    f2ASC = mAscA.ValuesFromTL
-                                    bASC2noDataZero = mNodataAsZeroASCa
-                                End If
-                                If mMathArgEle(7).ToLower = "b" Then
-                                    f2ASC = mAscB.ValuesFromTL
-                                    bASC2noDataZero = mNodataAsZeroASCb
-                                End If
-                                If mMathArgEle(7).ToLower = "c" Then
-                                    f2ASC = mAscC.ValuesFromTL
-                                    bASC2noDataZero = mNodataAsZeroASCc
-                                End If
-                                bf2ASC = True
-                            End If
-                            '이경우 false 값은 무조건 array 이다.
-                            ifFalseAsc = cCalculator.calculate2DArryUsing2TermAlgebra(mMathArgEle(6), bf1ASC, bf2ASC, bASC1noDataZero, bASC2noDataZero, f1ASC, f2ASC, f1V, f2V, nv)
-                            bIffalseIASC = True
-                        End If
-                    End If
-
-                    If mMathArgEle.Length = 10 Then
-                        '        If (a < -9999,  B + 1,  C - 2)
-                        '        0   1 2    3     4  5  6  7 8 9
+                    If elementsInTrue.Length = 2 Then ' A +2 두개 항목 연산하는 경우
                         Dim t1V As Double = 0
                         Dim t1ASC(,) As Double = Nothing
                         Dim bt1ASC As Boolean = False
                         Dim t2V As Double = 0
                         Dim t2ASC(,) As Double = Nothing
                         Dim bt2ASC As Boolean = False
-                        Dim f1V As Double = 0
-                        Dim f1ASC(,) As Double = Nothing
-                        Dim bf1ASC As Boolean = False
-                        Dim f2V As Double = 0
-                        Dim f2ASC(,) As Double = Nothing
-                        Dim bf2ASC As Boolean = False
-
                         Dim bASC1noDataZero As Boolean = False
                         Dim bASC2noDataZero As Boolean = False
-
-                        If Double.TryParse(mMathArgEle(4), vc) = True Then
+                        Dim operatorInTrue As String = cCalculator.getOperatorFromString(elementsInif(1))
+                        If Double.TryParse(elementsInTrue(0), vc) = True Then
                             t1V = vc
                         Else
-                            If mMathArgEle(4).ToLower = "a" Then
+                            If elementsInTrue(0).ToLower = "a" Then
                                 t1ASC = mAscA.ValuesFromTL
                                 bASC1noDataZero = mNodataAsZeroASCa
                             End If
-                            If mMathArgEle(4).ToLower = "b" Then
+                            If elementsInTrue(0).ToLower = "b" Then
                                 t1ASC = mAscB.ValuesFromTL
                                 bASC1noDataZero = mNodataAsZeroASCb
                             End If
-                            If mMathArgEle(4).ToLower = "c" Then
+                            If elementsInTrue(0).ToLower = "c" Then
                                 t1ASC = mAscC.ValuesFromTL
                                 bASC1noDataZero = mNodataAsZeroASCc
                             End If
                             bt1ASC = True
                         End If
 
-                        If Double.TryParse(mMathArgEle(6), vc) = True Then
+                        If Double.TryParse(elementsInTrue(1), vc) = True Then
                             t2V = vc
                         Else
-                            If mMathArgEle(6).ToLower = "a" Then
+                            If elementsInTrue(1).ToLower = "a" Then
                                 t2ASC = mAscA.ValuesFromTL
                                 bASC2noDataZero = mNodataAsZeroASCa
                             End If
-                            If mMathArgEle(6).ToLower = "b" Then
+                            If elementsInTrue(1).ToLower = "b" Then
                                 t2ASC = mAscB.ValuesFromTL
                                 bASC2noDataZero = mNodataAsZeroASCb
                             End If
-                            If mMathArgEle(6).ToLower = "c" Then
+                            If elementsInTrue(1).ToLower = "c" Then
                                 t2ASC = mAscC.ValuesFromTL
                                 bASC2noDataZero = mNodataAsZeroASCc
                             End If
                             bt2ASC = True
                         End If
                         '이 경우 true 값은 무조건 array 이다.
-                        ifTrueAsc = cCalculator.calculate2DArryUsing2TermAlgebra(mMathArgEle(5), bt1ASC, bt2ASC, bASC2noDataZero, bASC2noDataZero, t1ASC, t2ASC, t1V, t2V, nv)
+                        ifTrueAsc = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInTrue, bt1ASC, bt2ASC, bASC1noDataZero, bASC2noDataZero, t1ASC, t2ASC, t1V, t2V, nv)
                         bIftrueIsASC = True
+                    End If
+                    '===============================================
 
-                        If Double.TryParse(mMathArgEle(7), vc) = True Then
+                    '===== false 부분
+                    If elementsInFalse.Length = 1 Then 'A . 하나만 있는 경우
+                        If Double.TryParse(elementsInFalse(0), vc) = True Then
+                            ifFalseV = vc
+                        Else
+                            If elementsInFalse(0).ToLower = "a" Then ifFalseAsc = mAscA.ValuesFromTL
+                            If elementsInFalse(0).ToLower = "b" Then ifFalseAsc = mAscB.ValuesFromTL
+                            If elementsInFalse(0).ToLower = "c" Then ifFalseAsc = mAscC.ValuesFromTL
+                            bIffalseIsASC = True
+                        End If
+                    End If
+
+                    If elementsInFalse.Length = 2 Then 'A +1. 두개 항목 연산하는 경우
+                        Dim operatorInFalse As String = cCalculator.getOperatorFromString(elementsInif(2))
+                        Dim f1V As Double = 0
+                        Dim f1ASC(,) As Double = Nothing
+                        Dim bf1ASC As Boolean = False
+                        Dim f2V As Double = 0
+                        Dim f2ASC(,) As Double = Nothing
+                        Dim bf2ASC As Boolean = False
+                        Dim bASC1noDataZero As Boolean = False
+                        Dim bASC2noDataZero As Boolean = False
+                        If Double.TryParse(elementsInFalse(0), vc) = True Then
                             f1V = vc
                         Else
-                            If mMathArgEle(7).ToLower = "a" Then
+                            If elementsInFalse(0).ToLower = "a" Then
                                 f1ASC = mAscA.ValuesFromTL
                                 bASC1noDataZero = mNodataAsZeroASCa
                             End If
-                            If mMathArgEle(7).ToLower = "b" Then
+                            If elementsInFalse(0).ToLower = "b" Then
                                 f1ASC = mAscB.ValuesFromTL
                                 bASC1noDataZero = mNodataAsZeroASCb
                             End If
-                            If mMathArgEle(7).ToLower = "c" Then
+                            If elementsInFalse(0).ToLower = "c" Then
                                 f1ASC = mAscC.ValuesFromTL
                                 bASC1noDataZero = mNodataAsZeroASCc
                             End If
                             bf1ASC = True
                         End If
 
-                        If Double.TryParse(mMathArgEle(9), vc) = True Then
+                        If Double.TryParse(elementsInFalse(1), vc) = True Then
                             f2V = vc
                         Else
-                            If mMathArgEle(9).ToLower = "a" Then
+                            If elementsInFalse(1).ToLower = "a" Then
                                 f2ASC = mAscA.ValuesFromTL
                                 bASC2noDataZero = mNodataAsZeroASCa
                             End If
-                            If mMathArgEle(9).ToLower = "b" Then
+                            If elementsInFalse(1).ToLower = "b" Then
                                 f2ASC = mAscB.ValuesFromTL
                                 bASC2noDataZero = mNodataAsZeroASCb
                             End If
-                            If mMathArgEle(9).ToLower = "c" Then
+                            If elementsInFalse(1).ToLower = "c" Then
                                 f2ASC = mAscC.ValuesFromTL
                                 bASC2noDataZero = mNodataAsZeroASCc
                             End If
                             bf2ASC = True
                         End If
                         '이경우 false 값은 무조건 array 이다.
-                        ifFalseAsc = cCalculator.calculate2DArryUsing2TermAlgebra(mMathArgEle(8), bf1ASC, bf2ASC, bASC1noDataZero, bASC2noDataZero, f1ASC, f2ASC, f1V, f2V, nv)
-                        bIffalseIASC = True
-                    End If
+                        ifFalseAsc = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInFalse, bf1ASC, bf2ASC, bASC1noDataZero, bASC2noDataZero, f1ASC, f2ASC, f1V, f2V, nv)
+                        bIffalseIsASC = True
 
-                    resultArr = cCalculator.calculate2DArryUsingCondition(mMathArgEle(2), bIf1IsASC, bIf2IsASC, bIftrueIsASC, bIffalseIASC,
+                    End If
+                    resultArr = cCalculator.calculate2DArryUsingCondition(operatorInCondition, bIf1IsASC, bIf2IsASC, bIftrueIsASC, bIffalseIsASC,
                                                          ifFirstAsc, ifSecondAsc, ifTrueAsc, ifFalseAsc,
                                                           ifFirstV, ifSecondV, ifTrueV, ifFalseV, nv)
                 Else
                     '        a + B
                     '        0  1 2 
-                    If mMathArgEle.Length > 3 Then
-                        MsgBox("Just 3 arguments elements are allowed in algebraic expression.   ", MsgBoxStyle.Information)
+                    If mMathArgEle.Length > 2 Then
+                        MsgBox("Just 2 elements and one operator are allowed in algebraic expression.   ", MsgBoxStyle.Information)
                         Exit Sub
                     End If
                     Dim vc As Double = 0
@@ -471,7 +354,7 @@ Public Class fCalculator
                         End If
                         bIf1IsASC = True
                     End If
-                    If Double.TryParse(mMathArgEle(2), vc) = True Then
+                    If Double.TryParse(mMathArgEle(1), vc) = True Then
                         ifSecondV = vc
                     Else
                         If mMathArgEle(2).ToLower = "a" Then
@@ -489,7 +372,8 @@ Public Class fCalculator
                         bIf2IsASC = True
                     End If
 
-                    resultArr = cCalculator.calculate2DArryUsing2TermAlgebra(mMathArgEle(1), bIf1IsASC, bIf2IsASC, bASC1noDataZero, bASC2noDataZero, ifFirstAsc, ifSecondAsc, ifFirstV, ifSecondV)
+                    Dim operatorInString As String = cCalculator.getOperatorFromString(mMathArg)
+                    resultArr = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInString, bIf1IsASC, bIf2IsASC, bASC1noDataZero, bASC2noDataZero, ifFirstAsc, ifSecondAsc, ifFirstV, ifSecondV)
                 End If
                 cTextFile.MakeASCTextFile(mfpnOut, headerStringAll, resultArr, mDecimalN, mAscA.Header.nodataValue)
                 resultArr = Nothing
@@ -534,23 +418,22 @@ Public Class fCalculator
         Dim str As String
         str = " - The algebraic equation has to contain 2 values (or variables) and one operator." + vbCrLf
         str = str + " - In conditional expression, [condition] term has to contain 2 values (or variables) and one condtion operator." + vbCrLf
-        str = str + "   And also, [true] and [false] terms have to contain 2 values (or variables) and one operator in each other." + vbCrLf
-        str = str + " - In the algebraic and conditional expressions, the [operator] and [file or number] have to be separated with a space." + vbCrLf
-        str = str + " - Available operators are +, -, *, /, >, <, =, >=, or <=." + vbCrLf
+        str = str + "   And also, [true] and [false] terms can contain up to 2 values (or variables) and one operator in each other." + vbCrLf
+        str = str + " - Available operators are +, -, *, /, ^, >, <, =, >=, or <=." + vbCrLf
         str = str + " - Files have to be applied using the characters A(or a), B(or b), or C(or c)." + vbCrLf
-        str = str + " - Calculating nodata values as 0 is just applied to the algrebraic eqs. (algrebraic eqs. in conditional expression are included)," + vbCrLf
-        str = str + "   nodata values in ascii raster files are converted into '0' automatically, and applied to calculation." + vbCrLf
+        str = str + " - Calculating nodata values as 0 is just applied to the algrebraic eqations (algrebraic eqs. in conditional expression are included)." + vbCrLf
+        str = str + "   If 'Calculate nodata as 0' option is checked, the nodata values in ascii raster files are converted into '0' automatically, " + vbCrLf
+        str = str + "       and applied to calculation. " + vbCrLf
         str = str + "   All ascii raster files have to have the same nodata value." + vbCrLf
         str = str + "" + vbCrLf
-        str = str + " (Usages)  " + vbCrLf
-        str = str + "   - [file or number][a space][operator][a space][file or number]" + vbCrLf
+        str = str + " (Usages)   (*** FoN means 'file or number'.) " + vbCrLf
+        str = str + "   - [FoN][operator][FoN]" + vbCrLf
         str = str + "   - if(condition, true value, false value)" + vbCrLf
-        str = str + "     if ([file or number][a space][condition][a space][file or number], " + vbCrLf
-        str = str + "         [file or number][a space][operator][a space][file or number], [file or number][a space][operator][a space][file or number])" + vbCrLf
+        str = str + "     if([FoN][condition operator][FoN], [FoN][operator][FoN], [FoN][operator][FoN])" + vbCrLf
         str = str + "" + vbCrLf
         str = str + " (Examples)" + vbCrLf
-        str = str + "   - A + 1       A - B             A * B          A / 2" + vbCrLf
-        str = str + "   - if(A > 1, 0, B)    if(A >= 1, C, B)   if(a < B, b, c)   if(A < B, B + 1, C)   if(A < B, B, C + 1)   if(A < B, B + C, B - C)" + vbCrLf
+        str = str + "   - A+1, A-B, A*B, A/2, A^3, etc." + vbCrLf
+        str = str + "   - if(A>1, 0, B),  if(A>=1, C, B), if(a<B, b, c), if(A<B, B+1, C^2), if(A<B, B, C+1), if(A<B, B+C, B-C), etc." + vbCrLf
         Dim fh As New fHelp
         fh.tbTextToShow.Text = str
         fh.tbTextToShow.Select(Len(str), 0)
