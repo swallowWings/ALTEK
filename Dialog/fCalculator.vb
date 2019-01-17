@@ -172,7 +172,7 @@ Public Class fCalculator
                 Dim nv As Double = baseASC.Header.nodataValue
                 Dim resultArr(baseASC.Header.numberCols - 1, baseASC.Header.numberRows - 1) As Double
                 If mMathArgEle(0).ToLower = "if" Then
-                    Dim ArgTwoPart As String() = mMathArg.Split({" ", "(", ")"}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim ArgTwoPart As String() = mMathArg.Split({"(", ")"}, StringSplitOptions.RemoveEmptyEntries)
                     Dim elementsInif As String() = ArgTwoPart(1).Split({" ", ","}, StringSplitOptions.RemoveEmptyEntries)
                     Dim elementsInCondition As String() = elementsInif(0).Split({" ", "=", ">", "<", ">=", "<="}, StringSplitOptions.RemoveEmptyEntries)
                     Dim elementsInTrue As String() = elementsInif(1).Split({" ", "+", "-", "*", "/", "^"}, StringSplitOptions.RemoveEmptyEntries)
