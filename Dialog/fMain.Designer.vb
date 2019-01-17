@@ -105,7 +105,7 @@ Partial Class fMain
         Me.MinimumSize = New System.Drawing.Size(503, 371)
         Me.Name = "fMain"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
-        Me.Text = "Tok - Text file? It's OK!  v.2018.10.25"
+        Me.Text = "Tok - Text file? It's OK!  v.2018.12.24"
         Me.ResumeLayout(False)
 
     End Sub
