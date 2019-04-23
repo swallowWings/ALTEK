@@ -82,7 +82,7 @@ Public Class fRasterFileConverter
         mResamplingMethod = Nothing
         If Me.cbResamplingMethod.Enabled = True Then _
             mResamplingMethod = cGdal.GetGdalResamplingMethodByText(Me.cbResamplingMethod.Text.Trim)
-        mFileFormatResampleClip = Nothing
+        mFileFormatResampleClip = cGdal.GdalFormat.AAIGrid
         'If Me.cbFileFormat.Enabled = True Then _
         '    mFileFormatResampleClip = cGdal.GetGdalFileFormatByText(Me.cbFileFormat.Text.Trim)
 
