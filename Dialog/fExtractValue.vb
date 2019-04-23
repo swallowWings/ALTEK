@@ -532,8 +532,9 @@ Public Class fExtractValue
 
     Private Sub btHelpExtractCellsAverageValue_Click(sender As Object, e As EventArgs) Handles btHelpExtractCellsAverageValue.Click
         Dim f As New fHelp
-        Dim helpString As String = "Extract average value from the cells located in the base raster file selected." + vbCrLf
-        helpString = helpString + "In the base raster file, the target cells have to be defined as positive value."
+        Dim helpString As String = "Calculate a average value from the cells located in the base raster file selected." + vbCrLf
+        helpString = helpString + "In the base raster file, the target cells have to be defined as positive value." + vbCrLf
+        helpString = helpString + "The input raster files and the base raster file must have same extent and spatial resolution."
         f.tbTextToShow.Text = helpString
         'f.tbTextToShow.ReadOnly = True
         f.tbTextToShow.Font = System.Drawing.SystemFonts.DefaultFont
