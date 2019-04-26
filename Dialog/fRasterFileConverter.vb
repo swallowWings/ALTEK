@@ -140,8 +140,10 @@ Public Class fRasterFileConverter
                 Dim resultFName As String = ""
                 Dim resultFPN As String = ""
                 Dim resultFNWithoutExtension As String
+                Dim prjFPNsource As String
                 sourceFPN = Path.Combine(r.FilePath, r.FileName)
                 resultFNWithoutExtension = mFileNamePrefix + IO.Path.GetFileNameWithoutExtension(r.FileName) + mFileNameTag
+                prjFPNsource = Path.Combine(Path.GetDirectoryName(sourceFPN), Path.GetFileNameWithoutExtension(sourceFPN) + ".prj")
 
                 Select Case meProcessingType
                     Case cVars.ProcessingType.ASCiiToGTiff
@@ -166,6 +168,12 @@ Public Class fRasterFileConverter
                         If mFileFormatResampleClip = cGdal.GdalFormat.AAIGrid Then _
                             resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
                         Call cGdal.ClipGridAndResample(baseGridHeader, sourceFPN, resultFPN, cellSizeResult, mResamplingMethod, mFileFormatResampleClip, oDataType)
+                        Dim prjFPNout As String = Path.Combine(Path.GetDirectoryName(resultFPN), Path.GetFileNameWithoutExtension(resultFPN) + ".prj")
+                        If File.Exists(prjFPNsource) = True Then
+                            If File.Exists(prjFPNout) = True Then File.Delete(prjFPNout)
+                            File.Copy(prjFPNsource, prjFPNout)
+                        End If
+
                     Case cVars.ProcessingType.Resample
                         strProcessingMsg = "Resampling"
                         If mFileFormatResampleClip = cGdal.GdalFormat.GTiff Then _
@@ -173,6 +181,12 @@ Public Class fRasterFileConverter
                         If mFileFormatResampleClip = cGdal.GdalFormat.AAIGrid Then _
                             resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
                         cGdal.GridResample(baseGridHeader, sourceFPN, resultFPN, cellSizeResult, mResamplingMethod, mFileFormatResampleClip, oDataType)
+                        Dim prjFPNout As String = Path.Combine(Path.GetDirectoryName(resultFPN), Path.GetFileNameWithoutExtension(resultFPN) + ".prj")
+                        If File.Exists(prjFPNsource) = True Then
+                            If File.Exists(prjFPNout) = True Then File.Delete(prjFPNout)
+                            File.Copy(prjFPNsource, prjFPNout)
+                        End If
+
                     Case cVars.ProcessingType.Gdalinfo
                         strProcessingMsg = "Get info..."
                         resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + "_info" + ".txt")

@@ -72,6 +72,11 @@ Public Class fCalculator
     End Sub
 
     Private Sub btStartCalc_Click(sender As Object, e As EventArgs) Handles btStartCalc.Click
+        If Me.tbInFileA.Text.Trim = "" OrElse Me.tbResultFPN.Text.Trim = "" Then
+            MsgBox(String.Format("Input files or an output file are not defined."), MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
         Dim mAscA As cAscRasterReader
         Dim mAscB As cAscRasterReader
         Dim mAscC As cAscRasterReader
@@ -121,6 +126,12 @@ Public Class fCalculator
             Else
                 lstFileA.Add(tbInFileA.Text.Trim)
                 mfpnOut = Me.tbResultFPN.Text.Trim
+                If (Me.tbInFileA.Text.Trim <> "" AndAlso Me.tbInFileA.Text.Trim = mfpnOut.Trim()) OrElse
+                    (Me.tbInFileB.Text.Trim <> "" AndAlso Me.tbInFileB.Text.Trim = mfpnOut.Trim()) OrElse
+                    (Me.tbInFileB.Text.Trim <> "" AndAlso Me.tbInFileB.Text.Trim = mfpnOut.Trim()) Then
+                    MsgBox(String.Format("The output file is same as an input file. Rename output file."), MsgBoxStyle.Exclamation)
+                    Exit Sub
+                End If
                 If File.Exists(mfpnOut) Then File.Delete(mfpnOut)
             End If
 
@@ -175,7 +186,7 @@ Public Class fCalculator
                     Dim ArgTwoPart As String() = mMathArg.Split({"(", ")"}, StringSplitOptions.RemoveEmptyEntries)
                     Dim elementsInif As String() = ArgTwoPart(1).Split({" ", ","}, StringSplitOptions.RemoveEmptyEntries)
                     Dim elementsInCondition As String() = elementsInif(0).Split({" ", "=", ">", "<", ">=", "<="}, StringSplitOptions.RemoveEmptyEntries)
-                    Dim elementsInTrue As String() = elementsInif(1).Split({" ", "+", "-", "*", "/", "^"}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim elementsInTrue As String() = elementsInif(1).Split({" ", " +", " -", " *", "/", "^"}, StringSplitOptions.RemoveEmptyEntries)
                     Dim elementsInFalse As String() = elementsInif(2).Split({" ", "+", "-", "*", "/", "^"}, StringSplitOptions.RemoveEmptyEntries)
 
                     '===== condition  부분
@@ -376,6 +387,15 @@ Public Class fCalculator
                     resultArr = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInString, bIf1IsASC, bIf2IsASC, bASC1noDataZero, bASC2noDataZero, ifFirstAsc, ifSecondAsc, ifFirstV, ifSecondV)
                 End If
                 cTextFile.MakeASCTextFile(mfpnOut, headerStringAll, resultArr, mDecimalN, mAscA.Header.nodataValue)
+                Dim prjFPNSource As String = Path.Combine(Path.GetDirectoryName(lstFileA(fn).Trim), Path.GetFileNameWithoutExtension(lstFileA(fn).Trim) + ".prj")
+                If File.Exists(prjFPNSource) = True Then
+                    Dim prjFPNout As String = Path.Combine(Path.GetDirectoryName(mfpnOut), Path.GetFileNameWithoutExtension(mfpnOut) + ".prj")
+                    If File.Exists(prjFPNout) = True Then
+                        File.Delete(prjFPNout)
+                    End If
+                    File.Copy(prjFPNSource, prjFPNout)
+                End If
+
                 resultArr = Nothing
                 If mAscA IsNot Nothing Then mAscA.Dispose()
                 If mAscB IsNot Nothing Then mAscB.Dispose()
