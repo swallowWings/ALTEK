@@ -28,6 +28,7 @@ Partial Class fMain
         Me.btExtractText = New System.Windows.Forms.Button()
         Me.btChangeFileName = New System.Windows.Forms.Button()
         Me.btASCcalculator = New System.Windows.Forms.Button()
+        Me.btConvertCoordSystem = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btStartFileProcessing
@@ -42,7 +43,7 @@ Partial Class fMain
         '
         'btClose
         '
-        Me.btClose.Location = New System.Drawing.Point(331, 291)
+        Me.btClose.Location = New System.Drawing.Point(331, 336)
         Me.btClose.Name = "btClose"
         Me.btClose.Size = New System.Drawing.Size(110, 30)
         Me.btClose.TabIndex = 1
@@ -52,7 +53,7 @@ Partial Class fMain
         'btTextFileEdit
         '
         Me.btTextFileEdit.Font = New System.Drawing.Font("맑은 고딕", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.btTextFileEdit.Location = New System.Drawing.Point(43, 188)
+        Me.btTextFileEdit.Location = New System.Drawing.Point(43, 239)
         Me.btTextFileEdit.Name = "btTextFileEdit"
         Me.btTextFileEdit.Size = New System.Drawing.Size(398, 40)
         Me.btTextFileEdit.TabIndex = 2
@@ -62,7 +63,7 @@ Partial Class fMain
         'btExtractText
         '
         Me.btExtractText.Font = New System.Drawing.Font("맑은 고딕", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.btExtractText.Location = New System.Drawing.Point(43, 137)
+        Me.btExtractText.Location = New System.Drawing.Point(43, 188)
         Me.btExtractText.Name = "btExtractText"
         Me.btExtractText.Size = New System.Drawing.Size(398, 40)
         Me.btExtractText.TabIndex = 1
@@ -72,7 +73,7 @@ Partial Class fMain
         'btChangeFileName
         '
         Me.btChangeFileName.Font = New System.Drawing.Font("맑은 고딕", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.btChangeFileName.Location = New System.Drawing.Point(43, 239)
+        Me.btChangeFileName.Location = New System.Drawing.Point(43, 290)
         Me.btChangeFileName.Name = "btChangeFileName"
         Me.btChangeFileName.Size = New System.Drawing.Size(398, 40)
         Me.btChangeFileName.TabIndex = 3
@@ -89,11 +90,22 @@ Partial Class fMain
         Me.btASCcalculator.Text = "ASCII raster calculator"
         Me.btASCcalculator.UseVisualStyleBackColor = True
         '
+        'btConvertCoordSystem
+        '
+        Me.btConvertCoordSystem.Font = New System.Drawing.Font("맑은 고딕", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.btConvertCoordSystem.Location = New System.Drawing.Point(43, 136)
+        Me.btConvertCoordSystem.Name = "btConvertCoordSystem"
+        Me.btConvertCoordSystem.Size = New System.Drawing.Size(398, 43)
+        Me.btConvertCoordSystem.TabIndex = 5
+        Me.btConvertCoordSystem.Text = "Coordinate system comverter"
+        Me.btConvertCoordSystem.UseVisualStyleBackColor = True
+        '
         'fMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(487, 332)
+        Me.ClientSize = New System.Drawing.Size(487, 378)
+        Me.Controls.Add(Me.btConvertCoordSystem)
         Me.Controls.Add(Me.btASCcalculator)
         Me.Controls.Add(Me.btChangeFileName)
         Me.Controls.Add(Me.btExtractText)
@@ -101,11 +113,11 @@ Partial Class fMain
         Me.Controls.Add(Me.btTextFileEdit)
         Me.Controls.Add(Me.btStartFileProcessing)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(503, 371)
+        Me.MaximumSize = New System.Drawing.Size(503, 417)
         Me.MinimumSize = New System.Drawing.Size(503, 371)
         Me.Name = "fMain"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
-        Me.Text = "Tok - Text file? It's OK!  v.2018.12.24"
+        Me.Text = "Tok - Text file? It's OK!  v.2019.05.13"
         Me.ResumeLayout(False)
 
     End Sub
@@ -116,4 +128,5 @@ Partial Class fMain
     Friend WithEvents btExtractText As Button
     Friend WithEvents btChangeFileName As Button
     Friend WithEvents btASCcalculator As Button
+    Friend WithEvents btConvertCoordSystem As Button
 End Class

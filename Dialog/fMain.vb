@@ -32,4 +32,9 @@
         Dim fFP As New fCalculator
         fFP.Show()
     End Sub
+
+    Private Sub btConvertCoordSystem_Click(sender As Object, e As EventArgs) Handles btConvertCoordSystem.Click
+        Dim fFP As New fConvertCoordiSystem
+        fFP.Show()
+    End Sub
 End Class

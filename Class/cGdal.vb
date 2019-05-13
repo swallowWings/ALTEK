@@ -34,6 +34,59 @@ Public Class cGdal
         'Byte/Int16/UInt16/UInt32/Int32/Float32/Float64/CInt16/CInt32/CFloat32/CFloat64
     End Enum
 
+    Public Shared Function ConvertCoordSystem(sourceFPN As String, resultFPN As String, FileformatOutput As GdalFormat,
+                                        srsResult As String, outputDataType As cGdal.GdalDataType, Optional srsSource As String = "")
+        Try
+            If resultFPN = "" OrElse sourceFPN = "" Then
+                MsgBox("Invalid source/result file name. ", MsgBoxStyle.Exclamation)
+                Return False
+
+            End If
+            Dim fpnTempOut As String = resultFPN
+            If FileformatOutput = GdalFormat.AAIGrid Then
+                fpnTempOut = Replace(resultFPN, ".asc", ".tif")
+            End If
+
+            '부동소수점 single 지정해도 double로 나온다..
+            Dim strGdalPath As String = Path.Combine(mGdalPath, "gdalwarp.exe")
+            Dim pGdalGrid As New Process()
+            pGdalGrid.StartInfo.FileName = strGdalPath
+            If srsSource = "" Then
+                pGdalGrid.StartInfo.Arguments = " --config GDAL_FILENAME_IS_UTF8 NO" +
+                                                     " -t_srs " + cComTools.SetDQ(srsResult) +
+                                                     " " + cComTools.SetDQ(sourceFPN) +
+                                                     " " + cComTools.SetDQ(fpnTempOut)
+
+            Else
+                pGdalGrid.StartInfo.Arguments = " --config GDAL_FILENAME_IS_UTF8 NO" +
+                                                     " -s_srs " + cComTools.SetDQ(srsSource) +
+                                                     " -t_srs " + cComTools.SetDQ(srsResult) +
+                                                     " " + cComTools.SetDQ(sourceFPN) +
+                                                     " " + cComTools.SetDQ(fpnTempOut)
+
+            End If
+
+            pGdalGrid.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            pGdalGrid.Start()
+            pGdalGrid.WaitForExit()
+            pGdalGrid.Dispose()
+
+            If FileformatOutput = GdalFormat.AAIGrid Then
+                cGdal.ConvertGtiffAndGribToASCII(fpnTempOut, resultFPN, 1, outputDataType)
+                Dim fp As String = Path.GetDirectoryName(resultFPN)
+                Dim fnWOe As String = Path.GetFileNameWithoutExtension(resultFPN)
+                File.Delete(Path.Combine(fp, fnWOe + ".tif"))
+                File.Delete(Path.Combine(fp, fnWOe + ".asc.aux.xml"))
+            End If
+
+            Return True
+        Catch ex As Exception
+            Throw ex
+            Return False
+        End Try
+    End Function
+
+
     ''' <summary>
     ''' shapefile의 포인트를 이용해서 idw 보간 후 , geotiff로 레이어 생성
     ''' </summary>
@@ -325,7 +378,11 @@ Public Class cGdal
 
             If outFormat = GdalFormat.AAIGrid Then
                 cGdal.ConvertGtiffAndGribToASCII(fpnTemp, resultFPN, 1, outDataType)
-                cFile.DeleteFileFriends(resultFPN)
+                Dim fp As String = Path.GetDirectoryName(resultFPN)
+                Dim fnWOe As String = Path.GetFileNameWithoutExtension(resultFPN)
+                File.Delete(Path.Combine(fp, fnWOe + ".tif"))
+                File.Delete(Path.Combine(fp, fnWOe + ".asc.aux.xml"))
+                'cFile.DeleteFileFriends(resultFPN)
             End If
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Exclamation)
@@ -368,7 +425,11 @@ Public Class cGdal
             prGdalGrid.Dispose()
             If outFormat = GdalFormat.AAIGrid Then
                 cGdal.ConvertGtiffAndGribToASCII(fpnTemp, resultFPN, 1, outDataType)
-                cFile.DeleteFileFriends(resultFPN)
+                Dim fp As String = Path.GetDirectoryName(resultFPN)
+                Dim fnWOe As String = Path.GetFileNameWithoutExtension(resultFPN)
+                File.Delete(Path.Combine(fp, fnWOe + ".tif"))
+                File.Delete(Path.Combine(fp, fnWOe + ".asc.aux.xml"))
+                'cFile.DeleteFileFriends(resultFPN)
             End If
         Catch ex As Exception
             MsgBox(ex.ToString, MsgBoxStyle.Exclamation)
@@ -408,5 +469,23 @@ Public Class cGdal
             Throw ex
         End Try
     End Sub
+
+
+    Public Shared Function GetGdalDataTypeFromGRMDataType(inType As gentle.cData.DataType) As cGdal.GdalDataType
+        Select Case inType
+            Case cData.DataType.DTByte
+                Return cGdal.GdalDataType.GDT_Byte
+            Case cData.DataType.DTShort
+                Return cGdal.GdalDataType.GDT_Int16
+            Case cData.DataType.DTInteger
+                Return cGdal.GdalDataType.GDT_Int32
+            Case cData.DataType.DTSingle
+                Return cGdal.GdalDataType.GDT_Float32
+            Case cData.DataType.DTDouble
+                Return cGdal.GdalDataType.GDT_Float64
+            Case Else
+                Return Nothing
+        End Select
+    End Function
 
 End Class

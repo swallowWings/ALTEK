@@ -97,6 +97,12 @@
     <Compile Include="Dialog\fCalculator.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialog\fConvertCoordiSystem.Designer.vb">
+      <DependentUpon>fConvertCoordiSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\fConvertCoordiSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialog\fFileName.Designer.vb">
       <DependentUpon>fFileName.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Dialog\fCalculator.resx">
       <DependentUpon>fCalculator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\fConvertCoordiSystem.resx">
+      <DependentUpon>fConvertCoordiSystem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\fFileName.resx">
       <DependentUpon>fFileName.vb</DependentUpon>

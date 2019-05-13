@@ -28,7 +28,7 @@ Public Class fRasterFileConverter
     Private Sub frmGRMToolsRainfallFileProcessing_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         mbIsAllDataNormal = True
         Call InitializeComboBox()
-        Me.dgvRainfallFileList.DataSource = mdtSourceFile
+        Me.dgvFileList.DataSource = mdtSourceFile
         SetDataGridViewForm()
     End Sub
 
@@ -86,7 +86,7 @@ Public Class fRasterFileConverter
         'If Me.cbFileFormat.Enabled = True Then _
         '    mFileFormatResampleClip = cGdal.GetGdalFileFormatByText(Me.cbFileFormat.Text.Trim)
 
-        If Me.dgvRainfallFileList.RowCount > 0 Then
+        If Me.dgvFileList.RowCount > 0 Then
             Call DataProcessingManager()
         Else
             MsgBox("Source file is not selected.   ", MsgBoxStyle.Information)
@@ -133,7 +133,7 @@ Public Class fRasterFileConverter
             mFileNameTag = Trim(Me.txtResultFileTag.Text)
 
             Dim selectedDT As gentle.cData.DataType = cData.GetDataTypeByName(Me.cbODataType.SelectedItem.ToString.Trim)
-            Dim oDataType As cGdal.GdalDataType = GetGdalDataTypeFromGRMDataType(selectedDT)
+            Dim oDataType As cGdal.GdalDataType = cGdal.GetGdalDataTypeFromGRMDataType(selectedDT)
             'Dim bIsConvertingError As Boolean = False
             For Each r As FilesDS.FilesRow In mdtSourceFile
                 Dim sourceFPN As String
@@ -242,7 +242,7 @@ Public Class fRasterFileConverter
 
 
     Sub SetDataGridViewForm()
-        With Me.dgvRainfallFileList
+        With Me.dgvFileList
             .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .AllowUserToDeleteRows = False
             .AllowUserToAddRows = False
@@ -316,19 +316,19 @@ Public Class fRasterFileConverter
 
     Private Sub btRemoveSelected_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btRemoveSelected.Click
 
-        If dgvRainfallFileList.SelectedRows.Count <= 0 Then
+        If dgvFileList.SelectedRows.Count <= 0 Then
             MsgBox("Please select rows to remove.     ", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
         Dim rowsToRemove As New List(Of DataRow)
 
-        For Each dgvRow As DataGridViewRow In dgvRainfallFileList.SelectedRows
+        For Each dgvRow As DataGridViewRow In dgvFileList.SelectedRows
             Dim drv As DataRowView = CType(dgvRow.DataBoundItem, DataRowView)
             rowsToRemove.Add(drv.Row)
         Next
 
-        Dim dt As DataTable = CType(dgvRainfallFileList.DataSource, DataTable)
+        Dim dt As DataTable = CType(dgvFileList.DataSource, DataTable)
         For Each row As DataRow In rowsToRemove
             dt.Rows.Remove(row)
         Next
@@ -539,22 +539,7 @@ Public Class fRasterFileConverter
     End Sub
 
 
-    Private Function GetGdalDataTypeFromGRMDataType(inType As gentle.cData.DataType) As cGdal.GdalDataType
-        Select Case inType
-            Case cData.DataType.DTByte
-                Return cGdal.GdalDataType.GDT_Byte
-            Case cData.DataType.DTShort
-                Return cGdal.GdalDataType.GDT_Int16
-            Case cData.DataType.DTInteger
-                Return cGdal.GdalDataType.GDT_Int32
-            Case cData.DataType.DTSingle
-                Return cGdal.GdalDataType.GDT_Float32
-            Case cData.DataType.DTDouble
-                Return cGdal.GdalDataType.GDT_Float64
-            Case Else
-                Return Nothing
-        End Select
-    End Function
+
 
     Private Sub btSelectBaseRasterFile_Click(sender As Object, e As EventArgs) Handles btSelectBaseRasterFile.Click
         Dim fb As New OpenFileDialog
