@@ -97,7 +97,7 @@ Partial Class fMain
         Me.btConvertCoordSystem.Name = "btConvertCoordSystem"
         Me.btConvertCoordSystem.Size = New System.Drawing.Size(398, 43)
         Me.btConvertCoordSystem.TabIndex = 5
-        Me.btConvertCoordSystem.Text = "Coordinate system comverter"
+        Me.btConvertCoordSystem.Text = "Coordinate system converter"
         Me.btConvertCoordSystem.UseVisualStyleBackColor = True
         '
         'fMain

@@ -39,12 +39,12 @@ Public Class fConvertCoordiSystem
             .AllowUserToDeleteRows = False
             .AllowUserToAddRows = False
             .RowHeadersVisible = False
-            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter '.MiddleLeft
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
             .AutoResizeRows()
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
-            .SelectionMode = DataGridViewSelectionMode.FullRowSelect '.CellSelect
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             .MultiSelect = True
             .ReadOnly = True
         End With
@@ -126,7 +126,7 @@ Public Class fConvertCoordiSystem
 
     Private Sub txtFolderPathSource_TextChanged(sender As Object, e As EventArgs) Handles txtFolderPathSource.TextChanged
         If txtFolderPathSource.Text.Trim <> "" AndAlso IO.Directory.Exists(txtFolderPathSource.Text.Trim) Then
-            Dim filePattern As String = Me.tbExtensionFilter.Text.Trim  'mFilePattern.ToString
+            Dim filePattern As String = Me.tbExtensionFilter.Text.Trim
             If Trim(Me.tbExtensionFilter.Text) <> "" Then
                 filePattern = Trim(Me.tbExtensionFilter.Text)
                 If (filePattern.Contains(".")) = False Then
@@ -143,7 +143,7 @@ Public Class fConvertCoordiSystem
     Private Sub tbFileNameFilter_TextChanged(sender As Object, e As EventArgs) Handles tbFileNameFilter.TextChanged
 
         If txtFolderPathSource.Text.Trim <> "" AndAlso IO.Directory.Exists(txtFolderPathSource.Text.Trim) Then
-            Dim filePattern As String = Me.tbExtensionFilter.Text.Trim  'mFilePattern.ToString
+            Dim filePattern As String = Me.tbExtensionFilter.Text.Trim
             If Trim(Me.tbExtensionFilter.Text) <> "" Then
                 filePattern = Trim(Me.tbExtensionFilter.Text)
                 If (filePattern.Contains(".")) = False Then
@@ -159,7 +159,7 @@ Public Class fConvertCoordiSystem
 
     Private Sub tbExtensionFilter_TextChanged(sender As Object, e As EventArgs) Handles tbExtensionFilter.TextChanged
         If txtFolderPathSource.Text.Trim <> "" AndAlso IO.Directory.Exists(txtFolderPathSource.Text.Trim) Then
-            Dim filePattern As String = Me.tbExtensionFilter.Text.Trim  'mFilePattern.ToString
+            Dim filePattern As String = Me.tbExtensionFilter.Text.Trim
             If Trim(Me.tbExtensionFilter.Text) <> "" Then
                 filePattern = Trim(Me.tbExtensionFilter.Text)
                 If (filePattern.Contains(".")) = False Then
@@ -197,7 +197,7 @@ Public Class fConvertCoordiSystem
         Try
             Dim strProcessingMsg As String = ""
             Dim cellSizeResult As Single
-            Dim baseGridHeader As gentle.cAscRasterHeader ' MapWinGIS.Grid
+            Dim baseGridHeader As gentle.cAscRasterHeader
             mfPrograssBar.GRMToolsPrograssBar.Maximum = mdtSourceFile.Rows.Count
             mfPrograssBar.GRMToolsPrograssBar.Style = ProgressBarStyle.Blocks
             mfPrograssBar.labGRMToolsPrograssBar.Text = "Processing 0/" & CStr(mdtSourceFile.Rows.Count) & " raster file..."
