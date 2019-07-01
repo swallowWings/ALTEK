@@ -1,1 +1,2 @@
-# Text file? It's OK! ASCII raster files and text files processing tools for the GRM(Grid based Rainfall-Runoff Model) and G2D(Grid based 2-Dimensional land surface flood model).
+# ALTEK is a name derived from AHALTEKE which is one of the best horses in the world from Turkmen .
+ALTEK will help you by processing a lot of data for the GRM(Grid based Rainfall-Runoff Model) and G2D(Grid based 2-Dimensional land surface flood model).
