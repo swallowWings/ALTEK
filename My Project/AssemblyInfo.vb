@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' 어셈블리 특성 값을 검토합니다.
 
-<Assembly: AssemblyTitle("Angle")>
-<Assembly: AssemblyDescription("An angel who processes a lof of data, by Choi, Yun seok")>
+<Assembly: AssemblyTitle("ALTEK")>
+<Assembly: AssemblyDescription("ALTEK is a tool for processing a lof of data, by Choi, Yun seok")>
 <Assembly: AssemblyCompany("Korea Institute of Civil Engineering and Building Technology")>
-<Assembly: AssemblyProduct("An angel who processes a lof of data, by Choi, Yun seok")>
+<Assembly: AssemblyProduct("ALTEK is a tool for processing a lof of data, by Choi, Yun seok")>
 <Assembly: AssemblyCopyright("Copyright ©  2018. Free by KICT")>
-<Assembly: AssemblyTrademark("Angel by Korea Institute of Civil Engineering and Building Technology.")>
+<Assembly: AssemblyTrademark("ALTEK by Korea Institute of Civil Engineering and Building Technology.")>
 
 <Assembly: ComVisible(False)>
 
