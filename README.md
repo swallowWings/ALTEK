@@ -1,6 +1,8 @@
 # ALTEK is a data processing tool
 ALTEK will help you processing a lot of data for the GRM(Grid based Rainfall-Runoff Model) and G2D(Grid based 2-Dimensional land surface flood model).
+
 (ALTEK is a name derived from AHALTEKE which is one of the best horses in the world from Turkmen)
+
 ALTEK can process a lot of files in a batch process.
 
 The main features of the ALTEK are below
@@ -22,17 +24,17 @@ O Get values from text files
    - Extract values in a cell of ASCII raster files
    - Calculate average values of ASCII raster files
    - Accumulate all ASCII raster files
-   - Aggreate ASCII raster files in some interval
+   - Aggregate ASCII raster files in some interval
    - Extract values in a certain positions of text files
 
 O Append text files 
-   - Append text files in colume mode
+   - Append text files in column mode
    - Append text files in row mode
   
 O Text files editor
    - Replace text in text files
    - Search and replace lines in text files
-   - lnsert a line to text files
+   - Insert a line to text files
    - Remove lines from text files
    - Replace values in certain regions of ASCII raster files
    - Cut decimal parts in ASCII raster files
