@@ -1,8 +1,8 @@
 # ALTEK is a data processing tool
-ALTEK will help you processing a lot of data for the GRM(Grid based Rainfall-Runoff Model) and G2D(Grid based 2-Dimensional land surface flood model).
+ALTEK will help you processing a lot of data for the GRM(Grid based Rainfall-Runoff Model) and G2D(Grid based 2-Dimensional land surface flood model). 
 (ALTEK is a name derived from AHALTEKE which is one of the best horses in the world from Turkmen)
 
-ALTEK can process a lot of files in a batch process. The main features of the ALTEK are below
+ALTEK can process a lot of files in a batch process. The main features of the ALTEK are below.
 
 O Raster files converter(using GDAL files)
    - Convert GTiff files <-> ASCII raster files
