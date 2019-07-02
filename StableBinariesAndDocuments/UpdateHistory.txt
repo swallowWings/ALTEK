@@ -89,6 +89,8 @@ Tok의 특징과 주요 기능은 아래와 같습니다.
 
 2019.07.02
   - Text file을 appending 하는 기능 추가. 행방향, 열방향.
+  - file 이름 변경시 폴더 지정 기능 추가
+  - 파일리스트에서 natural comparer 기능 추가
 
 
 파일 다운로드와 세팅 가이드는    https://github.com/floodmodel/ALTEK/tree/master/StableBinariesAndDocuments
