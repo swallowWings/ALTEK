@@ -22,7 +22,7 @@ O Get values from text files
    - Calculate average values of ASCII raster files
    - Accumulate all ASCII raster files
    - Aggregate ASCII raster files in some interval
-   - Extract values in a certain positions of text files
+   - Extract values in a certain column of text files
 
 O Append text files 
    - Append text files in column mode
