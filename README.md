@@ -2,6 +2,8 @@
 ALTEK will help you processing ASCII rater files and text files.   
 ALTEK can process a lot of files in a batch process. The main features of the ALTEK are below.
 
+  ![](https://github.com/floodmodel/ALTEK/blob/master/Wiki/MainGUI.JPG)
+
 O Raster files converter(using GDAL tool)
    - Convert GTiff files <-> ASCII raster files
    - Convert GRIB/GRIB2 files -> ASCII raster files
