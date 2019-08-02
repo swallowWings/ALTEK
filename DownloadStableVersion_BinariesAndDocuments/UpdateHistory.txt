@@ -91,6 +91,16 @@ Tok의 특징과 주요 기능은 아래와 같습니다.
 2019.07.15
   -raster file converter에서 ascii 파일의 소수점 자리수를 줄일 수 있는 기능 추가(ascii 파일 용량을 작게 하기 위해서)
 
+2019.07.29
+  -[Get values from text files]의 [Extract texts in text file] 에서
+   여러개의 열을 추출할 수 있도록 기능 확장
+
+2019.08.02
+  - raster file converter에서 ascii 파일 생성시, prj 파일 누락되는 버그 수정
+  - gdal 업데이트
+    기존 : 2017.8.14 빌드 버전
+    신규 : 2019.3.23 빌드 버전
+
 
 파일 다운로드와 세팅 가이드는    https://github.com/floodmodel/ALTEK/tree/master/StableBinariesAndDocuments
    에서 gdal.zip과 ALTEK_ALL.zip을 다운로드 하고, 각 파일의 속성에서 차단해제를 한다.
