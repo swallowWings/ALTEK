@@ -3,6 +3,7 @@ Imports gentle
 
 Public Class fFileName
     Private mDestinationFPN_fileList As String
+    Private mDestinationFPN_batchFile As String
     Private mDestinationFolder As String
     Private mFileNameHead As String
     Private mFileNameTail As String
@@ -23,6 +24,7 @@ Public Class fFileName
 
         mDestinationFPN_fileList = ""
         mDestinationFolder = ""
+        mDestinationFPN_batchFile = ""
 
 
         If Me.rbChangeFileExt.Checked Then
@@ -46,14 +48,40 @@ Public Class fFileName
                     File.Delete(mDestinationFPN_fileList)
                 End If
             End If
-        Else
-            mDestinationFolder = Me.tbResultFPN.Text.Trim()
-            If mDestinationFolder <> "" AndAlso Directory.Exists(mDestinationFolder) = False Then
-                MsgBox("Destination folder was not entered.   ", MsgBoxStyle.Information)
+        End If
+
+
+        If rbMakeBatchFile.Checked = True Then
+            If Me.tbBatchHead.Text = "" Then
+                MsgBox("Batch file statement is invalid.   ", MsgBoxStyle.Information)
                 Exit Sub
+            End If
+
+            If Me.tbResultFPN.Text = "" Then
+                MsgBox("Destination file was not entered.   ", MsgBoxStyle.Information)
+                Exit Sub
+            Else
+                mDestinationFPN_batchFile = Me.tbResultFPN.Text.Trim
+                If File.Exists(mDestinationFPN_batchFile) Then
+                    File.Delete(mDestinationFPN_batchFile)
+                End If
             End If
         End If
 
+
+        If Me.rbChangeFileExt.Checked AndAlso tbResultFPN.Enabled = True Then
+            If Me.tbResultFPN.Text = "" Then
+                MsgBox("Destination folder was not entered.   ", MsgBoxStyle.Information)
+                Exit Sub
+            Else
+                mDestinationFolder = Me.tbResultFPN.Text.Trim()
+                If mDestinationFolder <> "" AndAlso Directory.Exists(mDestinationFolder) = False Then
+                    MsgBox("Destination folder is not exist.   ", MsgBoxStyle.Information)
+                    Exit Sub
+                End If
+
+            End If
+        End If
 
         If Me.dgvFileList.RowCount > 0 Then
             Call DataProcessingManager()
@@ -79,6 +107,8 @@ Public Class fFileName
             Dim strTxtToReplace As String = ""
             Dim strStartingDateTime As String = ""
             Dim outputTimeStep As Integer = 0
+            Dim batchFileHead As String = ""
+            Dim batchFileTail As String = ""
             mFileNameHead = Trim(Me.tbFileHead.Text)
             mFileNameTail = Trim(Me.tbFileTail.Text)
             If meProcessingType = cVars.ProcessingType.Rename OrElse
@@ -92,6 +122,10 @@ Public Class fFileName
                 End If
             End If
 
+            If meProcessingType = cVars.ProcessingType.MakeBatchFile Then
+                batchFileHead = Me.tbBatchHead.Text.Trim
+                batchFileTail = Me.tbBatchTail.Text.Trim
+            End If
 
             Dim bIsConvertingError As Boolean = False
             For Each r As FilesDS.FilesRow In mdtSourceFile
@@ -200,6 +234,13 @@ Public Class fFileName
                     Case cVars.ProcessingType.SaveFileList
                         strProcessingMsg = "Saving file list"
                         File.AppendAllText(mDestinationFPN_fileList, sourceFPN + vbCrLf)
+
+                    Case cVars.ProcessingType.MakeBatchFile
+                        strProcessingMsg = "Making a batch file..."
+                        Dim aline As String = batchFileHead + " " + sourceFPN + " " + batchFileTail
+                        aline = aline.Trim
+                        File.AppendAllText(mDestinationFPN_batchFile, aline + vbCrLf)
+
                     Case Else
                         strProcessingMsg = ""
                 End Select
@@ -208,13 +249,13 @@ Public Class fFileName
                 mfPrograssBar.labGRMToolsPrograssBar.Text = strProcessingMsg + " " + CStr(r.FileOrder) + "/" & CStr(mdtSourceFile.Rows.Count) & " file..."
                 System.Windows.Forms.Application.DoEvents()
 
-                If meProcessingType <> cVars.ProcessingType.SaveFileList Then
-                    If File.Exists(resultFPN) = False Then
-                        MsgBox(String.Format("An Error was occured.{0}Converting {1} {2}to {3} is failed.     ", vbCrLf, sourceFPN, vbCrLf, resultFPN), MsgBoxStyle.Exclamation)
-                        mfPrograssBar.Close()
-                        Exit Sub
-                    End If
-                End If
+                'If meProcessingType <> cVars.ProcessingType.SaveFileList Then
+                '    If File.Exists(resultFPN) = False Then
+                '        MsgBox(String.Format("An Error was occured.{0}Converting {1} {2}to {3} is failed.     ", vbCrLf, sourceFPN, vbCrLf, resultFPN), MsgBoxStyle.Exclamation)
+                '        mfPrograssBar.Close()
+                '        Exit Sub
+                '    End If
+                'End If
 
                 If mStopProgress = True Then
                     MsgBox("Process was stopped..   ", MsgBoxStyle.Exclamation)
@@ -222,12 +263,16 @@ Public Class fFileName
                     Exit Sub
                 End If
             Next
+            If meProcessingType = cVars.ProcessingType.MakeBatchFile Then
+                Dim aline As String
+                aline = "@echo off" + vbCrLf + "echo." + vbCrLf + "echo Running the batch file was completed." + vbCrLf + "pause"
+                File.AppendAllText(mDestinationFPN_batchFile, aline + vbCrLf)
+            End If
+
             mfPrograssBar.Close()
-            'If bIsConvertingError = False Then
+
             MsgBox(strProcessingMsg + " " + CStr(mdtSourceFile.Rows.Count) + " files were completed!!!   ", MsgBoxStyle.Information)
-            'Else
-            '    MsgBox("Some errors were occured while converting file(s).   ", MsgBoxStyle.Exclamation)
-            'End If
+
         Catch ex As Exception
             mfPrograssBar.Close()
             MsgBox(ex.ToString, MsgBoxStyle.Critical)
@@ -240,6 +285,7 @@ Public Class fFileName
         If Me.rbRenameToDateTimeFormat.Checked Then pt = cVars.ProcessingType.RenameToDateTime
         If Me.rbChangeFileExt.Checked Then pt = cVars.ProcessingType.ChangeFileExt
         If Me.rbSaveFileList.Checked Then pt = cVars.ProcessingType.SaveFileList
+        If Me.rbMakeBatchFile.Checked Then pt = cVars.ProcessingType.MakeBatchFile
         Return pt
     End Function
 
@@ -339,6 +385,11 @@ Public Class fFileName
         'Me.tbResultFPN.Enabled = True
         Me.chkSetDestinationFolder.Enabled = False
         Me.chkSetDestinationFolder.Checked = False
+        Me.lbBatchFile.Enabled = True
+        Me.lbBatchFileList.Enabled = True
+        Me.tbBatchHead.Enabled = True
+        Me.tbBatchTail.Enabled = True
+
 
         If Me.rbRename.Checked = True Then
             Me.lbSetTime.Enabled = False
@@ -356,6 +407,10 @@ Public Class fFileName
             Me.chkSetDestinationFolder.Enabled = True
             Me.chkSetDestinationFolder.Checked = False
 
+            Me.lbBatchFile.Enabled = False
+            Me.lbBatchFileList.Enabled = False
+            Me.tbBatchHead.Enabled = False
+            Me.tbBatchTail.Enabled = False
         End If
 
         If Me.rbRenameToDateTimeFormat.Checked = True Then
@@ -375,6 +430,11 @@ Public Class fFileName
             'Me.tbResultFPN.Enabled = False
             Me.chkSetDestinationFolder.Enabled = True
             Me.chkSetDestinationFolder.Checked = False
+
+            Me.lbBatchFile.Enabled = False
+            Me.lbBatchFileList.Enabled = False
+            Me.tbBatchHead.Enabled = False
+            Me.tbBatchTail.Enabled = False
 
         End If
 
@@ -404,6 +464,10 @@ Public Class fFileName
             Me.chkSetDestinationFolder.Enabled = True
             Me.chkSetDestinationFolder.Checked = False
 
+            Me.lbBatchFile.Enabled = False
+            Me.lbBatchFileList.Enabled = False
+            Me.tbBatchHead.Enabled = False
+            Me.tbBatchTail.Enabled = False
         End If
 
         If Me.rbSaveFileList.Checked Then
@@ -426,12 +490,51 @@ Public Class fFileName
             Me.tbFileHead.Enabled = False
             Me.tbFileTail.Text = ""
             Me.tbFileTail.Enabled = False
-            'Me.lbFileExt.Enabled = False
+            Me.lbFileExt.Enabled = False
             Me.btResultFPN.Text = "Result file"
-            'Me.tbExtToChange.Enabled = False
-            Me.chkSetDestinationFolder.Checked = True
+            Me.tbExtToChange.Text = ""
+            Me.tbExtToChange.Enabled = False
+            Me.chkSetDestinationFolder.Checked = False
             Me.chkSetDestinationFolder.Enabled = False
 
+            Me.lbBatchFile.Enabled = False
+            Me.lbBatchFileList.Enabled = False
+            Me.tbBatchHead.Enabled = False
+            Me.tbBatchTail.Enabled = False
+        End If
+
+
+        If Me.rbMakeBatchFile.Checked Then
+            Me.chkUsingSourceFileName.Enabled = False
+            Me.lbTextToReplace.Enabled = False
+            Me.tbTextToReplace.Text = ""
+            Me.tbTextToReplace.Enabled = False
+            Me.lbTextToFind.Enabled = False
+            Me.tbTextToFind.Text = ""
+            Me.tbTextToFind.Enabled = False
+            Me.lbSetTime.Enabled = False
+            Me.lbTimeStart.Enabled = False
+            Me.lbTimeStep.Enabled = False
+            Me.dtpResultStarting.Enabled = False
+            Me.tbTimeStep.Text = ""
+            Me.tbTimeStep.Enabled = False
+            Me.lbHead.Enabled = False
+            Me.lbTail.Enabled = False
+            Me.tbFileHead.Text = ""
+            Me.tbFileHead.Enabled = False
+            Me.tbFileTail.Text = ""
+            Me.tbFileTail.Enabled = False
+            Me.lbFileExt.Enabled = False
+            Me.btResultFPN.Text = "Result file"
+            Me.tbExtToChange.Text = ""
+            Me.tbExtToChange.Enabled = False
+            Me.chkSetDestinationFolder.Checked = True
+            Me.chkSetDestinationFolder.Enabled = True
+
+            Me.lbBatchFile.Enabled = True
+            Me.lbBatchFileList.Enabled = True
+            Me.tbBatchHead.Enabled = True
+            Me.tbBatchTail.Enabled = True
         End If
 
     End Sub
@@ -482,6 +585,10 @@ Public Class fFileName
     End Sub
 
     Private Sub rbSaveFileList_CheckedChanged(sender As Object, e As EventArgs) Handles rbSaveFileList.CheckedChanged
+        Call Me.SetProcessingOptionalIU()
+    End Sub
+
+    Private Sub rbMakeBatchFile_CheckedChanged(sender As Object, e As EventArgs) Handles rbMakeBatchFile.CheckedChanged
         Call Me.SetProcessingOptionalIU()
     End Sub
 

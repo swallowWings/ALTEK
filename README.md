@@ -41,3 +41,4 @@ O File name processor
    - Rename files to DateTime format
    - Change the extensions of files
    - Save file list (full path and name) to a file
+   - Make a batch file using file list

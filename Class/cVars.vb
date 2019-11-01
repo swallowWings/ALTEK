@@ -8,6 +8,7 @@
         RenameToDateTime
         ChangeFileExt
         SaveFileList
+        MakeBatchFile
         ClipAndResample
         Resample
         Replace
