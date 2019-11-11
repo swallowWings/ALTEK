@@ -605,8 +605,8 @@ Public Class fExtractValue
         If rbAccAllFiles.Checked Then
             Me.tbFileNumToAgg.Text = ""
             Me.tbFileNumToAgg.Enabled = False
-            Me.chkAllowNegativeInAcc.Checked = False
-            Me.chkAllowNegativeInAcc.Enabled = False
+            'Me.chkAllowNegativeInAcc.Checked = False
+            'Me.chkAllowNegativeInAcc.Enabled = False
             Me.btOpenDestFolderOrFile.Text = "Destination file"
         End If
 
@@ -700,5 +700,9 @@ Public Class fExtractValue
                 Me.tbEndingLineidx.Enabled = True
             End If
         End If
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class

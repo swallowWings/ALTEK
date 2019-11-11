@@ -22,9 +22,9 @@ Partial Class fAppendFiles
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbFileNameFilter = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -89,7 +89,7 @@ Partial Class fAppendFiles
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Location = New System.Drawing.Point(16, 95)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 351)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 315)
         Me.GroupBox2.TabIndex = 211
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
@@ -125,7 +125,7 @@ Partial Class fAppendFiles
         Me.lstFiles.Location = New System.Drawing.Point(10, 75)
         Me.lstFiles.Name = "lstFiles"
         Me.lstFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstFiles.Size = New System.Drawing.Size(410, 232)
+        Me.lstFiles.Size = New System.Drawing.Size(410, 196)
         Me.lstFiles.TabIndex = 39
         '
         'txtFolderPathSource
@@ -157,7 +157,7 @@ Partial Class fAppendFiles
         'btAddAllFiles
         '
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 317)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 279)
         Me.btAddAllFiles.Name = "btAddAllFiles"
         Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
         Me.btAddAllFiles.TabIndex = 13
@@ -167,7 +167,7 @@ Partial Class fAppendFiles
         'btAddSelectedFile
         '
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 317)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 279)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
         Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
         Me.btAddSelectedFile.TabIndex = 14
@@ -181,7 +181,7 @@ Partial Class fAppendFiles
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
         Me.GroupBox4.Location = New System.Drawing.Point(452, 95)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(411, 351)
+        Me.GroupBox4.Size = New System.Drawing.Size(411, 315)
         Me.GroupBox4.TabIndex = 212
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -189,42 +189,42 @@ Partial Class fAppendFiles
         'dgvFileList
         '
         Me.dgvFileList.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvFileList.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvFileList.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgvFileList.Location = New System.Drawing.Point(10, 22)
         Me.dgvFileList.Name = "dgvFileList"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvFileList.RowHeadersVisible = False
         Me.dgvFileList.RowTemplate.Height = 23
-        Me.dgvFileList.Size = New System.Drawing.Size(392, 285)
+        Me.dgvFileList.Size = New System.Drawing.Size(392, 249)
         Me.dgvFileList.TabIndex = 16
         '
         'btRemoveAll
         '
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(112, 317)
+        Me.btRemoveAll.Location = New System.Drawing.Point(112, 279)
         Me.btRemoveAll.Name = "btRemoveAll"
         Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveAll.TabIndex = 17
@@ -234,7 +234,7 @@ Partial Class fAppendFiles
         'btRemoveSelected
         '
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(260, 317)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(260, 279)
         Me.btRemoveSelected.Name = "btRemoveSelected"
         Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveSelected.TabIndex = 18
@@ -283,7 +283,7 @@ Partial Class fAppendFiles
         Me.gbConditions.Controls.Add(Me.GroupBox3)
         Me.gbConditions.Controls.Add(Me.tbFileToAppend)
         Me.gbConditions.Controls.Add(Me.btSelectAfileToAppend)
-        Me.gbConditions.Location = New System.Drawing.Point(16, 459)
+        Me.gbConditions.Location = New System.Drawing.Point(16, 420)
         Me.gbConditions.Name = "gbConditions"
         Me.gbConditions.Size = New System.Drawing.Size(757, 148)
         Me.gbConditions.TabIndex = 230
@@ -470,9 +470,9 @@ Partial Class fAppendFiles
         'btClose
         '
         Me.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btClose.Location = New System.Drawing.Point(779, 629)
+        Me.btClose.Location = New System.Drawing.Point(779, 621)
         Me.btClose.Name = "btClose"
-        Me.btClose.Size = New System.Drawing.Size(86, 71)
+        Me.btClose.Size = New System.Drawing.Size(86, 40)
         Me.btClose.TabIndex = 239
         Me.btClose.Text = "Close"
         Me.btClose.UseVisualStyleBackColor = True
@@ -480,9 +480,9 @@ Partial Class fAppendFiles
         'btStartProcess
         '
         Me.btStartProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btStartProcess.Location = New System.Drawing.Point(779, 469)
+        Me.btStartProcess.Location = New System.Drawing.Point(779, 430)
         Me.btStartProcess.Name = "btStartProcess"
-        Me.btStartProcess.Size = New System.Drawing.Size(86, 151)
+        Me.btStartProcess.Size = New System.Drawing.Size(86, 185)
         Me.btStartProcess.TabIndex = 238
         Me.btStartProcess.Text = "Start"
         Me.btStartProcess.UseVisualStyleBackColor = True
@@ -495,7 +495,7 @@ Partial Class fAppendFiles
         Me.gbResult.Controls.Add(Me.tbFileHead)
         Me.gbResult.Controls.Add(Me.tbFileTail)
         Me.gbResult.Controls.Add(Me.lbHead)
-        Me.gbResult.Location = New System.Drawing.Point(16, 622)
+        Me.gbResult.Location = New System.Drawing.Point(16, 583)
         Me.gbResult.Name = "gbResult"
         Me.gbResult.Size = New System.Drawing.Size(757, 78)
         Me.gbResult.TabIndex = 240
@@ -506,7 +506,7 @@ Partial Class fAppendFiles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(877, 709)
+        Me.ClientSize = New System.Drawing.Size(877, 671)
         Me.Controls.Add(Me.gbResult)
         Me.Controls.Add(Me.btClose)
         Me.Controls.Add(Me.btStartProcess)
@@ -514,6 +514,8 @@ Partial Class fAppendFiles
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox4)
+        Me.MaximumSize = New System.Drawing.Size(893, 710)
+        Me.MinimumSize = New System.Drawing.Size(893, 710)
         Me.Name = "fAppendFiles"
         Me.Text = "Append files"
         Me.GroupBox2.ResumeLayout(False)

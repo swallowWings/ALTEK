@@ -22,9 +22,9 @@ Partial Class fFileName
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lbTimeStart = New System.Windows.Forms.Label()
         Me.dtpResultStarting = New System.Windows.Forms.DateTimePicker()
         Me.lbTimeStep = New System.Windows.Forms.Label()
@@ -51,9 +51,14 @@ Partial Class fFileName
         Me.btRemoveSelected = New System.Windows.Forms.Button()
         Me.rbRename = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbMakeBatchFile = New System.Windows.Forms.RadioButton()
         Me.rbSaveFileList = New System.Windows.Forms.RadioButton()
         Me.rbChangeFileExt = New System.Windows.Forms.RadioButton()
         Me.gbConditions = New System.Windows.Forms.GroupBox()
+        Me.lbBatchFile = New System.Windows.Forms.Label()
+        Me.tbBatchTail = New System.Windows.Forms.TextBox()
+        Me.tbBatchHead = New System.Windows.Forms.TextBox()
+        Me.lbBatchFileList = New System.Windows.Forms.Label()
         Me.lbFileExt = New System.Windows.Forms.Label()
         Me.tbExtToChange = New System.Windows.Forms.TextBox()
         Me.lbSetTime = New System.Windows.Forms.Label()
@@ -67,11 +72,6 @@ Partial Class fFileName
         Me.btResultFPN = New System.Windows.Forms.Button()
         Me.tbResultFPN = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.rbMakeBatchFile = New System.Windows.Forms.RadioButton()
-        Me.tbBatchHead = New System.Windows.Forms.TextBox()
-        Me.lbBatchFile = New System.Windows.Forms.Label()
-        Me.lbBatchFileList = New System.Windows.Forms.Label()
-        Me.tbBatchTail = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dgvFileList, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,9 +180,9 @@ Partial Class fFileName
         Me.GroupBox2.Controls.Add(Me.btAddAllFiles)
         Me.GroupBox2.Controls.Add(Me.btAddSelectedFile)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 111)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 106)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 319)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 296)
         Me.GroupBox2.TabIndex = 209
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
@@ -218,7 +218,7 @@ Partial Class fFileName
         Me.lstFiles.Location = New System.Drawing.Point(10, 75)
         Me.lstFiles.Name = "lstFiles"
         Me.lstFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstFiles.Size = New System.Drawing.Size(410, 196)
+        Me.lstFiles.Size = New System.Drawing.Size(410, 172)
         Me.lstFiles.TabIndex = 39
         '
         'txtFolderPathSource
@@ -250,7 +250,7 @@ Partial Class fFileName
         'btAddAllFiles
         '
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 281)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 258)
         Me.btAddAllFiles.Name = "btAddAllFiles"
         Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
         Me.btAddAllFiles.TabIndex = 13
@@ -260,7 +260,7 @@ Partial Class fFileName
         'btAddSelectedFile
         '
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 281)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 258)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
         Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
         Me.btAddSelectedFile.TabIndex = 14
@@ -282,9 +282,9 @@ Partial Class fFileName
         Me.GroupBox4.Controls.Add(Me.dgvFileList)
         Me.GroupBox4.Controls.Add(Me.btRemoveAll)
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
-        Me.GroupBox4.Location = New System.Drawing.Point(448, 111)
+        Me.GroupBox4.Location = New System.Drawing.Point(448, 106)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(411, 319)
+        Me.GroupBox4.Size = New System.Drawing.Size(411, 296)
         Me.GroupBox4.TabIndex = 210
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -292,42 +292,42 @@ Partial Class fFileName
         'dgvFileList
         '
         Me.dgvFileList.AllowUserToAddRows = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvFileList.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvFileList.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvFileList.Location = New System.Drawing.Point(10, 22)
         Me.dgvFileList.Name = "dgvFileList"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFileList.RowHeadersVisible = False
         Me.dgvFileList.RowTemplate.Height = 23
-        Me.dgvFileList.Size = New System.Drawing.Size(392, 249)
+        Me.dgvFileList.Size = New System.Drawing.Size(392, 225)
         Me.dgvFileList.TabIndex = 16
         '
         'btRemoveAll
         '
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(112, 281)
+        Me.btRemoveAll.Location = New System.Drawing.Point(112, 258)
         Me.btRemoveAll.Name = "btRemoveAll"
         Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveAll.TabIndex = 17
@@ -337,7 +337,7 @@ Partial Class fFileName
         'btRemoveSelected
         '
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(260, 281)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(260, 258)
         Me.btRemoveSelected.Name = "btRemoveSelected"
         Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveSelected.TabIndex = 18
@@ -369,6 +369,16 @@ Partial Class fFileName
         Me.GroupBox1.TabIndex = 228
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select processing"
+        '
+        'rbMakeBatchFile
+        '
+        Me.rbMakeBatchFile.AutoSize = True
+        Me.rbMakeBatchFile.Location = New System.Drawing.Point(385, 42)
+        Me.rbMakeBatchFile.Name = "rbMakeBatchFile"
+        Me.rbMakeBatchFile.Size = New System.Drawing.Size(231, 16)
+        Me.rbMakeBatchFile.TabIndex = 216
+        Me.rbMakeBatchFile.Text = "Make a batch file using file name list"
+        Me.rbMakeBatchFile.UseVisualStyleBackColor = True
         '
         'rbSaveFileList
         '
@@ -409,12 +419,48 @@ Partial Class fFileName
         Me.gbConditions.Controls.Add(Me.chkUsingSourceFileName)
         Me.gbConditions.Controls.Add(Me.tbTextToFind)
         Me.gbConditions.Controls.Add(Me.lbTextToReplace)
-        Me.gbConditions.Location = New System.Drawing.Point(12, 442)
+        Me.gbConditions.Location = New System.Drawing.Point(12, 415)
         Me.gbConditions.Name = "gbConditions"
         Me.gbConditions.Size = New System.Drawing.Size(747, 159)
         Me.gbConditions.TabIndex = 229
         Me.gbConditions.TabStop = False
         Me.gbConditions.Text = "Conditions"
+        '
+        'lbBatchFile
+        '
+        Me.lbBatchFile.AutoSize = True
+        Me.lbBatchFile.Location = New System.Drawing.Point(14, 134)
+        Me.lbBatchFile.Name = "lbBatchFile"
+        Me.lbBatchFile.Size = New System.Drawing.Size(124, 12)
+        Me.lbBatchFile.TabIndex = 235
+        Me.lbBatchFile.Text = "Batch file statement :"
+        '
+        'tbBatchTail
+        '
+        Me.tbBatchTail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbBatchTail.Location = New System.Drawing.Point(468, 132)
+        Me.tbBatchTail.Multiline = True
+        Me.tbBatchTail.Name = "tbBatchTail"
+        Me.tbBatchTail.Size = New System.Drawing.Size(273, 21)
+        Me.tbBatchTail.TabIndex = 234
+        '
+        'tbBatchHead
+        '
+        Me.tbBatchHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbBatchHead.Location = New System.Drawing.Point(144, 132)
+        Me.tbBatchHead.Multiline = True
+        Me.tbBatchHead.Name = "tbBatchHead"
+        Me.tbBatchHead.Size = New System.Drawing.Size(242, 21)
+        Me.tbBatchHead.TabIndex = 234
+        '
+        'lbBatchFileList
+        '
+        Me.lbBatchFileList.AutoSize = True
+        Me.lbBatchFileList.Location = New System.Drawing.Point(388, 136)
+        Me.lbBatchFileList.Name = "lbBatchFileList"
+        Me.lbBatchFileList.Size = New System.Drawing.Size(77, 12)
+        Me.lbBatchFileList.TabIndex = 233
+        Me.lbBatchFileList.Text = "+ file name +"
         '
         'lbFileExt
         '
@@ -493,7 +539,7 @@ Partial Class fFileName
         'btClose
         '
         Me.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btClose.Location = New System.Drawing.Point(765, 632)
+        Me.btClose.Location = New System.Drawing.Point(765, 605)
         Me.btClose.Name = "btClose"
         Me.btClose.Size = New System.Drawing.Size(97, 61)
         Me.btClose.TabIndex = 231
@@ -503,7 +549,7 @@ Partial Class fFileName
         'btStartProcess
         '
         Me.btStartProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btStartProcess.Location = New System.Drawing.Point(765, 449)
+        Me.btStartProcess.Location = New System.Drawing.Point(765, 422)
         Me.btStartProcess.Name = "btStartProcess"
         Me.btStartProcess.Size = New System.Drawing.Size(97, 177)
         Me.btStartProcess.TabIndex = 230
@@ -537,64 +583,18 @@ Partial Class fFileName
         Me.GroupBox3.Controls.Add(Me.tbFileTail)
         Me.GroupBox3.Controls.Add(Me.lbHead)
         Me.GroupBox3.Controls.Add(Me.tbFileHead)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 613)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 586)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(747, 80)
         Me.GroupBox3.TabIndex = 236
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Result"
         '
-        'rbMakeBatchFile
-        '
-        Me.rbMakeBatchFile.AutoSize = True
-        Me.rbMakeBatchFile.Location = New System.Drawing.Point(385, 42)
-        Me.rbMakeBatchFile.Name = "rbMakeBatchFile"
-        Me.rbMakeBatchFile.Size = New System.Drawing.Size(231, 16)
-        Me.rbMakeBatchFile.TabIndex = 216
-        Me.rbMakeBatchFile.Text = "Make a batch file using file name list"
-        Me.rbMakeBatchFile.UseVisualStyleBackColor = True
-        '
-        'tbBatchHead
-        '
-        Me.tbBatchHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbBatchHead.Location = New System.Drawing.Point(144, 132)
-        Me.tbBatchHead.Multiline = True
-        Me.tbBatchHead.Name = "tbBatchHead"
-        Me.tbBatchHead.Size = New System.Drawing.Size(242, 21)
-        Me.tbBatchHead.TabIndex = 234
-        '
-        'lbBatchFile
-        '
-        Me.lbBatchFile.AutoSize = True
-        Me.lbBatchFile.Location = New System.Drawing.Point(14, 134)
-        Me.lbBatchFile.Name = "lbBatchFile"
-        Me.lbBatchFile.Size = New System.Drawing.Size(124, 12)
-        Me.lbBatchFile.TabIndex = 235
-        Me.lbBatchFile.Text = "Batch file statement :"
-        '
-        'lbBatchFileList
-        '
-        Me.lbBatchFileList.AutoSize = True
-        Me.lbBatchFileList.Location = New System.Drawing.Point(388, 136)
-        Me.lbBatchFileList.Name = "lbBatchFileList"
-        Me.lbBatchFileList.Size = New System.Drawing.Size(77, 12)
-        Me.lbBatchFileList.TabIndex = 233
-        Me.lbBatchFileList.Text = "+ file name +"
-        '
-        'tbBatchTail
-        '
-        Me.tbBatchTail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbBatchTail.Location = New System.Drawing.Point(468, 132)
-        Me.tbBatchTail.Multiline = True
-        Me.tbBatchTail.Name = "tbBatchTail"
-        Me.tbBatchTail.Size = New System.Drawing.Size(273, 21)
-        Me.tbBatchTail.TabIndex = 234
-        '
         'fFileName
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(874, 720)
+        Me.ClientSize = New System.Drawing.Size(874, 676)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btClose)
         Me.Controls.Add(Me.btStartProcess)
@@ -603,7 +603,8 @@ Partial Class fFileName
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox4)
         Me.MaximizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(890, 671)
+        Me.MaximumSize = New System.Drawing.Size(890, 715)
+        Me.MinimumSize = New System.Drawing.Size(890, 715)
         Me.Name = "fFileName"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "File name processing"

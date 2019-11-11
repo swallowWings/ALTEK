@@ -89,15 +89,12 @@ Partial Class fFileEdit
         '
         'GroupBox4
         '
-        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.dgvRainfallFileList)
         Me.GroupBox4.Controls.Add(Me.btRemoveAll)
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
         Me.GroupBox4.Location = New System.Drawing.Point(450, 100)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(411, 307)
+        Me.GroupBox4.Size = New System.Drawing.Size(411, 279)
         Me.GroupBox4.TabIndex = 36
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -105,9 +102,6 @@ Partial Class fFileEdit
         'dgvRainfallFileList
         '
         Me.dgvRainfallFileList.AllowUserToAddRows = False
-        Me.dgvRainfallFileList.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle4.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
@@ -137,14 +131,13 @@ Partial Class fFileEdit
         Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
-        Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 238)
+        Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 210)
         Me.dgvRainfallFileList.TabIndex = 16
         '
         'btRemoveAll
         '
-        Me.btRemoveAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(111, 272)
+        Me.btRemoveAll.Location = New System.Drawing.Point(111, 244)
         Me.btRemoveAll.Name = "btRemoveAll"
         Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveAll.TabIndex = 17
@@ -153,9 +146,8 @@ Partial Class fFileEdit
         '
         'btRemoveSelected
         '
-        Me.btRemoveSelected.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(259, 272)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(259, 244)
         Me.btRemoveSelected.Name = "btRemoveSelected"
         Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveSelected.TabIndex = 18
@@ -164,8 +156,6 @@ Partial Class fFileEdit
         '
         'GroupBox3
         '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.rbCutDecimal)
         Me.GroupBox3.Controls.Add(Me.rbReplaceTextInASCII)
         Me.GroupBox3.Controls.Add(Me.rbReplaceLineByLine)
@@ -243,9 +233,8 @@ Partial Class fFileEdit
         '
         'btClose
         '
-        Me.btClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btClose.Location = New System.Drawing.Point(709, 681)
+        Me.btClose.Location = New System.Drawing.Point(709, 635)
         Me.btClose.Name = "btClose"
         Me.btClose.Size = New System.Drawing.Size(152, 28)
         Me.btClose.TabIndex = 33
@@ -254,9 +243,8 @@ Partial Class fFileEdit
         '
         'btStartProcess
         '
-        Me.btStartProcess.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btStartProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btStartProcess.Location = New System.Drawing.Point(709, 632)
+        Me.btStartProcess.Location = New System.Drawing.Point(709, 587)
         Me.btStartProcess.Name = "btStartProcess"
         Me.btStartProcess.Size = New System.Drawing.Size(152, 43)
         Me.btStartProcess.TabIndex = 32
@@ -265,15 +253,13 @@ Partial Class fFileEdit
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtDestinationFolderPath)
         Me.GroupBox1.Controls.Add(Me.txtResultFileTag)
         Me.GroupBox1.Controls.Add(Me.txtResultFilePrefix)
         Me.GroupBox1.Controls.Add(Me.btOpenDestinationFolder)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 624)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 580)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(691, 84)
         Me.GroupBox1.TabIndex = 37
@@ -337,8 +323,6 @@ Partial Class fFileEdit
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.tbFileNameFilter)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.tbExtensionFilter)
@@ -351,7 +335,7 @@ Partial Class fFileEdit
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Location = New System.Drawing.Point(14, 100)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 307)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 279)
         Me.GroupBox2.TabIndex = 35
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
@@ -381,21 +365,17 @@ Partial Class fFileEdit
         '
         'lstFiles
         '
-        Me.lstFiles.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lstFiles.FormattingEnabled = True
         Me.lstFiles.HorizontalScrollbar = True
         Me.lstFiles.ItemHeight = 12
         Me.lstFiles.Location = New System.Drawing.Point(10, 75)
         Me.lstFiles.Name = "lstFiles"
         Me.lstFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstFiles.Size = New System.Drawing.Size(410, 184)
+        Me.lstFiles.Size = New System.Drawing.Size(410, 148)
         Me.lstFiles.TabIndex = 39
         '
         'txtFolderPathSource
         '
-        Me.txtFolderPathSource.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtFolderPathSource.BackColor = System.Drawing.SystemColors.Window
         Me.txtFolderPathSource.Location = New System.Drawing.Point(101, 23)
         Me.txtFolderPathSource.Name = "txtFolderPathSource"
@@ -422,9 +402,8 @@ Partial Class fFileEdit
         '
         'btAddAllFiles
         '
-        Me.btAddAllFiles.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 272)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 244)
         Me.btAddAllFiles.Name = "btAddAllFiles"
         Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
         Me.btAddAllFiles.TabIndex = 13
@@ -433,9 +412,8 @@ Partial Class fFileEdit
         '
         'btAddSelectedFile
         '
-        Me.btAddSelectedFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 272)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 244)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
         Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
         Me.btAddSelectedFile.TabIndex = 14
@@ -450,7 +428,7 @@ Partial Class fFileEdit
         Me.GroupBox5.Controls.Add(Me.tbTextToFind)
         Me.GroupBox5.Controls.Add(Me.lbTextToReplace)
         Me.GroupBox5.Controls.Add(Me.lbTextToFind)
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 546)
+        Me.GroupBox5.Location = New System.Drawing.Point(12, 507)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(849, 59)
         Me.GroupBox5.TabIndex = 209
@@ -515,7 +493,7 @@ Partial Class fFileEdit
         Me.gbLineConditions.Controls.Add(Me.tbStartingLineidx)
         Me.gbLineConditions.Controls.Add(Me.Label6)
         Me.gbLineConditions.Controls.Add(Me.Label1)
-        Me.gbLineConditions.Location = New System.Drawing.Point(12, 426)
+        Me.gbLineConditions.Location = New System.Drawing.Point(12, 394)
         Me.gbLineConditions.Name = "gbLineConditions"
         Me.gbLineConditions.Size = New System.Drawing.Size(432, 99)
         Me.gbLineConditions.TabIndex = 210
@@ -581,7 +559,7 @@ Partial Class fFileEdit
         Me.gbASCIIRangeConditions.Controls.Add(Me.tbAscTLyRow)
         Me.gbASCIIRangeConditions.Controls.Add(Me.tbAscTLxCol)
         Me.gbASCIIRangeConditions.Controls.Add(Me.Label10)
-        Me.gbASCIIRangeConditions.Location = New System.Drawing.Point(450, 426)
+        Me.gbASCIIRangeConditions.Location = New System.Drawing.Point(450, 394)
         Me.gbASCIIRangeConditions.Name = "gbASCIIRangeConditions"
         Me.gbASCIIRangeConditions.Size = New System.Drawing.Size(411, 99)
         Me.gbASCIIRangeConditions.TabIndex = 211
@@ -647,7 +625,7 @@ Partial Class fFileEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(874, 719)
+        Me.ClientSize = New System.Drawing.Size(874, 671)
         Me.Controls.Add(Me.gbASCIIRangeConditions)
         Me.Controls.Add(Me.gbLineConditions)
         Me.Controls.Add(Me.GroupBox5)
@@ -658,8 +636,8 @@ Partial Class fFileEdit
         Me.Controls.Add(Me.btStartProcess)
         Me.Controls.Add(Me.GroupBox2)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(890, 758)
-        Me.MinimumSize = New System.Drawing.Size(890, 758)
+        Me.MaximumSize = New System.Drawing.Size(890, 710)
+        Me.MinimumSize = New System.Drawing.Size(890, 710)
         Me.Name = "fFileEdit"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Edit Text files"

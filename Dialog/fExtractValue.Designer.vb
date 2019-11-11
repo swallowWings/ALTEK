@@ -40,13 +40,6 @@ Partial Class fExtractValue
         Me.tbcolx = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.tbDest_FP_or_FPN = New System.Windows.Forms.TextBox()
-        Me.tbFileNameTail = New System.Windows.Forms.TextBox()
-        Me.tbFileNameHead = New System.Windows.Forms.TextBox()
-        Me.btOpenDestFolderOrFile = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbFileNameFilter = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -94,28 +87,32 @@ Partial Class fExtractValue
         Me.rbSepSpaceResult = New System.Windows.Forms.RadioButton()
         Me.rbSepCommaResult = New System.Windows.Forms.RadioButton()
         Me.rbSepTabResult = New System.Windows.Forms.RadioButton()
+        Me.btOpenDestFolderOrFile = New System.Windows.Forms.Button()
+        Me.tbFileNameHead = New System.Windows.Forms.TextBox()
+        Me.tbFileNameTail = New System.Windows.Forms.TextBox()
+        Me.tbDest_FP_or_FPN = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dgvRainfallFileList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbExtractFromASCII.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.gbAcc.SuspendLayout()
         Me.gbLineCon.SuspendLayout()
         Me.gbColCon.SuspendLayout()
         Me.gbResultValue.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox4
         '
-        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.dgvRainfallFileList)
         Me.GroupBox4.Controls.Add(Me.btRemoveAll)
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
         Me.GroupBox4.Location = New System.Drawing.Point(449, 16)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(433, 303)
+        Me.GroupBox4.Size = New System.Drawing.Size(433, 285)
         Me.GroupBox4.TabIndex = 40
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -177,8 +174,6 @@ Partial Class fExtractValue
         '
         'gbExtractFromASCII
         '
-        Me.gbExtractFromASCII.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbExtractFromASCII.Controls.Add(Me.chkAllowNegativeInCalCellAverage)
         Me.gbExtractFromASCII.Controls.Add(Me.btHelpExtractCellsAverageValue)
         Me.gbExtractFromASCII.Controls.Add(Me.btSelectBaseRasterFile)
@@ -191,14 +186,14 @@ Partial Class fExtractValue
         Me.gbExtractFromASCII.Controls.Add(Me.Label1)
         Me.gbExtractFromASCII.Location = New System.Drawing.Point(13, 329)
         Me.gbExtractFromASCII.Name = "gbExtractFromASCII"
-        Me.gbExtractFromASCII.Size = New System.Drawing.Size(869, 70)
+        Me.gbExtractFromASCII.Size = New System.Drawing.Size(499, 94)
         Me.gbExtractFromASCII.TabIndex = 38
         Me.gbExtractFromASCII.TabStop = False
         '
         'chkAllowNegativeInCalCellAverage
         '
         Me.chkAllowNegativeInCalCellAverage.AutoSize = True
-        Me.chkAllowNegativeInCalCellAverage.Location = New System.Drawing.Point(717, 44)
+        Me.chkAllowNegativeInCalCellAverage.Location = New System.Drawing.Point(279, 44)
         Me.chkAllowNegativeInCalCellAverage.Name = "chkAllowNegativeInCalCellAverage"
         Me.chkAllowNegativeInCalCellAverage.Size = New System.Drawing.Size(147, 16)
         Me.chkAllowNegativeInCalCellAverage.TabIndex = 221
@@ -207,9 +202,8 @@ Partial Class fExtractValue
         '
         'btHelpExtractCellsAverageValue
         '
-        Me.btHelpExtractCellsAverageValue.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btHelpExtractCellsAverageValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btHelpExtractCellsAverageValue.Location = New System.Drawing.Point(210, 41)
+        Me.btHelpExtractCellsAverageValue.Location = New System.Drawing.Point(198, 41)
         Me.btHelpExtractCellsAverageValue.Name = "btHelpExtractCellsAverageValue"
         Me.btHelpExtractCellsAverageValue.Size = New System.Drawing.Size(64, 21)
         Me.btHelpExtractCellsAverageValue.TabIndex = 220
@@ -218,9 +212,8 @@ Partial Class fExtractValue
         '
         'btSelectBaseRasterFile
         '
-        Me.btSelectBaseRasterFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btSelectBaseRasterFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btSelectBaseRasterFile.Location = New System.Drawing.Point(281, 41)
+        Me.btSelectBaseRasterFile.Location = New System.Drawing.Point(20, 64)
         Me.btSelectBaseRasterFile.Name = "btSelectBaseRasterFile"
         Me.btSelectBaseRasterFile.Size = New System.Drawing.Size(108, 21)
         Me.btSelectBaseRasterFile.TabIndex = 219
@@ -229,7 +222,7 @@ Partial Class fExtractValue
         '
         'tbBaseGridFile
         '
-        Me.tbBaseGridFile.Location = New System.Drawing.Point(394, 41)
+        Me.tbBaseGridFile.Location = New System.Drawing.Point(134, 64)
         Me.tbBaseGridFile.Name = "tbBaseGridFile"
         Me.tbBaseGridFile.Size = New System.Drawing.Size(317, 21)
         Me.tbBaseGridFile.TabIndex = 218
@@ -237,7 +230,7 @@ Partial Class fExtractValue
         'rbExtractCellsAverage
         '
         Me.rbExtractCellsAverage.AutoSize = True
-        Me.rbExtractCellsAverage.Location = New System.Drawing.Point(20, 44)
+        Me.rbExtractCellsAverage.Location = New System.Drawing.Point(6, 44)
         Me.rbExtractCellsAverage.Name = "rbExtractCellsAverage"
         Me.rbExtractCellsAverage.Size = New System.Drawing.Size(190, 16)
         Me.rbExtractCellsAverage.TabIndex = 215
@@ -248,7 +241,7 @@ Partial Class fExtractValue
         '
         Me.rbExtractFromAcell.AutoSize = True
         Me.rbExtractFromAcell.Checked = True
-        Me.rbExtractFromAcell.Location = New System.Drawing.Point(18, 19)
+        Me.rbExtractFromAcell.Location = New System.Drawing.Point(6, 19)
         Me.rbExtractFromAcell.Name = "rbExtractFromAcell"
         Me.rbExtractFromAcell.Size = New System.Drawing.Size(266, 16)
         Me.rbExtractFromAcell.TabIndex = 214
@@ -258,22 +251,22 @@ Partial Class fExtractValue
         '
         'tbrowy
         '
-        Me.tbrowy.Location = New System.Drawing.Point(446, 15)
+        Me.tbrowy.Location = New System.Drawing.Point(432, 15)
         Me.tbrowy.Name = "tbrowy"
-        Me.tbrowy.Size = New System.Drawing.Size(56, 21)
+        Me.tbrowy.Size = New System.Drawing.Size(55, 21)
         Me.tbrowy.TabIndex = 212
         '
         'tbcolx
         '
-        Me.tbcolx.Location = New System.Drawing.Point(332, 15)
+        Me.tbcolx.Location = New System.Drawing.Point(320, 15)
         Me.tbcolx.Name = "tbcolx"
-        Me.tbcolx.Size = New System.Drawing.Size(56, 21)
+        Me.tbcolx.Size = New System.Drawing.Size(55, 21)
         Me.tbcolx.TabIndex = 211
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(397, 19)
+        Me.Label6.Location = New System.Drawing.Point(383, 19)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 12)
         Me.Label6.TabIndex = 209
@@ -282,88 +275,14 @@ Partial Class fExtractValue
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(289, 19)
+        Me.Label1.Location = New System.Drawing.Point(277, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 12)
         Me.Label1.TabIndex = 210
         Me.Label1.Text = "ColX :"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.tbDest_FP_or_FPN)
-        Me.GroupBox1.Controls.Add(Me.tbFileNameTail)
-        Me.GroupBox1.Controls.Add(Me.tbFileNameHead)
-        Me.GroupBox1.Controls.Add(Me.btOpenDestFolderOrFile)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 670)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(699, 84)
-        Me.GroupBox1.TabIndex = 41
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Result files"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(406, 28)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(128, 12)
-        Me.Label5.TabIndex = 228
-        Me.Label5.Text = "Tail text of file name :"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(98, 28)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(136, 12)
-        Me.Label4.TabIndex = 229
-        Me.Label4.Text = "Head text of file name :"
-        '
-        'tbDest_FP_or_FPN
-        '
-        Me.tbDest_FP_or_FPN.BackColor = System.Drawing.SystemColors.Window
-        Me.tbDest_FP_or_FPN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbDest_FP_or_FPN.Location = New System.Drawing.Point(146, 50)
-        Me.tbDest_FP_or_FPN.Name = "tbDest_FP_or_FPN"
-        Me.tbDest_FP_or_FPN.Size = New System.Drawing.Size(543, 21)
-        Me.tbDest_FP_or_FPN.TabIndex = 30
-        '
-        'tbFileNameTail
-        '
-        Me.tbFileNameTail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbFileNameTail.Location = New System.Drawing.Point(537, 23)
-        Me.tbFileNameTail.Multiline = True
-        Me.tbFileNameTail.Name = "tbFileNameTail"
-        Me.tbFileNameTail.Size = New System.Drawing.Size(152, 21)
-        Me.tbFileNameTail.TabIndex = 26
-        '
-        'tbFileNameHead
-        '
-        Me.tbFileNameHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbFileNameHead.Location = New System.Drawing.Point(237, 23)
-        Me.tbFileNameHead.Multiline = True
-        Me.tbFileNameHead.Name = "tbFileNameHead"
-        Me.tbFileNameHead.Size = New System.Drawing.Size(158, 21)
-        Me.tbFileNameHead.TabIndex = 25
-        '
-        'btOpenDestFolderOrFile
-        '
-        Me.btOpenDestFolderOrFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btOpenDestFolderOrFile.Location = New System.Drawing.Point(18, 49)
-        Me.btOpenDestFolderOrFile.Name = "btOpenDestFolderOrFile"
-        Me.btOpenDestFolderOrFile.Size = New System.Drawing.Size(122, 21)
-        Me.btOpenDestFolderOrFile.TabIndex = 29
-        Me.btOpenDestFolderOrFile.Text = "Destination folder"
-        Me.btOpenDestFolderOrFile.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.tbFileNameFilter)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.tbExtensionFilter)
@@ -376,7 +295,7 @@ Partial Class fExtractValue
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Location = New System.Drawing.Point(13, 16)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 303)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 285)
         Me.GroupBox2.TabIndex = 39
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
@@ -417,8 +336,6 @@ Partial Class fExtractValue
         '
         'txtFolderPathSource
         '
-        Me.txtFolderPathSource.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtFolderPathSource.BackColor = System.Drawing.SystemColors.Window
         Me.txtFolderPathSource.Location = New System.Drawing.Point(101, 23)
         Me.txtFolderPathSource.Name = "txtFolderPathSource"
@@ -465,9 +382,8 @@ Partial Class fExtractValue
         '
         'btClose
         '
-        Me.btClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btClose.Location = New System.Drawing.Point(718, 727)
+        Me.btClose.Location = New System.Drawing.Point(718, 683)
         Me.btClose.Name = "btClose"
         Me.btClose.Size = New System.Drawing.Size(164, 27)
         Me.btClose.TabIndex = 43
@@ -476,9 +392,8 @@ Partial Class fExtractValue
         '
         'btStartProcess
         '
-        Me.btStartProcess.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btStartProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btStartProcess.Location = New System.Drawing.Point(718, 676)
+        Me.btStartProcess.Location = New System.Drawing.Point(718, 632)
         Me.btStartProcess.Name = "btStartProcess"
         Me.btStartProcess.Size = New System.Drawing.Size(164, 43)
         Me.btStartProcess.TabIndex = 42
@@ -500,7 +415,7 @@ Partial Class fExtractValue
         'rbValueFromTextFile
         '
         Me.rbValueFromTextFile.AutoSize = True
-        Me.rbValueFromTextFile.Location = New System.Drawing.Point(12, 484)
+        Me.rbValueFromTextFile.Location = New System.Drawing.Point(12, 436)
         Me.rbValueFromTextFile.Name = "rbValueFromTextFile"
         Me.rbValueFromTextFile.Size = New System.Drawing.Size(750, 16)
         Me.rbValueFromTextFile.TabIndex = 46
@@ -511,7 +426,7 @@ Partial Class fExtractValue
         'rbAccAscRaster
         '
         Me.rbAccAscRaster.AutoSize = True
-        Me.rbAccAscRaster.Location = New System.Drawing.Point(13, 409)
+        Me.rbAccAscRaster.Location = New System.Drawing.Point(525, 314)
         Me.rbAccAscRaster.Name = "rbAccAscRaster"
         Me.rbAccAscRaster.Size = New System.Drawing.Size(181, 16)
         Me.rbAccAscRaster.TabIndex = 48
@@ -520,22 +435,20 @@ Partial Class fExtractValue
         '
         'gbAcc
         '
-        Me.gbAcc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbAcc.Controls.Add(Me.tbFileNumToAgg)
         Me.gbAcc.Controls.Add(Me.chkAllowNegativeInAcc)
         Me.gbAcc.Controls.Add(Me.rbAggregate)
         Me.gbAcc.Controls.Add(Me.rbAccAllFiles)
-        Me.gbAcc.Location = New System.Drawing.Point(13, 424)
+        Me.gbAcc.Location = New System.Drawing.Point(523, 329)
         Me.gbAcc.Name = "gbAcc"
-        Me.gbAcc.Size = New System.Drawing.Size(869, 47)
+        Me.gbAcc.Size = New System.Drawing.Size(359, 94)
         Me.gbAcc.TabIndex = 47
         Me.gbAcc.TabStop = False
         '
         'tbFileNumToAgg
         '
         Me.tbFileNumToAgg.Enabled = False
-        Me.tbFileNumToAgg.Location = New System.Drawing.Point(462, 16)
+        Me.tbFileNumToAgg.Location = New System.Drawing.Point(290, 62)
         Me.tbFileNumToAgg.Name = "tbFileNumToAgg"
         Me.tbFileNumToAgg.Size = New System.Drawing.Size(42, 21)
         Me.tbFileNumToAgg.TabIndex = 217
@@ -543,7 +456,7 @@ Partial Class fExtractValue
         'chkAllowNegativeInAcc
         '
         Me.chkAllowNegativeInAcc.AutoSize = True
-        Me.chkAllowNegativeInAcc.Location = New System.Drawing.Point(717, 19)
+        Me.chkAllowNegativeInAcc.Location = New System.Drawing.Point(21, 18)
         Me.chkAllowNegativeInAcc.Name = "chkAllowNegativeInAcc"
         Me.chkAllowNegativeInAcc.Size = New System.Drawing.Size(147, 16)
         Me.chkAllowNegativeInAcc.TabIndex = 216
@@ -553,7 +466,7 @@ Partial Class fExtractValue
         'rbAggregate
         '
         Me.rbAggregate.AutoSize = True
-        Me.rbAggregate.Location = New System.Drawing.Point(193, 19)
+        Me.rbAggregate.Location = New System.Drawing.Point(21, 65)
         Me.rbAggregate.Name = "rbAggregate"
         Me.rbAggregate.Size = New System.Drawing.Size(268, 16)
         Me.rbAggregate.TabIndex = 214
@@ -564,7 +477,7 @@ Partial Class fExtractValue
         '
         Me.rbAccAllFiles.AutoSize = True
         Me.rbAccAllFiles.Checked = True
-        Me.rbAccAllFiles.Location = New System.Drawing.Point(20, 20)
+        Me.rbAccAllFiles.Location = New System.Drawing.Point(21, 43)
         Me.rbAccAllFiles.Name = "rbAccAllFiles"
         Me.rbAccAllFiles.Size = New System.Drawing.Size(134, 16)
         Me.rbAccAllFiles.TabIndex = 213
@@ -665,8 +578,6 @@ Partial Class fExtractValue
         '
         'gbLineCon
         '
-        Me.gbLineCon.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbLineCon.Controls.Add(Me.rbStartingLineText)
         Me.gbLineCon.Controls.Add(Me.rbStartingIndex)
         Me.gbLineCon.Controls.Add(Me.tbEndingLineText)
@@ -677,7 +588,7 @@ Partial Class fExtractValue
         Me.gbLineCon.Controls.Add(Me.Label3)
         Me.gbLineCon.Controls.Add(Me.Label9)
         Me.gbLineCon.Controls.Add(Me.Label10)
-        Me.gbLineCon.Location = New System.Drawing.Point(14, 509)
+        Me.gbLineCon.Location = New System.Drawing.Point(14, 461)
         Me.gbLineCon.Name = "gbLineCon"
         Me.gbLineCon.Size = New System.Drawing.Size(455, 155)
         Me.gbLineCon.TabIndex = 218
@@ -712,8 +623,6 @@ Partial Class fExtractValue
         '
         'gbColCon
         '
-        Me.gbColCon.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbColCon.Controls.Add(Me.Label15)
         Me.gbColCon.Controls.Add(Me.btShowColumns)
         Me.gbColCon.Controls.Add(Me.rbSepSpaceSource)
@@ -723,7 +632,7 @@ Partial Class fExtractValue
         Me.gbColCon.Controls.Add(Me.Label2)
         Me.gbColCon.Controls.Add(Me.Label7)
         Me.gbColCon.Controls.Add(Me.tbColidxInTextFile)
-        Me.gbColCon.Location = New System.Drawing.Point(475, 509)
+        Me.gbColCon.Location = New System.Drawing.Point(475, 461)
         Me.gbColCon.Name = "gbColCon"
         Me.gbColCon.Size = New System.Drawing.Size(407, 92)
         Me.gbColCon.TabIndex = 219
@@ -741,7 +650,6 @@ Partial Class fExtractValue
         '
         'btShowColumns
         '
-        Me.btShowColumns.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btShowColumns.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btShowColumns.Location = New System.Drawing.Point(301, 19)
         Me.btShowColumns.Name = "btShowColumns"
@@ -814,14 +722,12 @@ Partial Class fExtractValue
         '
         'gbResultValue
         '
-        Me.gbResultValue.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbResultValue.Controls.Add(Me.rbSepSpaceResult)
         Me.gbResultValue.Controls.Add(Me.rbSepCommaResult)
         Me.gbResultValue.Controls.Add(Me.rbSepTabResult)
         Me.gbResultValue.Controls.Add(Me.chkOnlyNumericValue)
         Me.gbResultValue.Controls.Add(Me.Label13)
-        Me.gbResultValue.Location = New System.Drawing.Point(475, 610)
+        Me.gbResultValue.Location = New System.Drawing.Point(475, 562)
         Me.gbResultValue.Name = "gbResultValue"
         Me.gbResultValue.Size = New System.Drawing.Size(407, 54)
         Me.gbResultValue.TabIndex = 220
@@ -860,11 +766,81 @@ Partial Class fExtractValue
         Me.rbSepTabResult.Text = "Tab"
         Me.rbSepTabResult.UseVisualStyleBackColor = True
         '
+        'btOpenDestFolderOrFile
+        '
+        Me.btOpenDestFolderOrFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btOpenDestFolderOrFile.Location = New System.Drawing.Point(18, 49)
+        Me.btOpenDestFolderOrFile.Name = "btOpenDestFolderOrFile"
+        Me.btOpenDestFolderOrFile.Size = New System.Drawing.Size(122, 21)
+        Me.btOpenDestFolderOrFile.TabIndex = 29
+        Me.btOpenDestFolderOrFile.Text = "Destination folder"
+        Me.btOpenDestFolderOrFile.UseVisualStyleBackColor = True
+        '
+        'tbFileNameHead
+        '
+        Me.tbFileNameHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbFileNameHead.Location = New System.Drawing.Point(237, 23)
+        Me.tbFileNameHead.Multiline = True
+        Me.tbFileNameHead.Name = "tbFileNameHead"
+        Me.tbFileNameHead.Size = New System.Drawing.Size(158, 21)
+        Me.tbFileNameHead.TabIndex = 25
+        '
+        'tbFileNameTail
+        '
+        Me.tbFileNameTail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbFileNameTail.Location = New System.Drawing.Point(537, 23)
+        Me.tbFileNameTail.Multiline = True
+        Me.tbFileNameTail.Name = "tbFileNameTail"
+        Me.tbFileNameTail.Size = New System.Drawing.Size(152, 21)
+        Me.tbFileNameTail.TabIndex = 26
+        '
+        'tbDest_FP_or_FPN
+        '
+        Me.tbDest_FP_or_FPN.BackColor = System.Drawing.SystemColors.Window
+        Me.tbDest_FP_or_FPN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbDest_FP_or_FPN.Location = New System.Drawing.Point(146, 50)
+        Me.tbDest_FP_or_FPN.Name = "tbDest_FP_or_FPN"
+        Me.tbDest_FP_or_FPN.Size = New System.Drawing.Size(543, 21)
+        Me.tbDest_FP_or_FPN.TabIndex = 30
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(98, 28)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(136, 12)
+        Me.Label4.TabIndex = 229
+        Me.Label4.Text = "Head text of file name :"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(406, 28)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(128, 12)
+        Me.Label5.TabIndex = 228
+        Me.Label5.Text = "Tail text of file name :"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.tbDest_FP_or_FPN)
+        Me.GroupBox1.Controls.Add(Me.tbFileNameTail)
+        Me.GroupBox1.Controls.Add(Me.tbFileNameHead)
+        Me.GroupBox1.Controls.Add(Me.btOpenDestFolderOrFile)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 626)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(699, 84)
+        Me.GroupBox1.TabIndex = 41
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Result files"
+        '
         'fExtractValue
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(894, 761)
+        Me.ClientSize = New System.Drawing.Size(894, 721)
         Me.Controls.Add(Me.gbResultValue)
         Me.Controls.Add(Me.gbColCon)
         Me.Controls.Add(Me.gbLineCon)
@@ -879,8 +855,8 @@ Partial Class fExtractValue
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(910, 800)
-        Me.MinimumSize = New System.Drawing.Size(910, 800)
+        Me.MaximumSize = New System.Drawing.Size(910, 760)
+        Me.MinimumSize = New System.Drawing.Size(910, 760)
         Me.Name = "fExtractValue"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Extract values from text files"
@@ -888,8 +864,6 @@ Partial Class fExtractValue
         CType(Me.dgvRainfallFileList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbExtractFromASCII.ResumeLayout(False)
         Me.gbExtractFromASCII.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.gbAcc.ResumeLayout(False)
@@ -900,6 +874,8 @@ Partial Class fExtractValue
         Me.gbColCon.PerformLayout()
         Me.gbResultValue.ResumeLayout(False)
         Me.gbResultValue.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -910,11 +886,6 @@ Partial Class fExtractValue
     Friend WithEvents btRemoveAll As Button
     Friend WithEvents btRemoveSelected As Button
     Friend WithEvents gbExtractFromASCII As GroupBox
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents tbDest_FP_or_FPN As TextBox
-    Friend WithEvents tbFileNameTail As TextBox
-    Friend WithEvents tbFileNameHead As TextBox
-    Friend WithEvents btOpenDestFolderOrFile As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents tbExtensionFilter As TextBox
     Friend WithEvents lstFiles As ListBox
@@ -931,8 +902,6 @@ Partial Class fExtractValue
     Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents rbValueFromTextFile As RadioButton
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents rbAccAscRaster As RadioButton
     Friend WithEvents gbAcc As GroupBox
     Friend WithEvents rbAggregate As RadioButton
@@ -974,4 +943,11 @@ Partial Class fExtractValue
     Friend WithEvents rbSepSpaceResult As RadioButton
     Friend WithEvents rbSepCommaResult As RadioButton
     Friend WithEvents rbSepTabResult As RadioButton
+    Friend WithEvents btOpenDestFolderOrFile As Button
+    Friend WithEvents tbFileNameHead As TextBox
+    Friend WithEvents tbFileNameTail As TextBox
+    Friend WithEvents tbDest_FP_or_FPN As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
