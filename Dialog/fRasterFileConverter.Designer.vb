@@ -657,7 +657,8 @@ Partial Class fRasterFileConverter
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(890, 755)
+        Me.MaximumSize = New System.Drawing.Size(890, 725)
+        Me.MinimumSize = New System.Drawing.Size(890, 725)
         Me.Name = "fRasterFileConverter"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Raster file converter"

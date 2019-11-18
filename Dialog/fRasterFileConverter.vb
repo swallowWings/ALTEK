@@ -172,14 +172,17 @@ Public Class fRasterFileConverter
                         If mCutDecimalPart = True Then
                             tmpResultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + "_tmp.asc"
                             Dim tmpPrjFPN As String = Replace(tmpResultFPN, ".asc", ".prj")
-
+                            Dim oriPrjFPN As String = Replace(resultFPN, ".asc", ".prj")
                             Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, tmpResultFPN, mBandN, oDataType)
                             Dim ascDS As New cAscRasterReader(tmpResultFPN)
                             Call cTextFile.MakeASCTextFile(resultFPN, ascDS.HeaderStringAll, ascDS.ValuesFromTL, mDecimalPartLength, ascDS.Header.nodataValue)
                             If File.Exists(tmpResultFPN) = True Then File.Delete(tmpResultFPN)
-                            If File.Exists(tmpPrjFPN) = True Then File.Delete(tmpPrjFPN)
+                            If File.Exists(tmpPrjFPN) = True Then
+                                File.Copy(tmpPrjFPN, oriPrjFPN)
+                                File.Delete(tmpPrjFPN)
+                            End If
                         Else
-                                Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, resultFPN, mBandN, oDataType)
+                            Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, resultFPN, mBandN, oDataType)
                         End If
 
                     Case cVars.ProcessingType.ASCiiToImg
