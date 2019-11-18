@@ -538,6 +538,7 @@ Partial Class fRasterFileConverter
         '
         'tbDecimalPartN
         '
+        Me.tbDecimalPartN.Enabled = False
         Me.tbDecimalPartN.Location = New System.Drawing.Point(667, 74)
         Me.tbDecimalPartN.Name = "tbDecimalPartN"
         Me.tbDecimalPartN.Size = New System.Drawing.Size(51, 21)

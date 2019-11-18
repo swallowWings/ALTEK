@@ -171,12 +171,15 @@ Public Class fRasterFileConverter
                         resultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + ".asc"
                         If mCutDecimalPart = True Then
                             tmpResultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + "_tmp.asc"
+                            Dim tmpPrjFPN As String = Replace(tmpResultFPN, ".asc", ".prj")
+
                             Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, tmpResultFPN, mBandN, oDataType)
                             Dim ascDS As New cAscRasterReader(tmpResultFPN)
                             Call cTextFile.MakeASCTextFile(resultFPN, ascDS.HeaderStringAll, ascDS.ValuesFromTL, mDecimalPartLength, ascDS.Header.nodataValue)
                             If File.Exists(tmpResultFPN) = True Then File.Delete(tmpResultFPN)
+                            If File.Exists(tmpPrjFPN) = True Then File.Delete(tmpPrjFPN)
                         Else
-                            Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, resultFPN, mBandN, oDataType)
+                                Call cGdal.ConvertGtiffAndGribToASCII(sourceFPN, resultFPN, mBandN, oDataType)
                         End If
 
                     Case cVars.ProcessingType.ASCiiToImg
@@ -596,4 +599,12 @@ Public Class fRasterFileConverter
         mStopProgress = True
     End Sub
 
+    Private Sub chkDecimalLength_CheckedChanged(sender As Object, e As EventArgs) Handles chkDecimalLength.CheckedChanged
+        If Me.chkDecimalLength.Checked = True Then
+            Me.tbDecimalPartN.Enabled = True
+        Else
+            Me.tbDecimalPartN.Text = ""
+            Me.tbDecimalPartN.Enabled = False
+        End If
+    End Sub
 End Class
