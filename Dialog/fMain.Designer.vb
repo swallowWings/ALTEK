@@ -154,7 +154,7 @@ Partial Class fMain
         Me.MinimumSize = New System.Drawing.Size(350, 474)
         Me.Name = "fMain"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "ALTEK - v.2019.11.01"
+        Me.Text = "ALTEK - v.2019.11.25"
         Me.ResumeLayout(False)
 
     End Sub

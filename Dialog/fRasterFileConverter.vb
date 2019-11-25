@@ -199,10 +199,16 @@ Public Class fRasterFileConverter
                             resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
                         If mCutDecimalPart = True Then
                             tmpResultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + "_tmp.asc"
+                            Dim tmpPrjFPN As String = Replace(tmpResultFPN, ".asc", ".prj")
+                            Dim oriPrjFPN As String = Replace(resultFPN, ".asc", ".prj")
                             Call cGdal.ClipGridAndResample(baseGridHeader, sourceFPN, tmpResultFPN, cellSizeResult, mResamplingMethod, mFileFormatResampleClip, oDataType)
                             Dim ascDS As New cAscRasterReader(tmpResultFPN)
                             Call cTextFile.MakeASCTextFile(resultFPN, ascDS.HeaderStringAll, ascDS.ValuesFromTL, mDecimalPartLength, ascDS.Header.nodataValue)
                             If File.Exists(tmpResultFPN) = True Then File.Delete(tmpResultFPN)
+                            If File.Exists(tmpPrjFPN) = True Then
+                                File.Copy(tmpPrjFPN, oriPrjFPN)
+                                File.Delete(tmpPrjFPN)
+                            End If
                         Else
                             Call cGdal.ClipGridAndResample(baseGridHeader, sourceFPN, resultFPN, cellSizeResult, mResamplingMethod, mFileFormatResampleClip, oDataType)
                         End If
@@ -220,10 +226,16 @@ Public Class fRasterFileConverter
                             resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
                         If mCutDecimalPart = True Then
                             tmpResultFPN = mstrDestinationFolderPath + "\" + resultFNWithoutExtension + "_tmp.asc"
+                            Dim tmpPrjFPN As String = Replace(tmpResultFPN, ".asc", ".prj")
+                            Dim oriPrjFPN As String = Replace(resultFPN, ".asc", ".prj")
                             cGdal.GridResample(baseGridHeader, sourceFPN, tmpResultFPN, cellSizeResult, mResamplingMethod, mFileFormatResampleClip, oDataType)
                             Dim ascDS As New cAscRasterReader(tmpResultFPN)
                             Call cTextFile.MakeASCTextFile(resultFPN, ascDS.HeaderStringAll, ascDS.ValuesFromTL, mDecimalPartLength, ascDS.Header.nodataValue)
                             If File.Exists(tmpResultFPN) = True Then File.Delete(tmpResultFPN)
+                            If File.Exists(tmpPrjFPN) = True Then
+                                File.Copy(tmpPrjFPN, oriPrjFPN)
+                                File.Delete(tmpPrjFPN)
+                            End If
                         Else
                             cGdal.GridResample(baseGridHeader, sourceFPN, resultFPN, cellSizeResult, mResamplingMethod, mFileFormatResampleClip, oDataType)
                         End If

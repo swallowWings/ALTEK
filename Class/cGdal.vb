@@ -337,6 +337,7 @@ Public Class cGdal
             pGdal.StartInfo.Arguments = " -te " + ext.left.ToString + " " + ext.bottom.ToString + " " _
                                                                + ext.right.ToString + " " + ext.top.ToString +
                                                      " -tr " + cellSize.ToString + " " + cellSize.ToString +
+                                                     " -r " + resampleMethod.ToString +
                                                      " -dstnodata " + CStr(-9999) +
                                                      " -of " + cComTools.SetDQ(formatName) +
                                                      " -ot " + cComTools.SetDQ(dType) +
