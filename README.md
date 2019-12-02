@@ -33,7 +33,7 @@ O Text files editor
    - Search and replace lines in text files
    - Insert a line to text files
    - Remove lines from text files
-   - Replace values in certain regions of ASCII raster files
+   - Replace values in certain region of ASCII raster files
    - Cut decimal parts in ASCII raster files
 
 O File name processor
