@@ -448,7 +448,7 @@ Partial Class fExtractValue
         'tbFileNumToAgg
         '
         Me.tbFileNumToAgg.Enabled = False
-        Me.tbFileNumToAgg.Location = New System.Drawing.Point(290, 62)
+        Me.tbFileNumToAgg.Location = New System.Drawing.Point(307, 62)
         Me.tbFileNumToAgg.Name = "tbFileNumToAgg"
         Me.tbFileNumToAgg.Size = New System.Drawing.Size(42, 21)
         Me.tbFileNumToAgg.TabIndex = 217
@@ -468,9 +468,9 @@ Partial Class fExtractValue
         Me.rbAggregate.AutoSize = True
         Me.rbAggregate.Location = New System.Drawing.Point(21, 65)
         Me.rbAggregate.Name = "rbAggregate"
-        Me.rbAggregate.Size = New System.Drawing.Size(268, 16)
+        Me.rbAggregate.Size = New System.Drawing.Size(283, 16)
         Me.rbAggregate.TabIndex = 214
-        Me.rbAggregate.Text = "Aggregate files. File number to aggregate : "
+        Me.rbAggregate.Text = "Aggregate files. Number of files to aggregate :"
         Me.rbAggregate.UseVisualStyleBackColor = True
         '
         'rbAccAllFiles
