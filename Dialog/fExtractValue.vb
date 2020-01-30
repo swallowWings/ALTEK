@@ -19,6 +19,11 @@ Public Class fExtractValue
     Private mBaseASC As cAscRasterReader
     Private mBaseCellsPos() As CellPosition
 
+    'Private mStatText As String = ""
+    Private Const AVE As String = "Average"
+    Private Const MAX As String = "Maximum"
+    Private Const MIN As String = "Minimum"
+
     Private mfileNagg As Integer = 0
     Private mNextFileOrderToStartAgg = 1
     Private mArrayToAcc(,) As Double
@@ -43,6 +48,10 @@ Public Class fExtractValue
         mbIsAllDataNormal = True
         Me.dgvRainfallFileList.DataSource = mdtSourceFile
         SetDataGridViewForm()
+        Me.cbStatistics.Items.Add(AVE)
+        Me.cbStatistics.Items.Add(MAX)
+        Me.cbStatistics.Items.Add(MIN)
+        Me.cbStatistics.Text = AVE
     End Sub
 
 
@@ -60,14 +69,21 @@ Public Class fExtractValue
                 mrowy = Me.tbrowy.Text.Trim
                 msb = New StringBuilder
             End If
-            If Me.rbExtractCellsAverage.Checked Then
-                mFPNbase = Me.tbBaseGridFile.Text.Trim
-                mBaseASC = New cAscRasterReader(mFPNbase)
-                mBaseCellsPos = cAscRasterReader.GetPositiveCellsPositions(mBaseASC)
-                If mBaseCellsPos.Length < 1 Then
-                    MsgBox("No positive cell.", MsgBoxStyle.Critical)
-                    Exit Sub
+
+            If Me.rbCalStatistics.Checked Then
+                mFPNbase = ""
+                mBaseASC = Nothing
+                mBaseCellsPos = Nothing
+                If Me.tbBaseGridFile.Text.Trim <> "" AndAlso File.Exists(Me.tbBaseGridFile.Text.Trim) Then
+                    mFPNbase = Me.tbBaseGridFile.Text.Trim
+                    mBaseASC = New cAscRasterReader(mFPNbase)
+                    mBaseCellsPos = cAscRasterReader.GetPositiveCellsPositions(mBaseASC)
+                    If mBaseCellsPos.Length < 1 Then
+                        MsgBox("No positive cell.", MsgBoxStyle.Critical)
+                        Exit Sub
+                    End If
                 End If
+
                 msb = New StringBuilder
                 mbAllowNegative = Me.chkAllowNegativeInCalCellAverage.Checked
                 mDestinationFPN = Me.tbDest_FP_or_FPN.Text.Trim
@@ -200,6 +216,7 @@ Public Class fExtractValue
     Sub DataProcessingManager()
         mfPrograssBar = New fProgressBar
         mStopProgress = False
+        Dim sourceFPN As String = ""
         Try
             Dim rFPN_First As String
 
@@ -213,7 +230,7 @@ Public Class fExtractValue
                 rFPN_First = mDestinationFPN
             End If
             If File.Exists(rFPN_First) Then
-                Dim mbr As MsgBoxResult = MsgBox(String.Format("Output file [{0}] is already exist. Overwrite and contiune? ", rFPN_First), MessageBoxButtons.YesNo+ MsgBoxStyle.Exclamation)
+                Dim mbr As MsgBoxResult = MsgBox(String.Format("Output file [{0}] is already exist. Overwrite and contiune? ", rFPN_First), MessageBoxButtons.YesNo + MsgBoxStyle.Exclamation)
                 If mbr = MsgBoxResult.No Then
                     Exit Sub
                 End If
@@ -231,13 +248,11 @@ Public Class fExtractValue
             mfileTag = Trim(Me.tbFileNameTail.Text)
 
             For Each r As FilesDS.FilesRow In mdtSourceFile
-                Dim sourceFPN As String
                 Dim resultFName As String = ""
                 Dim resultFPN As String = ""
                 Dim resultFNWithoutExtension As String
                 sourceFPN = Path.Combine(r.FilePath, r.FileName)
                 resultFNWithoutExtension = mfilePrefix + IO.Path.GetFileNameWithoutExtension(r.FileName) + mfileTag
-
                 Select Case meProcessingType
                     Case cVars.ProcessingType.ExtractAcellValueFromASCIIFile
                         strProcessingMsg = "Extracting"
@@ -245,17 +260,25 @@ Public Class fExtractValue
                         Dim avalue As String = ascfile.ValueFromTL(mcolx, mrowy).ToString
                         msb.Append(avalue + vbCrLf)
 
-                    Case cVars.ProcessingType.ExtractCellsAverageFromASCIIfile
+                    Case cVars.ProcessingType.CalAverageFromASCIIfile
                         strProcessingMsg = "Extracting"
                         Dim ascfile As New cAscRasterReader(sourceFPN)
-                        If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
-                            Dim avalue As Double = cAscRasterReader.CellsAverageValue(mBaseCellsPos, ascfile, mbAllowNegative)
-                            msb.Append(avalue.ToString + vbCrLf)
+                        Dim aveV As Double = 0
+                        If mFPNbase <> "" Then
+                            If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
+                                aveV = cAscRasterReader.CellsAverageValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                            Else
+                                MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
+                                mfPrograssBar.Close()
+                                Exit Sub
+                            End If
                         Else
-                            MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
-                            mfPrograssBar.Close()
-                            Exit Sub
+                            aveV = cAscRasterReader.CellsAverageValue(ascfile, mbAllowNegative)
                         End If
+                        msb.Append(aveV.ToString + vbCrLf)
+
+                    Case cVars.ProcessingType.CalMaximumFromASCIIfile
+                        here
 
                     Case cVars.ProcessingType.AccAllAsc
                         strProcessingMsg = "Accumulating"
@@ -316,11 +339,10 @@ Public Class fExtractValue
                     mfPrograssBar.Close()
                     Exit Sub
                 End If
-
             Next
 
             If meProcessingType = cVars.ProcessingType.ExtractAcellValueFromASCIIFile OrElse
-               meProcessingType = cVars.ProcessingType.ExtractCellsAverageFromASCIIfile Then
+               meProcessingType = cVars.ProcessingType.CalAverageFromASCIIfile Then
                 File.AppendAllText(mDestinationFPN, msb.ToString())
             End If
 
@@ -337,16 +359,21 @@ Public Class fExtractValue
         Catch ex As Exception
             mfPrograssBar.Close()
             MsgBox(ex.ToString, MsgBoxStyle.Critical)
+            MsgBox("Error in processing the file [" + sourceFPN + "]", MsgBoxStyle.Critical)
         End Try
     End Sub
-
 
 
     Private Function GetProcessType() As cVars.ProcessingType
         Dim pt As cVars.ProcessingType = Nothing
         If Me.rbValueFromASCIIFiles.Checked Then
             If Me.rbExtractFromAcell.Checked Then Return cVars.ProcessingType.ExtractAcellValueFromASCIIFile
-            If Me.rbExtractCellsAverage.Checked Then Return cVars.ProcessingType.ExtractCellsAverageFromASCIIfile
+            If Me.rbCalStatistics.Checked Then
+                If Me.cbStatistics.Text.Trim = AVE Then Return cVars.ProcessingType.CalAverageFromASCIIfile
+                If Me.cbStatistics.Text.Trim = MAX Then Return cVars.ProcessingType.CalMaximumFromASCIIfile
+                If Me.cbStatistics.Text.Trim = MIN Then Return cVars.ProcessingType.CalMinimumFromASCIIfile
+            End If
+            If Me.rbCountCellNumber.Checked Then Return cVars.ProcessingType.CountCellNumber
         End If
         If rbAccAscRaster.Checked Then
             If rbAccAllFiles.Checked Then Return cVars.ProcessingType.AccAllAsc
@@ -617,17 +644,32 @@ Public Class fExtractValue
 
     End Sub
 
-    Private Sub btHelpExtractCellsAverageValue_Click(sender As Object, e As EventArgs) Handles btHelpExtractCellsAverageValue.Click
+    Private Sub btHelpExtractCellsAverageValue_Click(sender As Object, e As EventArgs) Handles btHelpCalStatistics.Click
         Dim f As New fHelp
-        Dim helpString As String = "Calculate a average value from the cells located in the base raster file selected." + vbCrLf
+        Dim helpString As String = "Calculate some basic statistics from the cells located in the base raster file selected." + vbCrLf
         helpString = helpString + "In the base raster file, the target cells have to be defined as positive value." + vbCrLf
-        helpString = helpString + "The input raster files and the base raster file must have same extent and spatial resolution."
+        helpString = helpString + "The input raster files and the base raster file must have same extent and spatial resolution." + vbCrLf
+        helpString = helpString + "If no base file selected, all the cells in a file will be appled."
         f.tbTextToShow.Text = helpString
         'f.tbTextToShow.ReadOnly = True
         f.tbTextToShow.Font = System.Drawing.SystemFonts.DefaultFont
         f.tbTextToShow.Select(Len(helpString), 0)
         f.Show()
     End Sub
+
+    Private Sub btHelpCountCellNumber_Click(sender As Object, e As EventArgs) Handles btHelpCountCellNumber.Click
+        Dim f As New fHelp
+        Dim helpString As String = "Count the number of cells in a ascii raster file fit to the condition." + vbCrLf
+        helpString = helpString + "In the base raster file, the target cells have to be defined as positive value." + vbCrLf
+        helpString = helpString + "The input raster files and the base raster file must have same extent and spatial resolution." + vbCrLf
+        helpString = helpString + "If no base file selected, all the cells in a file will be appled."
+        f.tbTextToShow.Text = helpString
+        'f.tbTextToShow.ReadOnly = True
+        f.tbTextToShow.Font = System.Drawing.SystemFonts.DefaultFont
+        f.tbTextToShow.Select(Len(helpString), 0)
+        f.Show()
+    End Sub
+
 
     Private Sub btSelectBaseRasterFile_Click(sender As Object, e As EventArgs) Handles btSelectBaseRasterFile.Click
         Dim fb As New OpenFileDialog
@@ -645,30 +687,57 @@ Public Class fExtractValue
     Private Sub setUIinGbExtractFromASC()
         Me.tbcolx.Enabled = True
         Me.tbrowy.Enabled = True
-        Me.btSelectBaseRasterFile.Enabled = True
-        Me.tbBaseGridFile.Enabled = True
-        Me.btHelpExtractCellsAverageValue.Enabled = True
+        Me.cbStatistics.Enabled = True
+        Me.btHelpCalStatistics.Enabled = True
         Me.chkAllowNegativeInCalCellAverage.Enabled = True
+        Me.tbCondition.Enabled = True
+        Me.btHelpCountCellNumber.Enabled = True
+        Me.tbBaseGridFile.Enabled = True
+        Me.btSelectBaseRasterFile.Enabled = True
 
         If rbExtractFromAcell.Checked Then
-            Me.tbBaseGridFile.Text = ""
-            Me.tbBaseGridFile.Enabled = False
-            Me.btHelpExtractCellsAverageValue.Enabled = False
-            Me.btSelectBaseRasterFile.Enabled = False
+            Me.cbStatistics.Enabled = False
             Me.chkAllowNegativeInCalCellAverage.Checked = False
             Me.chkAllowNegativeInCalCellAverage.Enabled = False
+            Me.btHelpCalStatistics.Enabled = False
+
+            Me.tbCondition.Text = ""
+            Me.tbCondition.Enabled = False
+            Me.btHelpCountCellNumber.Enabled = False
+
+            Me.tbBaseGridFile.Text = ""
+            Me.tbBaseGridFile.Enabled = False
+            Me.btSelectBaseRasterFile.Enabled = False
+
         End If
 
-        If rbExtractCellsAverage.Checked Then
+        If rbCalStatistics.Checked Then
             Me.tbcolx.Text = ""
             Me.tbrowy.Text = ""
             Me.tbcolx.Enabled = False
             Me.tbrowy.Enabled = False
+
+            Me.tbCondition.Text = ""
+            Me.tbCondition.Enabled = False
+            Me.btHelpCountCellNumber.Enabled = False
         End If
+
+        If Me.rbCountCellNumber.Checked Then
+            Me.tbcolx.Text = ""
+            Me.tbrowy.Text = ""
+            Me.tbcolx.Enabled = False
+            Me.tbrowy.Enabled = False
+
+            Me.cbStatistics.Enabled = False
+            Me.chkAllowNegativeInCalCellAverage.Checked = False
+            Me.chkAllowNegativeInCalCellAverage.Enabled = False
+            Me.btHelpCalStatistics.Enabled = False
+        End If
+
 
     End Sub
 
-    Private Sub rbExtractCellsAverage_CheckedChanged(sender As Object, e As EventArgs) Handles rbExtractCellsAverage.CheckedChanged
+    Private Sub rbExtractCellsAverage_CheckedChanged(sender As Object, e As EventArgs) Handles rbCalStatistics.CheckedChanged
         setUIinGbExtractFromASC()
     End Sub
 

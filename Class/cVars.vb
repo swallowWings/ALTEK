@@ -17,8 +17,11 @@
         RemoveLines
         InsertALine
         ExtractAcellValueFromASCIIFile
-        ExtractCellsAverageFromASCIIfile
+        CalAverageFromASCIIfile
+        CalMaximumFromASCIIfile
+        CalMinimumFromASCIIfile
         ExtractValueFromTextFile
+        CountCellNumber
         AccAllAsc
         AggAscFiles
         CutDecimalPart

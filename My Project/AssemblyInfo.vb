@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("ALTEK is a tool for processing a lof of data, by Choi, Yun seok")>
 <Assembly: AssemblyCompany("Korea Institute of Civil Engineering and Building Technology")>
 <Assembly: AssemblyProduct("ALTEK is a tool for processing a lof of data, by Choi, Yun seok")>
-<Assembly: AssemblyCopyright("Copyright ©  2018. Free by KICT")>
+<Assembly: AssemblyCopyright("Copyright ©  2018. KICT")>
 <Assembly: AssemblyTrademark("ALTEK by Korea Institute of Civil Engineering and Building Technology.")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2019.11.25.0")>
-<Assembly: AssemblyFileVersion("2019.11.25.0")>
+<Assembly: AssemblyVersion("2020.02.01.0")>
+<Assembly: AssemblyFileVersion("2020.02.01.0")>
