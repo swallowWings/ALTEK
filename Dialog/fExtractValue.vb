@@ -261,13 +261,13 @@ Public Class fExtractValue
                         Dim avalue As String = ascfile.ValueFromTL(mcolx, mrowy).ToString
                         msb.Append(avalue + vbCrLf)
 
-                    Case cVars.ProcessingType.CalAverageFromASCIIfile
-                        strProcessingMsg = "Extracting"
+                    Case cVars.ProcessingType.CalAverageFromASCIIFile
+                        strProcessingMsg = "Calculating average value..."
                         Dim ascfile As New cAscRasterReader(sourceFPN)
                         Dim aveV As Double = 0
                         If mFPNbase <> "" Then
                             If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
-                                aveV = cAscRasterReader.CellsAverageValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                                aveV = cAscRasterReader.CellsAverageValue(mBaseCellsPos, ascfile)
                             Else
                                 MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
                                 mfPrograssBar.Close()
@@ -278,8 +278,56 @@ Public Class fExtractValue
                         End If
                         msb.Append(aveV.ToString + vbCrLf)
 
-                    Case cVars.ProcessingType.CalMaximumFromASCIIfile
+                    Case cVars.ProcessingType.CalMaximumFromASCIIFile
+                        strProcessingMsg = "Calculating maximum value..."
+                        Dim ascfile As New cAscRasterReader(sourceFPN)
+                        Dim aV As Double = 0
+                        If mFPNbase <> "" Then
+                            If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
+                                aV = cAscRasterReader.CellsMaxValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                            Else
+                                MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
+                                mfPrograssBar.Close()
+                                Exit Sub
+                            End If
+                        Else
+                            aV = ascfile.value_max
+                        End If
+                        msb.Append(aV.ToString + vbCrLf)
 
+                    Case cVars.ProcessingType.CalMinimumFromASCIIFile
+                        strProcessingMsg = "Calculating maximum value..."
+                        Dim ascfile As New cAscRasterReader(sourceFPN)
+                        Dim aV As Double = 0
+                        If mFPNbase <> "" Then
+                            If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
+                                aV = cAscRasterReader.CellsMinValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                            Else
+                                MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
+                                mfPrograssBar.Close()
+                                Exit Sub
+                            End If
+                        Else
+                            aV = ascfile.value_min
+                        End If
+                        msb.Append(aV.ToString + vbCrLf)
+
+                    Case cVars.ProcessingType.CalSumFromASCIIfile
+                        strProcessingMsg = "Calculating maximum value..."
+                        Dim ascfile As New cAscRasterReader(sourceFPN)
+                        Dim aV As Double = 0
+                        If mFPNbase <> "" Then
+                            If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
+                                aV = cAscRasterReader.CellsSumValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                            Else
+                                MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
+                                mfPrograssBar.Close()
+                                Exit Sub
+                            End If
+                        Else
+                            aV = ascfile.value_sum
+                        End If
+                        msb.Append(aV.ToString + vbCrLf)
 
                     Case cVars.ProcessingType.AccAllAsc
                         strProcessingMsg = "Accumulating"
@@ -343,7 +391,10 @@ Public Class fExtractValue
             Next
 
             If meProcessingType = cVars.ProcessingType.ExtractAcellValueFromASCIIFile OrElse
-               meProcessingType = cVars.ProcessingType.CalAverageFromASCIIfile Then
+               meProcessingType = cVars.ProcessingType.CalAverageFromASCIIFile OrElse
+               meProcessingType = cVars.ProcessingType.CalMaximumFromASCIIFile OrElse
+               meProcessingType = cVars.ProcessingType.CalMinimumFromASCIIFile OrElse
+               meProcessingType = cVars.ProcessingType.CalSumFromASCIIfile Then
                 File.AppendAllText(mDestinationFPN, msb.ToString())
             End If
 
@@ -370,9 +421,9 @@ Public Class fExtractValue
         If Me.rbValueFromASCIIFiles.Checked Then
             If Me.rbExtractFromAcell.Checked Then Return cVars.ProcessingType.ExtractAcellValueFromASCIIFile
             If Me.rbCalStatistics.Checked Then
-                If Me.cbStatistics.Text.Trim = CONST_STRING_AVE Then Return cVars.ProcessingType.CalAverageFromASCIIfile
-                If Me.cbStatistics.Text.Trim = CONST_STRING_MAX Then Return cVars.ProcessingType.CalMaximumFromASCIIfile
-                If Me.cbStatistics.Text.Trim = CONST_STRING_MIN Then Return cVars.ProcessingType.CalMinimumFromASCIIfile
+                If Me.cbStatistics.Text.Trim = CONST_STRING_AVE Then Return cVars.ProcessingType.CalAverageFromASCIIFile
+                If Me.cbStatistics.Text.Trim = CONST_STRING_MAX Then Return cVars.ProcessingType.CalMaximumFromASCIIFile
+                If Me.cbStatistics.Text.Trim = CONST_STRING_MIN Then Return cVars.ProcessingType.CalMinimumFromASCIIFile
             End If
             'If Me.rbCountCellNumber.Checked Then Return cVars.ProcessingType.CountCellNumber
         End If
