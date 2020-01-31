@@ -20,9 +20,10 @@ Public Class fExtractValue
     Private mBaseCellsPos() As CellPosition
 
     'Private mStatText As String = ""
-    Private Const AVE As String = "Average"
-    Private Const MAX As String = "Maximum"
-    Private Const MIN As String = "Minimum"
+    Private Const CONST_STRING_AVE As String = "Average"
+    Private Const CONST_STRING_MAX As String = "Maximum"
+    Private Const CONST_STRING_MIN As String = "Minimum"
+    Private Const CONST_STRING_SUM As String = "Sum"
 
     Private mfileNagg As Integer = 0
     Private mNextFileOrderToStartAgg = 1
@@ -48,10 +49,10 @@ Public Class fExtractValue
         mbIsAllDataNormal = True
         Me.dgvRainfallFileList.DataSource = mdtSourceFile
         SetDataGridViewForm()
-        Me.cbStatistics.Items.Add(AVE)
-        Me.cbStatistics.Items.Add(MAX)
-        Me.cbStatistics.Items.Add(MIN)
-        Me.cbStatistics.Text = AVE
+        Me.cbStatistics.Items.Add(CONST_STRING_AVE)
+        Me.cbStatistics.Items.Add(CONST_STRING_MAX)
+        Me.cbStatistics.Items.Add(CONST_STRING_MIN)
+        Me.cbStatistics.Text = CONST_STRING_AVE
     End Sub
 
 
@@ -85,7 +86,7 @@ Public Class fExtractValue
                 End If
 
                 msb = New StringBuilder
-                mbAllowNegative = Me.chkAllowNegativeInCalCellAverage.Checked
+                'mbAllowNegative = Me.chkAllowNegativeInCalCellAverage.Checked
                 mDestinationFPN = Me.tbDest_FP_or_FPN.Text.Trim
                 If File.Exists(mDestinationFPN) = True Then File.Delete(mDestinationFPN)
             End If
@@ -273,12 +274,12 @@ Public Class fExtractValue
                                 Exit Sub
                             End If
                         Else
-                            aveV = cAscRasterReader.CellsAverageValue(ascfile, mbAllowNegative)
+                            aveV = ascfile.value_ave
                         End If
                         msb.Append(aveV.ToString + vbCrLf)
 
                     Case cVars.ProcessingType.CalMaximumFromASCIIfile
-                        here
+
 
                     Case cVars.ProcessingType.AccAllAsc
                         strProcessingMsg = "Accumulating"
@@ -369,11 +370,11 @@ Public Class fExtractValue
         If Me.rbValueFromASCIIFiles.Checked Then
             If Me.rbExtractFromAcell.Checked Then Return cVars.ProcessingType.ExtractAcellValueFromASCIIFile
             If Me.rbCalStatistics.Checked Then
-                If Me.cbStatistics.Text.Trim = AVE Then Return cVars.ProcessingType.CalAverageFromASCIIfile
-                If Me.cbStatistics.Text.Trim = MAX Then Return cVars.ProcessingType.CalMaximumFromASCIIfile
-                If Me.cbStatistics.Text.Trim = MIN Then Return cVars.ProcessingType.CalMinimumFromASCIIfile
+                If Me.cbStatistics.Text.Trim = CONST_STRING_AVE Then Return cVars.ProcessingType.CalAverageFromASCIIfile
+                If Me.cbStatistics.Text.Trim = CONST_STRING_MAX Then Return cVars.ProcessingType.CalMaximumFromASCIIfile
+                If Me.cbStatistics.Text.Trim = CONST_STRING_MIN Then Return cVars.ProcessingType.CalMinimumFromASCIIfile
             End If
-            If Me.rbCountCellNumber.Checked Then Return cVars.ProcessingType.CountCellNumber
+            'If Me.rbCountCellNumber.Checked Then Return cVars.ProcessingType.CountCellNumber
         End If
         If rbAccAscRaster.Checked Then
             If rbAccAllFiles.Checked Then Return cVars.ProcessingType.AccAllAsc
@@ -657,7 +658,7 @@ Public Class fExtractValue
         f.Show()
     End Sub
 
-    Private Sub btHelpCountCellNumber_Click(sender As Object, e As EventArgs) Handles btHelpCountCellNumber.Click
+    Private Sub btHelpCountCellNumber_Click(sender As Object, e As EventArgs)
         Dim f As New fHelp
         Dim helpString As String = "Count the number of cells in a ascii raster file fit to the condition." + vbCrLf
         helpString = helpString + "In the base raster file, the target cells have to be defined as positive value." + vbCrLf
@@ -689,21 +690,21 @@ Public Class fExtractValue
         Me.tbrowy.Enabled = True
         Me.cbStatistics.Enabled = True
         Me.btHelpCalStatistics.Enabled = True
-        Me.chkAllowNegativeInCalCellAverage.Enabled = True
-        Me.tbCondition.Enabled = True
-        Me.btHelpCountCellNumber.Enabled = True
+        'Me.chkAllowNegativeInCalCellAverage.Enabled = True
+        'Me.tbCondition.Enabled = True
+        'Me.btHelpCountCellNumber.Enabled = True
         Me.tbBaseGridFile.Enabled = True
         Me.btSelectBaseRasterFile.Enabled = True
 
         If rbExtractFromAcell.Checked Then
             Me.cbStatistics.Enabled = False
-            Me.chkAllowNegativeInCalCellAverage.Checked = False
-            Me.chkAllowNegativeInCalCellAverage.Enabled = False
+            'Me.chkAllowNegativeInCalCellAverage.Checked = False
+            'Me.chkAllowNegativeInCalCellAverage.Enabled = False
             Me.btHelpCalStatistics.Enabled = False
 
-            Me.tbCondition.Text = ""
-            Me.tbCondition.Enabled = False
-            Me.btHelpCountCellNumber.Enabled = False
+            'Me.tbCondition.Text = ""
+            'Me.tbCondition.Enabled = False
+            'Me.btHelpCountCellNumber.Enabled = False
 
             Me.tbBaseGridFile.Text = ""
             Me.tbBaseGridFile.Enabled = False
@@ -717,22 +718,22 @@ Public Class fExtractValue
             Me.tbcolx.Enabled = False
             Me.tbrowy.Enabled = False
 
-            Me.tbCondition.Text = ""
-            Me.tbCondition.Enabled = False
-            Me.btHelpCountCellNumber.Enabled = False
+            'Me.tbCondition.Text = ""
+            'Me.tbCondition.Enabled = False
+            'Me.btHelpCountCellNumber.Enabled = False
         End If
 
-        If Me.rbCountCellNumber.Checked Then
-            Me.tbcolx.Text = ""
-            Me.tbrowy.Text = ""
-            Me.tbcolx.Enabled = False
-            Me.tbrowy.Enabled = False
+        'If Me.rbCountCellNumber.Checked Then
+        '    Me.tbcolx.Text = ""
+        '    Me.tbrowy.Text = ""
+        '    Me.tbcolx.Enabled = False
+        '    Me.tbrowy.Enabled = False
 
-            Me.cbStatistics.Enabled = False
-            Me.chkAllowNegativeInCalCellAverage.Checked = False
-            Me.chkAllowNegativeInCalCellAverage.Enabled = False
-            Me.btHelpCalStatistics.Enabled = False
-        End If
+        '    Me.cbStatistics.Enabled = False
+        '    Me.chkAllowNegativeInCalCellAverage.Checked = False
+        '    Me.chkAllowNegativeInCalCellAverage.Enabled = False
+        '    Me.btHelpCalStatistics.Enabled = False
+        'End If
 
 
     End Sub
@@ -771,7 +772,5 @@ Public Class fExtractValue
         End If
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
-    End Sub
 End Class

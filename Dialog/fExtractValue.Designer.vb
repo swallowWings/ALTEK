@@ -22,19 +22,17 @@ Partial Class fExtractValue
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dgvRainfallFileList = New System.Windows.Forms.DataGridView()
         Me.btRemoveAll = New System.Windows.Forms.Button()
         Me.btRemoveSelected = New System.Windows.Forms.Button()
         Me.gbExtractFromASCII = New System.Windows.Forms.GroupBox()
-        Me.tbCondition = New System.Windows.Forms.TextBox()
+        Me.btSelectBaseRasterFile = New System.Windows.Forms.Button()
+        Me.tbBaseGridFile = New System.Windows.Forms.TextBox()
         Me.cbStatistics = New System.Windows.Forms.ComboBox()
-        Me.rbCountCellNumber = New System.Windows.Forms.RadioButton()
-        Me.chkAllowNegativeInCalCellAverage = New System.Windows.Forms.CheckBox()
-        Me.btHelpCountCellNumber = New System.Windows.Forms.Button()
         Me.btHelpCalStatistics = New System.Windows.Forms.Button()
         Me.rbCalStatistics = New System.Windows.Forms.RadioButton()
         Me.rbExtractFromAcell = New System.Windows.Forms.RadioButton()
@@ -42,8 +40,6 @@ Partial Class fExtractValue
         Me.tbcolx = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btSelectBaseRasterFile = New System.Windows.Forms.Button()
-        Me.tbBaseGridFile = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.tbFileNameFilter = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -116,7 +112,7 @@ Partial Class fExtractValue
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
         Me.GroupBox4.Location = New System.Drawing.Point(449, 16)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(433, 259)
+        Me.GroupBox4.Size = New System.Drawing.Size(433, 280)
         Me.GroupBox4.TabIndex = 40
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -124,42 +120,42 @@ Partial Class fExtractValue
         'dgvRainfallFileList
         '
         Me.dgvRainfallFileList.AllowUserToAddRows = False
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRainfallFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvRainfallFileList.Location = New System.Drawing.Point(9, 22)
         Me.dgvRainfallFileList.Name = "dgvRainfallFileList"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
-        Me.dgvRainfallFileList.Size = New System.Drawing.Size(415, 195)
+        Me.dgvRainfallFileList.Size = New System.Drawing.Size(415, 219)
         Me.dgvRainfallFileList.TabIndex = 16
         '
         'btRemoveAll
         '
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(134, 222)
+        Me.btRemoveAll.Location = New System.Drawing.Point(134, 247)
         Me.btRemoveAll.Name = "btRemoveAll"
         Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveAll.TabIndex = 17
@@ -169,7 +165,7 @@ Partial Class fExtractValue
         'btRemoveSelected
         '
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(282, 222)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(282, 247)
         Me.btRemoveSelected.Name = "btRemoveSelected"
         Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
         Me.btRemoveSelected.TabIndex = 18
@@ -178,11 +174,9 @@ Partial Class fExtractValue
         '
         'gbExtractFromASCII
         '
-        Me.gbExtractFromASCII.Controls.Add(Me.tbCondition)
+        Me.gbExtractFromASCII.Controls.Add(Me.btSelectBaseRasterFile)
+        Me.gbExtractFromASCII.Controls.Add(Me.tbBaseGridFile)
         Me.gbExtractFromASCII.Controls.Add(Me.cbStatistics)
-        Me.gbExtractFromASCII.Controls.Add(Me.rbCountCellNumber)
-        Me.gbExtractFromASCII.Controls.Add(Me.chkAllowNegativeInCalCellAverage)
-        Me.gbExtractFromASCII.Controls.Add(Me.btHelpCountCellNumber)
         Me.gbExtractFromASCII.Controls.Add(Me.btHelpCalStatistics)
         Me.gbExtractFromASCII.Controls.Add(Me.rbCalStatistics)
         Me.gbExtractFromASCII.Controls.Add(Me.rbExtractFromAcell)
@@ -190,18 +184,28 @@ Partial Class fExtractValue
         Me.gbExtractFromASCII.Controls.Add(Me.tbcolx)
         Me.gbExtractFromASCII.Controls.Add(Me.Label6)
         Me.gbExtractFromASCII.Controls.Add(Me.Label1)
-        Me.gbExtractFromASCII.Location = New System.Drawing.Point(13, 307)
+        Me.gbExtractFromASCII.Location = New System.Drawing.Point(13, 324)
         Me.gbExtractFromASCII.Name = "gbExtractFromASCII"
-        Me.gbExtractFromASCII.Size = New System.Drawing.Size(499, 118)
+        Me.gbExtractFromASCII.Size = New System.Drawing.Size(499, 99)
         Me.gbExtractFromASCII.TabIndex = 38
         Me.gbExtractFromASCII.TabStop = False
         '
-        'tbCondition
+        'btSelectBaseRasterFile
         '
-        Me.tbCondition.Location = New System.Drawing.Point(257, 65)
-        Me.tbCondition.Name = "tbCondition"
-        Me.tbCondition.Size = New System.Drawing.Size(160, 21)
-        Me.tbCondition.TabIndex = 223
+        Me.btSelectBaseRasterFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btSelectBaseRasterFile.Location = New System.Drawing.Point(7, 69)
+        Me.btSelectBaseRasterFile.Name = "btSelectBaseRasterFile"
+        Me.btSelectBaseRasterFile.Size = New System.Drawing.Size(108, 21)
+        Me.btSelectBaseRasterFile.TabIndex = 223
+        Me.btSelectBaseRasterFile.Text = "Base raster file "
+        Me.btSelectBaseRasterFile.UseVisualStyleBackColor = True
+        '
+        'tbBaseGridFile
+        '
+        Me.tbBaseGridFile.Location = New System.Drawing.Point(121, 69)
+        Me.tbBaseGridFile.Name = "tbBaseGridFile"
+        Me.tbBaseGridFile.Size = New System.Drawing.Size(366, 21)
+        Me.tbBaseGridFile.TabIndex = 222
         '
         'cbStatistics
         '
@@ -210,36 +214,6 @@ Partial Class fExtractValue
         Me.cbStatistics.Name = "cbStatistics"
         Me.cbStatistics.Size = New System.Drawing.Size(81, 20)
         Me.cbStatistics.TabIndex = 221
-        '
-        'rbCountCellNumber
-        '
-        Me.rbCountCellNumber.AutoSize = True
-        Me.rbCountCellNumber.Location = New System.Drawing.Point(6, 67)
-        Me.rbCountCellNumber.Name = "rbCountCellNumber"
-        Me.rbCountCellNumber.Size = New System.Drawing.Size(250, 16)
-        Me.rbCountCellNumber.TabIndex = 222
-        Me.rbCountCellNumber.Text = "Count the number of cells.   Condition : "
-        Me.rbCountCellNumber.UseVisualStyleBackColor = True
-        '
-        'chkAllowNegativeInCalCellAverage
-        '
-        Me.chkAllowNegativeInCalCellAverage.AutoSize = True
-        Me.chkAllowNegativeInCalCellAverage.Location = New System.Drawing.Point(257, 44)
-        Me.chkAllowNegativeInCalCellAverage.Name = "chkAllowNegativeInCalCellAverage"
-        Me.chkAllowNegativeInCalCellAverage.Size = New System.Drawing.Size(147, 16)
-        Me.chkAllowNegativeInCalCellAverage.TabIndex = 221
-        Me.chkAllowNegativeInCalCellAverage.Text = "Allow negative values"
-        Me.chkAllowNegativeInCalCellAverage.UseVisualStyleBackColor = True
-        '
-        'btHelpCountCellNumber
-        '
-        Me.btHelpCountCellNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btHelpCountCellNumber.Location = New System.Drawing.Point(423, 65)
-        Me.btHelpCountCellNumber.Name = "btHelpCountCellNumber"
-        Me.btHelpCountCellNumber.Size = New System.Drawing.Size(64, 21)
-        Me.btHelpCountCellNumber.TabIndex = 220
-        Me.btHelpCountCellNumber.Text = "Help?"
-        Me.btHelpCountCellNumber.UseVisualStyleBackColor = True
         '
         'btHelpCalStatistics
         '
@@ -305,23 +279,6 @@ Partial Class fExtractValue
         Me.Label1.TabIndex = 210
         Me.Label1.Text = "ColX :"
         '
-        'btSelectBaseRasterFile
-        '
-        Me.btSelectBaseRasterFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btSelectBaseRasterFile.Location = New System.Drawing.Point(20, 396)
-        Me.btSelectBaseRasterFile.Name = "btSelectBaseRasterFile"
-        Me.btSelectBaseRasterFile.Size = New System.Drawing.Size(108, 21)
-        Me.btSelectBaseRasterFile.TabIndex = 219
-        Me.btSelectBaseRasterFile.Text = "Base raster file "
-        Me.btSelectBaseRasterFile.UseVisualStyleBackColor = True
-        '
-        'tbBaseGridFile
-        '
-        Me.tbBaseGridFile.Location = New System.Drawing.Point(134, 396)
-        Me.tbBaseGridFile.Name = "tbBaseGridFile"
-        Me.tbBaseGridFile.Size = New System.Drawing.Size(366, 21)
-        Me.tbBaseGridFile.TabIndex = 218
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.tbFileNameFilter)
@@ -336,7 +293,7 @@ Partial Class fExtractValue
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Location = New System.Drawing.Point(13, 16)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 259)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 280)
         Me.GroupBox2.TabIndex = 39
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
@@ -372,7 +329,7 @@ Partial Class fExtractValue
         Me.lstFiles.Location = New System.Drawing.Point(10, 81)
         Me.lstFiles.Name = "lstFiles"
         Me.lstFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstFiles.Size = New System.Drawing.Size(410, 136)
+        Me.lstFiles.Size = New System.Drawing.Size(410, 160)
         Me.lstFiles.TabIndex = 39
         '
         'txtFolderPathSource
@@ -404,7 +361,7 @@ Partial Class fExtractValue
         'btAddAllFiles
         '
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 222)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 247)
         Me.btAddAllFiles.Name = "btAddAllFiles"
         Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
         Me.btAddAllFiles.TabIndex = 13
@@ -414,7 +371,7 @@ Partial Class fExtractValue
         'btAddSelectedFile
         '
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 222)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 247)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
         Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
         Me.btAddSelectedFile.TabIndex = 14
@@ -445,7 +402,7 @@ Partial Class fExtractValue
         '
         Me.rbValueFromASCIIFiles.AutoSize = True
         Me.rbValueFromASCIIFiles.Checked = True
-        Me.rbValueFromASCIIFiles.Location = New System.Drawing.Point(13, 292)
+        Me.rbValueFromASCIIFiles.Location = New System.Drawing.Point(13, 309)
         Me.rbValueFromASCIIFiles.Name = "rbValueFromASCIIFiles"
         Me.rbValueFromASCIIFiles.Size = New System.Drawing.Size(331, 16)
         Me.rbValueFromASCIIFiles.TabIndex = 44
@@ -467,7 +424,7 @@ Partial Class fExtractValue
         'rbAccAscRaster
         '
         Me.rbAccAscRaster.AutoSize = True
-        Me.rbAccAscRaster.Location = New System.Drawing.Point(525, 292)
+        Me.rbAccAscRaster.Location = New System.Drawing.Point(525, 309)
         Me.rbAccAscRaster.Name = "rbAccAscRaster"
         Me.rbAccAscRaster.Size = New System.Drawing.Size(188, 16)
         Me.rbAccAscRaster.TabIndex = 48
@@ -480,9 +437,9 @@ Partial Class fExtractValue
         Me.gbAcc.Controls.Add(Me.chkAllowNegativeInAcc)
         Me.gbAcc.Controls.Add(Me.rbAggregate)
         Me.gbAcc.Controls.Add(Me.rbAccAllFiles)
-        Me.gbAcc.Location = New System.Drawing.Point(523, 307)
+        Me.gbAcc.Location = New System.Drawing.Point(523, 324)
         Me.gbAcc.Name = "gbAcc"
-        Me.gbAcc.Size = New System.Drawing.Size(359, 118)
+        Me.gbAcc.Size = New System.Drawing.Size(359, 99)
         Me.gbAcc.TabIndex = 47
         Me.gbAcc.TabStop = False
         '
@@ -886,9 +843,7 @@ Partial Class fExtractValue
         Me.Controls.Add(Me.gbColCon)
         Me.Controls.Add(Me.gbLineCon)
         Me.Controls.Add(Me.rbAccAscRaster)
-        Me.Controls.Add(Me.btSelectBaseRasterFile)
         Me.Controls.Add(Me.gbAcc)
-        Me.Controls.Add(Me.tbBaseGridFile)
         Me.Controls.Add(Me.rbValueFromTextFile)
         Me.Controls.Add(Me.rbValueFromASCIIFiles)
         Me.Controls.Add(Me.btClose)
@@ -954,9 +909,6 @@ Partial Class fExtractValue
     Friend WithEvents rbExtractFromAcell As RadioButton
     Friend WithEvents rbCalStatistics As RadioButton
     Friend WithEvents btHelpCalStatistics As Button
-    Friend WithEvents btSelectBaseRasterFile As Button
-    Friend WithEvents tbBaseGridFile As TextBox
-    Friend WithEvents chkAllowNegativeInCalCellAverage As CheckBox
     Friend WithEvents tbFileNameFilter As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
@@ -993,8 +945,7 @@ Partial Class fExtractValue
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents rbCountCellNumber As RadioButton
     Friend WithEvents cbStatistics As ComboBox
-    Friend WithEvents tbCondition As TextBox
-    Friend WithEvents btHelpCountCellNumber As Button
+    Friend WithEvents btSelectBaseRasterFile As Button
+    Friend WithEvents tbBaseGridFile As TextBox
 End Class

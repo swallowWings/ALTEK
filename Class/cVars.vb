@@ -21,7 +21,7 @@
         CalMaximumFromASCIIfile
         CalMinimumFromASCIIfile
         ExtractValueFromTextFile
-        CountCellNumber
+        'CountCellNumber
         AccAllAsc
         AggAscFiles
         CutDecimalPart
