@@ -17,13 +17,13 @@ Public Class fExtractValue
     Private mrowy As Integer = 0
     Private mFPNbase As String = ""
     Private mBaseASC As cAscRasterReader
-    Private mBaseCellsPos() As CellPosition
+    Private mTargetCellsPos() As CellPosition
 
     'Private mStatText As String = ""
-    Private Const CONST_STRING_AVE As String = "Average"
-    Private Const CONST_STRING_MAX As String = "Maximum"
-    Private Const CONST_STRING_MIN As String = "Minimum"
-    Private Const CONST_STRING_SUM As String = "Sum"
+    'Private Const CONST_STRING_AVE As String = "Average"
+    'Private Const CONST_STRING_MAX As String = "Maximum"
+    'Private Const CONST_STRING_MIN As String = "Minimum"
+    'Private Const CONST_STRING_SUM As String = "Sum"
 
     Private mfileNagg As Integer = 0
     Private mNextFileOrderToStartAgg = 1
@@ -49,10 +49,11 @@ Public Class fExtractValue
         mbIsAllDataNormal = True
         Me.dgvRainfallFileList.DataSource = mdtSourceFile
         SetDataGridViewForm()
-        Me.cbStatistics.Items.Add(CONST_STRING_AVE)
-        Me.cbStatistics.Items.Add(CONST_STRING_MAX)
-        Me.cbStatistics.Items.Add(CONST_STRING_MIN)
-        Me.cbStatistics.Text = CONST_STRING_AVE
+        Me.cbStatistics.Items.Add(cData.StatisticsType.Average.ToString)
+        Me.cbStatistics.Items.Add(cData.StatisticsType.Maximum.ToString)
+        Me.cbStatistics.Items.Add(cData.StatisticsType.Minimum.ToString)
+        Me.cbStatistics.Items.Add(cData.StatisticsType.Sum.ToString)
+        Me.cbStatistics.Text = cData.StatisticsType.Average.ToString
     End Sub
 
 
@@ -74,12 +75,12 @@ Public Class fExtractValue
             If Me.rbCalStatistics.Checked Then
                 mFPNbase = ""
                 mBaseASC = Nothing
-                mBaseCellsPos = Nothing
+                mTargetCellsPos = Nothing
                 If Me.tbBaseGridFile.Text.Trim <> "" AndAlso File.Exists(Me.tbBaseGridFile.Text.Trim) Then
                     mFPNbase = Me.tbBaseGridFile.Text.Trim
                     mBaseASC = New cAscRasterReader(mFPNbase)
-                    mBaseCellsPos = cAscRasterReader.GetPositiveCellsPositions(mBaseASC)
-                    If mBaseCellsPos.Length < 1 Then
+                    mTargetCellsPos = cAscRasterReader.GetPositiveCellsPositions(mBaseASC)
+                    If mTargetCellsPos.Length < 1 Then
                         MsgBox("No positive cell.", MsgBoxStyle.Critical)
                         Exit Sub
                     End If
@@ -267,7 +268,7 @@ Public Class fExtractValue
                         Dim aveV As Double = 0
                         If mFPNbase <> "" Then
                             If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
-                                aveV = cAscRasterReader.CellsAverageValue(mBaseCellsPos, ascfile)
+                                aveV = cAscRasterReader.StatisticValueInSomeCells(ascfile, mTargetCellsPos, cData.StatisticsType.Average)
                             Else
                                 MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
                                 mfPrograssBar.Close()
@@ -284,7 +285,7 @@ Public Class fExtractValue
                         Dim aV As Double = 0
                         If mFPNbase <> "" Then
                             If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
-                                aV = cAscRasterReader.CellsMaxValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                                aV = cAscRasterReader.StatisticValueInSomeCells(ascfile, mTargetCellsPos, cData.StatisticsType.Maximum)
                             Else
                                 MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
                                 mfPrograssBar.Close()
@@ -301,7 +302,7 @@ Public Class fExtractValue
                         Dim aV As Double = 0
                         If mFPNbase <> "" Then
                             If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
-                                aV = cAscRasterReader.CellsMinValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                                aV = cAscRasterReader.StatisticValueInSomeCells(ascfile, mTargetCellsPos, cData.StatisticsType.Minimum)
                             Else
                                 MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
                                 mfPrograssBar.Close()
@@ -318,7 +319,7 @@ Public Class fExtractValue
                         Dim aV As Double = 0
                         If mFPNbase <> "" Then
                             If cAscRasterReader.CheckTwoGridLayerExtentUsingRowAndColNum(mBaseASC, ascfile) = True Then
-                                aV = cAscRasterReader.CellsSumValue(mBaseCellsPos, ascfile, mbAllowNegative)
+                                aV = cAscRasterReader.StatisticValueInSomeCells(ascfile, mTargetCellsPos, cData.StatisticsType.Sum)
                             Else
                                 MsgBox(String.Format("Current asc file {0} has different region from base asc file. ", ascfile), MsgBoxStyle.Exclamation)
                                 mfPrograssBar.Close()
@@ -404,7 +405,7 @@ Public Class fExtractValue
 
             mfPrograssBar.Close()
             'If bIsConvertingError = False Then
-            MsgBox(strProcessingMsg + " " + CStr(mdtSourceFile.Rows.Count) + " files is completed!!!   ", MsgBoxStyle.Information)
+            MsgBox(strProcessingMsg + " " + CStr(mdtSourceFile.Rows.Count) + " files were completed!!!   ", MsgBoxStyle.Information)
             'Else
             '    MsgBox("Some errors were occured while converting file(s).   ", MsgBoxStyle.Exclamation)
             'End If
@@ -421,11 +422,11 @@ Public Class fExtractValue
         If Me.rbValueFromASCIIFiles.Checked Then
             If Me.rbExtractFromAcell.Checked Then Return cVars.ProcessingType.ExtractAcellValueFromASCIIFile
             If Me.rbCalStatistics.Checked Then
-                If Me.cbStatistics.Text.Trim = CONST_STRING_AVE Then Return cVars.ProcessingType.CalAverageFromASCIIFile
-                If Me.cbStatistics.Text.Trim = CONST_STRING_MAX Then Return cVars.ProcessingType.CalMaximumFromASCIIFile
-                If Me.cbStatistics.Text.Trim = CONST_STRING_MIN Then Return cVars.ProcessingType.CalMinimumFromASCIIFile
+                If Me.cbStatistics.Text.Trim = cData.StatisticsType.Average.ToString Then Return cVars.ProcessingType.CalAverageFromASCIIFile
+                If Me.cbStatistics.Text.Trim = cData.StatisticsType.Maximum.ToString Then Return cVars.ProcessingType.CalMaximumFromASCIIFile
+                If Me.cbStatistics.Text.Trim = cData.StatisticsType.Minimum.ToString Then Return cVars.ProcessingType.CalMinimumFromASCIIFile
+                If Me.cbStatistics.Text.Trim = cData.StatisticsType.Sum.ToString Then Return cVars.ProcessingType.CalSumFromASCIIfile
             End If
-            'If Me.rbCountCellNumber.Checked Then Return cVars.ProcessingType.CountCellNumber
         End If
         If rbAccAscRaster.Checked Then
             If rbAccAllFiles.Checked Then Return cVars.ProcessingType.AccAllAsc
@@ -461,7 +462,7 @@ Public Class fExtractValue
 
 
     Private Sub btOpenDestinationFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btOpenDestFolderOrFile.Click
-        If Me.rbValueFromASCIIFiles.Checked Then
+        If Me.rbValueFromASCIIFiles.Checked OrElse (rbAccAllFiles.Enabled = True AndAlso rbAccAllFiles.Checked = True) Then
             Dim fb As New SaveFileDialog
             fb.DefaultExt = "txt"
             fb.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
@@ -541,6 +542,12 @@ Public Class fExtractValue
             Me.tbFileNameTail.Text = ""
             Me.tbFileNameHead.Enabled = False
             Me.tbFileNameTail.Enabled = False
+            If rbAccAllFiles.Checked = True Then
+                Me.btOpenDestFolderOrFile.Text = "Destination file"
+            End If
+            If rbAggregate.Checked = True Then
+                Me.btOpenDestFolderOrFile.Text = "Destination folder"
+            End If
         End If
 
         If Me.rbValueFromTextFile.Checked Then

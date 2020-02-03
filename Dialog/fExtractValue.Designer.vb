@@ -771,7 +771,7 @@ Partial Class fExtractValue
         Me.btOpenDestFolderOrFile.Name = "btOpenDestFolderOrFile"
         Me.btOpenDestFolderOrFile.Size = New System.Drawing.Size(122, 21)
         Me.btOpenDestFolderOrFile.TabIndex = 29
-        Me.btOpenDestFolderOrFile.Text = "Destination folder"
+        Me.btOpenDestFolderOrFile.Text = "Destination file"
         Me.btOpenDestFolderOrFile.UseVisualStyleBackColor = True
         '
         'tbFileNameHead
