@@ -632,7 +632,6 @@ Public Class fExtractValue
     End Sub
 
     Private Sub btAddAllFiles_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAddAllFiles.Click
-
         Call AddFiles(False)
     End Sub
 
