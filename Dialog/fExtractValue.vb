@@ -79,7 +79,7 @@ Public Class fExtractValue
                 If Me.tbBaseGridFile.Text.Trim <> "" AndAlso File.Exists(Me.tbBaseGridFile.Text.Trim) Then
                     mFPNbase = Me.tbBaseGridFile.Text.Trim
                     mBaseASC = New cAscRasterReader(mFPNbase)
-                    mTargetCellsPos = cAscRasterReader.GetPositiveCellsPositions(mBaseASC)
+                    mTargetCellsPos = cAscRasterReader.GetPositiveCellsPositionsInASCfile(mBaseASC)
                     If mTargetCellsPos.Length < 1 Then
                         MsgBox("No positive cell.", MsgBoxStyle.Critical)
                         Exit Sub
