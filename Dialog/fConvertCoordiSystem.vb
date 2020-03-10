@@ -255,32 +255,39 @@ Public Class fConvertCoordiSystem
                 resultFNWithoutExtension = mFileNamePrefix + IO.Path.GetFileNameWithoutExtension(r.FileName) + mFileNameTag
                 prjFPNsource = Path.Combine(Path.GetDirectoryName(sourceFPN), Path.GetFileNameWithoutExtension(sourceFPN) + ".prj")
 
+                If fileFormatOutput = cGdal.GdalFormat.GTiff Then
+                    resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".tif")
+                End If
+                If fileFormatOutput = cGdal.GdalFormat.AAIGrid Then
+                    resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
+                End If
+
                 If fileFormatInput = cGdal.GdalFormat.GTiff Then
                     srsInput = ""
-                    If fileFormatOutput = cGdal.GdalFormat.GTiff Then
-                        resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".tif")
-                    End If
-                    If fileFormatOutput = cGdal.GdalFormat.AAIGrid Then
-                        resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
-                    End If
-                    cGdal.ConvertCoordSystem(sourceFPN, resultFPN, fileFormatOutput, srsOutput, outputDataType, srsInput)
+                    'If fileFormatOutput = cGdal.GdalFormat.GTiff Then
+                    '    resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".tif")
+                    'End If
+                    'If fileFormatOutput = cGdal.GdalFormat.AAIGrid Then
+                    '    resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
+                    'End If
+                    'cGdal.ConvertCoordSystem(sourceFPN, resultFPN, fileFormatOutput, srsOutput, outputDataType, srsInput)
                 End If
                 If fileFormatInput = cGdal.GdalFormat.AAIGrid Then
-                    If fileFormatOutput = cGdal.GdalFormat.GTiff Then
-                        resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".tif")
-                    End If
+                    'If fileFormatOutput = cGdal.GdalFormat.GTiff Then
+                    '    resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".tif")
+                    'End If
 
-                    If fileFormatOutput = cGdal.GdalFormat.AAIGrid Then
-                        resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
-                    End If
+                    'If fileFormatOutput = cGdal.GdalFormat.AAIGrid Then
+                    '    resultFPN = Path.Combine(mstrDestinationFolderPath, resultFNWithoutExtension + ".asc")
+                    'End If
                     If bUseInputSRS = False AndAlso File.Exists(prjFPNsource) = False Then
                         MsgBox(String.Format("Source file ({0}) coordinate system info. was invalid.     ", sourceFPN), MsgBoxStyle.Exclamation)
                         mfPrograssBar.Close()
                         Exit Sub
                     End If
-                    cGdal.ConvertCoordSystem(sourceFPN, resultFPN, fileFormatOutput, srsOutput, outputDataType, srsInput)
+                    'cGdal.ConvertCoordSystem(sourceFPN, resultFPN, fileFormatOutput, srsOutput, outputDataType, srsInput)
                 End If
-
+                cGdal.ConvertCoordSystem(sourceFPN, resultFPN, fileFormatOutput, srsOutput, outputDataType, srsInput)
                 mfPrograssBar.GRMToolsPrograssBar.Value = r.FileOrder
                 mfPrograssBar.labGRMToolsPrograssBar.Text = strProcessingMsg + " " + CStr(r.FileOrder) + "/" & CStr(mdtSourceFile.Rows.Count) & " file..."
                 System.Windows.Forms.Application.DoEvents()
