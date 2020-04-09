@@ -118,24 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TextBox1.Text" xml:space="preserve">
-    <value>
- - The algebraic equation has to contain 2 values (or variables) and one operator.
+    <value> - The algebraic equation has to contain 2 values (or variables) and one operator.
  - In conditional expression, [condition] term has to contain 2 values (or variables) and one condtion operator.
    And also, [true] and [false] terms can contain up to 2 values (or variables) and one operator in each other.
  - Available operators are +, -, *, /, ^, &gt;, &lt;, =, &gt;=, or &lt;=.
+ - Available math. operators are 'pow' and 'abs'.
  - Files have to be applied using the characters A(or a), B(or b), or C(or c).
- - Calculating nodata values as 0 is just applied to the algrebraic equations (algrebraic eqs. in conditional expression are included).
+ - Only A raster file(s) can be used in math. calculation.
+ - Calculating nodata values as 0 is just applied to the algrebraic eqations (algrebraic eqs. in conditional expression are included).
    If 'Calculate nodata as 0' option is checked, the nodata values in ascii raster files are converted into '0' automatically, 
-       and applied to calculation.
+       and applied to calculation. 
    All ascii raster files have to have the same nodata value.
 
- (Usages)  (*** FoN means 'file or number'.)
+ (Usages)   (*** FoN means 'raster file or number'.). F means 'raster file'. N means 'number'.
    - [FoN][operator][FoN]
    - if(condition, true value, false value)
      if([FoN][condition operator][FoN], [FoN][operator][FoN], [FoN][operator][FoN])
+   - [math operator](F, N)
 
-(Examples)
+ (Examples)
    - A+1, A-B, A*B, A/2, A^3, etc.
-   - if(A&gt;1, 0, B),  if(A&gt;=1, C, B), if(a&lt;B, b, c), if(A&lt;B, B+1, C^2), if(A&lt;B, B, C+1), if(A&lt;B, B+C, B-C), etc.</value>
+   - if(A&gt;1, 0, B), if(A&gt;=1, C, B), if(a&lt;B, b, c), if(A&lt;B, B+1, C^2), if(A&lt;B, B, C+1), if(A&lt;B, B+C, B-C), etc.
+   - pow(A, 0.5), pow(A, 3), abs(A), etc.</value>
   </data>
 </root>

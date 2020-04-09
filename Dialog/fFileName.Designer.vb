@@ -272,9 +272,9 @@ Partial Class fFileName
         Me.rbRenameToDateTimeFormat.AutoSize = True
         Me.rbRenameToDateTimeFormat.Location = New System.Drawing.Point(136, 20)
         Me.rbRenameToDateTimeFormat.Name = "rbRenameToDateTimeFormat"
-        Me.rbRenameToDateTimeFormat.Size = New System.Drawing.Size(208, 16)
+        Me.rbRenameToDateTimeFormat.Size = New System.Drawing.Size(324, 16)
         Me.rbRenameToDateTimeFormat.TabIndex = 213
-        Me.rbRenameToDateTimeFormat.Text = "Rename files to DateTime format"
+        Me.rbRenameToDateTimeFormat.Text = "Rename files to DateTime format (yyyymmddHHMM)"
         Me.rbRenameToDateTimeFormat.UseVisualStyleBackColor = True
         '
         'GroupBox4
@@ -373,7 +373,7 @@ Partial Class fFileName
         'rbMakeBatchFile
         '
         Me.rbMakeBatchFile.AutoSize = True
-        Me.rbMakeBatchFile.Location = New System.Drawing.Point(385, 42)
+        Me.rbMakeBatchFile.Location = New System.Drawing.Point(507, 42)
         Me.rbMakeBatchFile.Name = "rbMakeBatchFile"
         Me.rbMakeBatchFile.Size = New System.Drawing.Size(231, 16)
         Me.rbMakeBatchFile.TabIndex = 216
@@ -393,7 +393,7 @@ Partial Class fFileName
         'rbChangeFileExt
         '
         Me.rbChangeFileExt.AutoSize = True
-        Me.rbChangeFileExt.Location = New System.Drawing.Point(385, 20)
+        Me.rbChangeFileExt.Location = New System.Drawing.Point(507, 20)
         Me.rbChangeFileExt.Name = "rbChangeFileExt"
         Me.rbChangeFileExt.Size = New System.Drawing.Size(153, 16)
         Me.rbChangeFileExt.TabIndex = 214

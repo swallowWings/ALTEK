@@ -278,7 +278,9 @@ Public Class fCalculator
                             bt2ASC = True
                         End If
                         '이 경우 true 값은 무조건 array 이다.
-                        ifTrueAsc = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInTrue, bt1ASC, bt2ASC, bASC1noDataZero, bASC2noDataZero, t1ASC, t2ASC, t1V, t2V, nv)
+                        ifTrueAsc = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInTrue, bt1ASC, bt2ASC,
+                                                                                 bASC1noDataZero, bASC2noDataZero, t1ASC,
+                                                                                 t2ASC, t1V, t2V, nv)
                         bIftrueIsASC = True
                     End If
                     '===============================================
@@ -341,66 +343,96 @@ Public Class fCalculator
                             bf2ASC = True
                         End If
                         '이경우 false 값은 무조건 array 이다.
-                        ifFalseAsc = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInFalse, bf1ASC, bf2ASC, bASC1noDataZero, bASC2noDataZero, f1ASC, f2ASC, f1V, f2V, nv)
+                        ifFalseAsc = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInFalse, bf1ASC,
+                                                                                  bf2ASC, bASC1noDataZero, bASC2noDataZero,
+                                                                                  f1ASC, f2ASC, f1V, f2V, nv)
                         bIffalseIsASC = True
 
                     End If
-                    resultArr = cCalculator.calculate2DArryUsingCondition(operatorInCondition, bIf1IsASC, bIf2IsASC, bIftrueIsASC, bIffalseIsASC,
+                    resultArr = cCalculator.calculate2DArryUsingCondition(operatorInCondition, bIf1IsASC,
+                                                                          bIf2IsASC, bIftrueIsASC, bIffalseIsASC,
                                                          ifFirstAsc, ifSecondAsc, ifTrueAsc, ifFalseAsc,
                                                           ifFirstV, ifSecondV, ifTrueV, ifFalseV, nv)
                 Else
-                    '        a + B
-                    '        0  1 2 
-                    If mMathArgEle.Length > 2 Then
-                        MsgBox("Just 2 elements and one operator are allowed in algebraic expression.   ", MsgBoxStyle.Information)
-                        mfPrograssBar.Close()
-                        Exit Sub
-                    End If
-                    Dim vc As Double = 0
-                    Dim bASC1noDataZero As Boolean = False
-                    Dim bASC2noDataZero As Boolean = False
-                    If Double.TryParse(mMathArgEle(0), vc) = True Then
-                        ifFirstV = vc
+                    '    a + B  / pow, A, 0.5  / abs, A
+                    If Trim(mMathArgEle(0)).ToLower = "pow" OrElse Trim(mMathArgEle(0)).ToLower = "abs" Then
+                        Dim ftype As cData.MathFunctionType
+                        Dim expV As Double
+                        If Trim(mMathArgEle(0)).ToLower = "pow" Then
+                            If mMathArgEle.Length <> 3 Then
+                                MsgBox("Just 3 elements are allowed in math.pow calculation.   ", MsgBoxStyle.Information)
+                                mfPrograssBar.Close()
+                                Exit Sub
+                            End If
+                            ftype = cData.MathFunctionType.Pow
+                            expV = CDbl(mMathArgEle(2))
+                        ElseIf Trim(mMathArgEle(0)).ToLower = "abs" Then
+                            If mMathArgEle.Length <> 2 Then
+                                MsgBox("Just 2  elements are allowed in math.abs calculation.   ", MsgBoxStyle.Information)
+                                mfPrograssBar.Close()
+                                Exit Sub
+                            End If
+                            ftype = cData.MathFunctionType.Abs
+                            expV = 1
+                        End If
+                        resultArr = cCalculator.calculate2DArryUsingMathFunction(mAscA.ValuesFromTL, ftype, expV)
                     Else
-                        If mMathArgEle(0).ToLower = "a" Then
-                            ifFirstAsc = mAscA.ValuesFromTL
-                            bASC1noDataZero = mNodataAsZeroASCa
+                        '        a + B
+                        If mMathArgEle.Length > 2 Then
+                            MsgBox("Just 2 elements and one operator are allowed in algebraic expression.   ", MsgBoxStyle.Information)
+                            mfPrograssBar.Close()
+                            Exit Sub
                         End If
-                        If mMathArgEle(0).ToLower = "b" Then
-                            ifFirstAsc = mAscB.ValuesFromTL
-                            bASC1noDataZero = mNodataAsZeroASCb
+                        Dim vc As Double = 0
+                        Dim bASC1noDataZero As Boolean = False
+                        Dim bASC2noDataZero As Boolean = False
+                        If Double.TryParse(mMathArgEle(0), vc) = True Then
+                            ifFirstV = vc
+                        Else
+                            If mMathArgEle(0).ToLower = "a" Then
+                                ifFirstAsc = mAscA.ValuesFromTL
+                                bASC1noDataZero = mNodataAsZeroASCa
+                            End If
+                            If mMathArgEle(0).ToLower = "b" Then
+                                ifFirstAsc = mAscB.ValuesFromTL
+                                bASC1noDataZero = mNodataAsZeroASCb
+                            End If
+                            If mMathArgEle(0).ToLower = "c" Then
+                                ifFirstAsc = mAscC.ValuesFromTL
+                                bASC1noDataZero = mNodataAsZeroASCc
+                            End If
+                            bIf1IsASC = True
                         End If
-                        If mMathArgEle(0).ToLower = "c" Then
-                            ifFirstAsc = mAscC.ValuesFromTL
-                            bASC1noDataZero = mNodataAsZeroASCc
+                        If Double.TryParse(mMathArgEle(1), vc) = True Then
+                            ifSecondV = vc
+                        Else
+                            If mMathArgEle(1).ToLower = "a" Then
+                                ifSecondAsc = mAscA.ValuesFromTL
+                                bASC2noDataZero = mNodataAsZeroASCa
+                            End If
+                            If mMathArgEle(1).ToLower = "b" Then
+                                ifSecondAsc = mAscB.ValuesFromTL
+                                bASC2noDataZero = mNodataAsZeroASCb
+                            End If
+                            If mMathArgEle(1).ToLower = "c" Then
+                                ifSecondAsc = mAscC.ValuesFromTL
+                                bASC2noDataZero = mNodataAsZeroASCc
+                            End If
+                            bIf2IsASC = True
                         End If
-                        bIf1IsASC = True
-                    End If
-                    If Double.TryParse(mMathArgEle(1), vc) = True Then
-                        ifSecondV = vc
-                    Else
-                        If mMathArgEle(1).ToLower = "a" Then
-                            ifSecondAsc = mAscA.ValuesFromTL
-                            bASC2noDataZero = mNodataAsZeroASCa
-                        End If
-                        If mMathArgEle(1).ToLower = "b" Then
-                            ifSecondAsc = mAscB.ValuesFromTL
-                            bASC2noDataZero = mNodataAsZeroASCb
-                        End If
-                        If mMathArgEle(1).ToLower = "c" Then
-                            ifSecondAsc = mAscC.ValuesFromTL
-                            bASC2noDataZero = mNodataAsZeroASCc
-                        End If
-                        bIf2IsASC = True
-                    End If
 
-                    Dim operatorInString As String = cCalculator.getOperatorFromString(mMathArg)
-                    resultArr = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInString, bIf1IsASC, bIf2IsASC, bASC1noDataZero, bASC2noDataZero, ifFirstAsc, ifSecondAsc, ifFirstV, ifSecondV)
+                        Dim operatorInString As String = cCalculator.getOperatorFromString(mMathArg)
+                        resultArr = cCalculator.calculate2DArryUsing2TermAlgebra(operatorInString, bIf1IsASC, bIf2IsASC,
+                                                                             bASC1noDataZero, bASC2noDataZero, ifFirstAsc,
+                                                                             ifSecondAsc, ifFirstV, ifSecondV)
+                    End If
                 End If
                 cTextFile.MakeASCTextFile(mfpnOut, headerStringAll, resultArr, mDecimalN, mAscA.Header.nodataValue)
-                Dim prjFPNSource As String = Path.Combine(Path.GetDirectoryName(lstFileA(fn).Trim), Path.GetFileNameWithoutExtension(lstFileA(fn).Trim) + ".prj")
+                Dim prjFPNSource As String = Path.Combine(Path.GetDirectoryName(lstFileA(fn).Trim),
+                                                          Path.GetFileNameWithoutExtension(lstFileA(fn).Trim) + ".prj")
                 If File.Exists(prjFPNSource) = True Then
-                    Dim prjFPNout As String = Path.Combine(Path.GetDirectoryName(mfpnOut), Path.GetFileNameWithoutExtension(mfpnOut) + ".prj")
+                    Dim prjFPNout As String = Path.Combine(Path.GetDirectoryName(mfpnOut),
+                                                           Path.GetFileNameWithoutExtension(mfpnOut) + ".prj")
                     If File.Exists(prjFPNout) = True Then
                         File.Delete(prjFPNout)
                     End If
@@ -451,20 +483,24 @@ Public Class fCalculator
         str = str + " - In conditional expression, [condition] term has to contain 2 values (or variables) and one condtion operator." + vbCrLf
         str = str + "   And also, [true] and [false] terms can contain up to 2 values (or variables) and one operator in each other." + vbCrLf
         str = str + " - Available operators are +, -, *, /, ^, >, <, =, >=, or <=." + vbCrLf
+        str = str + " - Available math. operators are 'pow' and 'abs'." + vbCrLf
         str = str + " - Files have to be applied using the characters A(or a), B(or b), or C(or c)." + vbCrLf
+        str = str + " - Only A raster file(s) can be used in math. calculation." + vbCrLf
         str = str + " - Calculating nodata values as 0 is just applied to the algrebraic eqations (algrebraic eqs. in conditional expression are included)." + vbCrLf
         str = str + "   If 'Calculate nodata as 0' option is checked, the nodata values in ascii raster files are converted into '0' automatically, " + vbCrLf
         str = str + "       and applied to calculation. " + vbCrLf
         str = str + "   All ascii raster files have to have the same nodata value." + vbCrLf
         str = str + "" + vbCrLf
-        str = str + " (Usages)   (*** FoN means 'file or number'.) " + vbCrLf
+        str = str + " (Usages)   (*** FoN means 'raster file or number'.). F means 'raster file'. N means 'number'." + vbCrLf
         str = str + "   - [FoN][operator][FoN]" + vbCrLf
         str = str + "   - if(condition, true value, false value)" + vbCrLf
         str = str + "     if([FoN][condition operator][FoN], [FoN][operator][FoN], [FoN][operator][FoN])" + vbCrLf
+        str = str + "   - [math operator](F, N)" + vbCrLf
         str = str + "" + vbCrLf
         str = str + " (Examples)" + vbCrLf
         str = str + "   - A+1, A-B, A*B, A/2, A^3, etc." + vbCrLf
-        str = str + "   - if(A>1, 0, B),  if(A>=1, C, B), if(a<B, b, c), if(A<B, B+1, C^2), if(A<B, B, C+1), if(A<B, B+C, B-C), etc." + vbCrLf
+        str = str + "   - if(A>1, 0, B), if(A>=1, C, B), if(a<B, b, c), if(A<B, B+1, C^2), if(A<B, B, C+1), if(A<B, B+C, B-C), etc." + vbCrLf
+        str = str + "   - pow(A, 0.5), pow(A, 3), abs(A), etc." + vbCrLf
         Dim fh As New fHelp
         fh.tbTextToShow.Text = str
         fh.tbTextToShow.Select(Len(str), 0)
