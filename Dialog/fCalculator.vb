@@ -30,6 +30,7 @@ Public Class fCalculator
             End If
         Else
             Dim mfb As New OpenFileDialog
+            mfb.Filter = "ESRI ASCII text files (*.asc)|*.asc|All files (*.*)|*.*"
             If mfb.ShowDialog() = DialogResult.OK Then
                 tbInFileA.Text = mfb.FileName
             End If
@@ -38,6 +39,7 @@ Public Class fCalculator
 
     Private Sub btSelectAscFileB_Click(sender As Object, e As EventArgs) Handles btSelectAscFileB.Click
         Dim fb As New OpenFileDialog
+        fb.Filter = "ESRI ASCII text files (*.asc)|*.asc|All files (*.*)|*.*"
         If fb.ShowDialog() = DialogResult.OK Then
             tbInFileB.Text = fb.FileName
         End If
@@ -45,6 +47,7 @@ Public Class fCalculator
 
     Private Sub btSelectAscFileC_Click(sender As Object, e As EventArgs) Handles btSelectAscFileC.Click
         Dim fb As New OpenFileDialog
+        fb.Filter = "ESRI ASCII text files (*.asc)|*.asc|All files (*.*)|*.*"
         If fb.ShowDialog() = DialogResult.OK Then
             tbInFileC.Text = fb.FileName
         End If

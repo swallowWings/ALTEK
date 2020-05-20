@@ -731,6 +731,7 @@ Public Class fExtractValue
 
     Private Sub btSelectBaseRasterFile_Click(sender As Object, e As EventArgs) Handles btSelectBaseRasterFile.Click
         Dim fb As New OpenFileDialog
+        fb.Filter = "ESRI ASCII text files (*.asc)|*.asc|All files (*.*)|*.*"
         If fb.ShowDialog() = DialogResult.OK Then
             tbBaseGridFile.Text = fb.FileName
         End If
