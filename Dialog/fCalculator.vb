@@ -88,9 +88,8 @@ Public Class fCalculator
         Dim mAscC As cAscRasterReader
         mfPrograssBar = New fProgressBar
         mStopProgress = False
-        Try
-            mMathArg = Me.tbEq.Text.Trim
-            mMathArgEle = mMathArg.Split({" ", ",", "(", ")", "+", "-", "*", "/", "^", "=", ">", "<", ">=", "<="}, StringSplitOptions.RemoveEmptyEntries)
+        mMathArg = Me.tbEq.Text.Trim
+        mMathArgEle = mMathArg.Split({" ", ",", "(", ")", "+", "-", "*", "/", "^", "=", ">", "<", ">=", "<="}, StringSplitOptions.RemoveEmptyEntries)
             mNodataAsZeroASCa = Me.chkNodataToZeroASC1.Checked
             mNodataAsZeroASCb = Me.chkNodataToZeroASC2.Checked
             mNodataAsZeroASCc = Me.chkNodataToZeroASC3.Checked
@@ -109,7 +108,9 @@ Public Class fCalculator
             Dim baseASC As cAscRasterReader = Nothing
             Dim lstFileA As New List(Of String)
             Dim FilePathForMultiFiles As String = ""
-            Dim mfolderPathOut As String = ""
+        Dim mfolderPathOut As String = ""
+        Dim fpn_current As String = ""
+        Try
             If Me.chkMultiFiles.Checked Then
                 Dim naCom As New NaturalComparer
                 FilePathForMultiFiles = Me.tbInFileA.Text.Trim
@@ -150,8 +151,12 @@ Public Class fCalculator
             mfPrograssBar.Text = "Processing files"
             mfPrograssBar.Show()
             System.Windows.Forms.Application.DoEvents()
-
             For fn As Integer = 0 To lstFileA.Count - 1
+                If lstFileA.Count > 1 Then
+                    fpn_current = lstFileA(fn)
+                Else
+                    fpn_current = ""
+                End If
                 If File.Exists(lstFileA(fn).Trim) = True Then
                     mAscA = New cAscRasterReader(lstFileA(fn).Trim)
                     baseASC = mAscA
@@ -465,6 +470,9 @@ Public Class fCalculator
             If mAscC IsNot Nothing Then mAscC.Dispose()
             GC.Collect()
             MsgBox(String.Format("An Error was occured. "), MsgBoxStyle.Exclamation)
+            If fpn_current <> "" Then
+                MsgBox(String.Format("Error while processing [{0}] file. ", fpn_current), MsgBoxStyle.Exclamation)
+            End If
             mfPrograssBar.Close()
             Exit Sub
         End Try
