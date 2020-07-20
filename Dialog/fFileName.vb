@@ -492,6 +492,8 @@ Public Class fFileName
             Me.tbFileTail.Enabled = False
             Me.lbFileExt.Enabled = False
             Me.btResultFPN.Text = "Result file"
+            Me.btResultFPN.Enabled = True
+            Me.tbResultFPN.Enabled = True
             Me.tbExtToChange.Text = ""
             Me.tbExtToChange.Enabled = False
             Me.chkSetDestinationFolder.Checked = False
