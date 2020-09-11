@@ -148,22 +148,25 @@ Public Class fFileName
                         If mDestinationFolder <> "" Then
                             ff = mDestinationFolder
                             resultFPN = Path.Combine(ff, resultFName)
-                            If File.Exists(resultFName) = True Then
-                                MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
-                                Exit Sub
+                            If (sourceFPN <> resultFPN) Then '같으면 그냥 지나 가라
+                                If File.Exists(resultFName) = True Then
+                                    MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
+                                    Exit Sub
+                                End If
+                                My.Computer.FileSystem.CopyFile(sourceFPN, resultFPN)
                             End If
-                            My.Computer.FileSystem.CopyFile(sourceFPN, resultFPN)
                         Else
                             ff = r.FilePath
                             resultFPN = Path.Combine(ff, resultFName)
-                            If File.Exists(resultFName) = True Then
-                                MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
-                                Exit Sub
-                            Else
-                                My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
+                            If (sourceFPN <> resultFPN) Then
+                                If File.Exists(resultFName) = True Then
+                                    MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
+                                    Exit Sub
+                                Else
+                                    My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
+                                End If
                             End If
                         End If
-
                     Case cVars.ProcessingType.RenameToDateTime
                         strProcessingMsg = "Rename files to DateTime format"
                         Dim strNowDateTime As String _
@@ -175,19 +178,23 @@ Public Class fFileName
                         If mDestinationFolder <> "" Then
                             ff = mDestinationFolder
                             resultFPN = Path.Combine(ff, resultFName)
-                            If File.Exists(resultFName) = True Then
-                                MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
-                                Exit Sub
+                            If (sourceFPN <> resultFPN) Then
+                                If File.Exists(resultFName) = True Then
+                                    MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
+                                    Exit Sub
+                                End If
+                                My.Computer.FileSystem.CopyFile(sourceFPN, resultFPN)
                             End If
-                            My.Computer.FileSystem.CopyFile(sourceFPN, resultFPN)
                         Else
                             ff = r.FilePath
                             resultFPN = Path.Combine(ff, resultFName)
-                            If File.Exists(resultFName) = True Then
-                                MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
-                                Exit Sub
-                            Else
-                                My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
+                            If (sourceFPN <> resultFPN) Then '같으면 그냥 지나 가라
+                                If File.Exists(resultFName) = True Then
+                                    MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
+                                    Exit Sub
+                                Else
+                                    My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
+                                End If
                             End If
                         End If
 
@@ -202,27 +209,29 @@ Public Class fFileName
                     Case cVars.ProcessingType.ChangeFileExt
                         strProcessingMsg = "Change file extensions"
                         resultFName = IO.Path.GetFileNameWithoutExtension(resultFName) + mFileExtToChange
-
                         Dim ff As String
                         If mDestinationFolder <> "" Then
                             ff = mDestinationFolder
                             resultFPN = Path.Combine(ff, resultFName)
-                            If File.Exists(resultFName) = True Then
-                                MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
-                                Exit Sub
+                            If (sourceFPN <> resultFPN) Then '같으면 그냥 지나 가라
+                                If File.Exists(resultFName) = True Then
+                                    MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
+                                    Exit Sub
+                                End If
+                                My.Computer.FileSystem.CopyFile(sourceFPN, resultFPN)
                             End If
-                            My.Computer.FileSystem.CopyFile(sourceFPN, resultFPN)
                         Else
                             ff = r.FilePath
                             resultFPN = Path.Combine(ff, resultFName)
-                            If File.Exists(resultFName) = True Then
-                                MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
-                                Exit Sub
-                            Else
-                                My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
+                            If (sourceFPN <> resultFPN) Then '같으면 그냥 지나 가라
+                                If File.Exists(resultFName) = True Then
+                                    MsgBox(String.Format("{0} is already exist. Stop processing.  ", resultFName), MsgBoxStyle.Information)
+                                    Exit Sub
+                                Else
+                                    My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
+                                End If
                             End If
                         End If
-
                         'If IO.Path.GetFileName(resultFName) <> IO.Path.GetFileName(sourceFPN) AndAlso File.Exists(resultFName) = False Then
                         '    My.Computer.FileSystem.RenameFile(sourceFPN, resultFName)
                         'Else

@@ -133,18 +133,30 @@ Public Class fCalculator
                     Exit Sub
                 End If
             Else
-                lstFileA.Add(tbInFileA.Text.Trim)
-                mfpnOut = Me.tbResultFPN.Text.Trim
-                If (Me.tbInFileA.Text.Trim <> "" AndAlso Me.tbInFileA.Text.Trim = mfpnOut.Trim()) OrElse
-                    (Me.tbInFileB.Text.Trim <> "" AndAlso Me.tbInFileB.Text.Trim = mfpnOut.Trim()) OrElse
-                    (Me.tbInFileB.Text.Trim <> "" AndAlso Me.tbInFileB.Text.Trim = mfpnOut.Trim()) Then
-                    MsgBox(String.Format("The output file is same as an input file. Rename output file."), MsgBoxStyle.Exclamation)
+                If tbInFileA.Text.Trim <> "" AndAlso File.Exists(tbInFileA.Text.Trim) = False Then
+                    MsgBox(String.Format("{0} file is not exist.", tbInFileA.Text.Trim), MsgBoxStyle.Exclamation)
                     Exit Sub
                 End If
-                If File.Exists(mfpnOut) Then File.Delete(mfpnOut)
-            End If
+                If tbInFileB.Text.Trim <> "" AndAlso File.Exists(tbInFileB.Text.Trim) = False Then
+                    MsgBox(String.Format("{0} file is not exist.", tbInFileB.Text.Trim), MsgBoxStyle.Exclamation)
+                    Exit Sub
+                End If
+                If tbInFileC.Text.Trim <> "" AndAlso File.Exists(tbInFileC.Text.Trim) = False Then
+                    MsgBox(String.Format("{0} file is not exist.", tbInFileC.Text.Trim), MsgBoxStyle.Exclamation)
+                    Exit Sub
+                End If
+                lstFileA.Add(tbInFileA.Text.Trim)
+                    mfpnOut = Me.tbResultFPN.Text.Trim
+                    If (Me.tbInFileA.Text.Trim <> "" AndAlso Me.tbInFileA.Text.Trim = mfpnOut.Trim()) OrElse
+                    (Me.tbInFileB.Text.Trim <> "" AndAlso Me.tbInFileB.Text.Trim = mfpnOut.Trim()) OrElse
+                    (Me.tbInFileB.Text.Trim <> "" AndAlso Me.tbInFileB.Text.Trim = mfpnOut.Trim()) Then
+                        MsgBox(String.Format("The output file is same as an input file. Rename output file."), MsgBoxStyle.Exclamation)
+                        Exit Sub
+                    End If
+                    If File.Exists(mfpnOut) Then File.Delete(mfpnOut)
+                End If
 
-            Dim strProcessingMsg As String = ""
+                Dim strProcessingMsg As String = ""
             mfPrograssBar.GRMToolsPrograssBar.Maximum = lstFileA.Count
             mfPrograssBar.GRMToolsPrograssBar.Style = ProgressBarStyle.Blocks
             mfPrograssBar.labGRMToolsPrograssBar.Text = "Processing 0/" & CStr(lstFileA.Count) & " file..."
@@ -157,6 +169,17 @@ Public Class fCalculator
                 Else
                     fpn_current = ""
                 End If
+                If Path.GetExtension(lstFileA(fn)).ToLower = ".prj" Then
+                    Dim fpn_target As String
+                    Dim fn_source As String
+                    fn_source = Path.GetFileName(lstFileA(fn))
+                    fpn_target = Path.Combine(mfolderPathOut, fn_source)
+                    If File.Exists(fpn_target) = False Then
+                        File.Copy(lstFileA(fn), fpn_target)
+                    End If
+                    Continue For
+                End If
+
                 If File.Exists(lstFileA(fn).Trim) = True Then
                     mAscA = New cAscRasterReader(lstFileA(fn).Trim)
                     baseASC = mAscA
