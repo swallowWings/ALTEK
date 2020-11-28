@@ -92,9 +92,11 @@ Partial Class fFileEdit
         Me.GroupBox4.Controls.Add(Me.dgvRainfallFileList)
         Me.GroupBox4.Controls.Add(Me.btRemoveAll)
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
-        Me.GroupBox4.Location = New System.Drawing.Point(450, 100)
+        Me.GroupBox4.Location = New System.Drawing.Point(514, 125)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(411, 279)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox4.Size = New System.Drawing.Size(470, 349)
         Me.GroupBox4.TabIndex = 36
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -119,7 +121,8 @@ Partial Class fFileEdit
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvRainfallFileList.Location = New System.Drawing.Point(9, 22)
+        Me.dgvRainfallFileList.Location = New System.Drawing.Point(10, 28)
+        Me.dgvRainfallFileList.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvRainfallFileList.Name = "dgvRainfallFileList"
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
@@ -131,15 +134,16 @@ Partial Class fFileEdit
         Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
-        Me.dgvRainfallFileList.Size = New System.Drawing.Size(392, 210)
+        Me.dgvRainfallFileList.Size = New System.Drawing.Size(448, 262)
         Me.dgvRainfallFileList.TabIndex = 16
         '
         'btRemoveAll
         '
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(111, 244)
+        Me.btRemoveAll.Location = New System.Drawing.Point(127, 305)
+        Me.btRemoveAll.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btRemoveAll.Name = "btRemoveAll"
-        Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
+        Me.btRemoveAll.Size = New System.Drawing.Size(162, 31)
         Me.btRemoveAll.TabIndex = 17
         Me.btRemoveAll.Text = "Remove all"
         Me.btRemoveAll.UseVisualStyleBackColor = True
@@ -147,9 +151,10 @@ Partial Class fFileEdit
         'btRemoveSelected
         '
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(259, 244)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(296, 305)
+        Me.btRemoveSelected.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btRemoveSelected.Name = "btRemoveSelected"
-        Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
+        Me.btRemoveSelected.Size = New System.Drawing.Size(162, 31)
         Me.btRemoveSelected.TabIndex = 18
         Me.btRemoveSelected.Text = "Remove selected"
         Me.btRemoveSelected.UseVisualStyleBackColor = True
@@ -162,9 +167,11 @@ Partial Class fFileEdit
         Me.GroupBox3.Controls.Add(Me.rbInsertALine)
         Me.GroupBox3.Controls.Add(Me.rbRemoveLines)
         Me.GroupBox3.Controls.Add(Me.rbReplaceText)
-        Me.GroupBox3.Location = New System.Drawing.Point(14, 11)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 14)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(847, 79)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(968, 99)
         Me.GroupBox3.TabIndex = 34
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Select processing"
@@ -172,9 +179,10 @@ Partial Class fFileEdit
         'rbCutDecimal
         '
         Me.rbCutDecimal.AutoSize = True
-        Me.rbCutDecimal.Location = New System.Drawing.Point(333, 48)
+        Me.rbCutDecimal.Location = New System.Drawing.Point(381, 60)
+        Me.rbCutDecimal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbCutDecimal.Name = "rbCutDecimal"
-        Me.rbCutDecimal.Size = New System.Drawing.Size(228, 16)
+        Me.rbCutDecimal.Size = New System.Drawing.Size(261, 19)
         Me.rbCutDecimal.TabIndex = 10
         Me.rbCutDecimal.Text = "Cut decimal parts in ASCII raster file"
         Me.rbCutDecimal.UseVisualStyleBackColor = True
@@ -182,9 +190,10 @@ Partial Class fFileEdit
         'rbReplaceTextInASCII
         '
         Me.rbReplaceTextInASCII.AutoSize = True
-        Me.rbReplaceTextInASCII.Location = New System.Drawing.Point(33, 48)
+        Me.rbReplaceTextInASCII.Location = New System.Drawing.Point(38, 60)
+        Me.rbReplaceTextInASCII.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbReplaceTextInASCII.Name = "rbReplaceTextInASCII"
-        Me.rbReplaceTextInASCII.Size = New System.Drawing.Size(286, 16)
+        Me.rbReplaceTextInASCII.Size = New System.Drawing.Size(333, 19)
         Me.rbReplaceTextInASCII.TabIndex = 9
         Me.rbReplaceTextInASCII.Text = "Relpace values in a region of ASCII raster files"
         Me.rbReplaceTextInASCII.UseVisualStyleBackColor = True
@@ -192,9 +201,10 @@ Partial Class fFileEdit
         'rbReplaceLineByLine
         '
         Me.rbReplaceLineByLine.AutoSize = True
-        Me.rbReplaceLineByLine.Location = New System.Drawing.Point(251, 20)
+        Me.rbReplaceLineByLine.Location = New System.Drawing.Point(287, 25)
+        Me.rbReplaceLineByLine.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbReplaceLineByLine.Name = "rbReplaceLineByLine"
-        Me.rbReplaceLineByLine.Size = New System.Drawing.Size(200, 16)
+        Me.rbReplaceLineByLine.Size = New System.Drawing.Size(230, 19)
         Me.rbReplaceLineByLine.TabIndex = 8
         Me.rbReplaceLineByLine.Text = "Search and replace line by line"
         Me.rbReplaceLineByLine.UseVisualStyleBackColor = True
@@ -202,9 +212,10 @@ Partial Class fFileEdit
         'rbInsertALine
         '
         Me.rbInsertALine.AutoSize = True
-        Me.rbInsertALine.Location = New System.Drawing.Point(511, 20)
+        Me.rbInsertALine.Location = New System.Drawing.Point(584, 25)
+        Me.rbInsertALine.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbInsertALine.Name = "rbInsertALine"
-        Me.rbInsertALine.Size = New System.Drawing.Size(89, 16)
+        Me.rbInsertALine.Size = New System.Drawing.Size(103, 19)
         Me.rbInsertALine.TabIndex = 7
         Me.rbInsertALine.Text = "Insert a line"
         Me.rbInsertALine.UseVisualStyleBackColor = True
@@ -212,9 +223,10 @@ Partial Class fFileEdit
         'rbRemoveLines
         '
         Me.rbRemoveLines.AutoSize = True
-        Me.rbRemoveLines.Location = New System.Drawing.Point(685, 20)
+        Me.rbRemoveLines.Location = New System.Drawing.Point(783, 25)
+        Me.rbRemoveLines.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbRemoveLines.Name = "rbRemoveLines"
-        Me.rbRemoveLines.Size = New System.Drawing.Size(100, 16)
+        Me.rbRemoveLines.Size = New System.Drawing.Size(117, 19)
         Me.rbRemoveLines.TabIndex = 7
         Me.rbRemoveLines.Text = "Remove lines"
         Me.rbRemoveLines.UseVisualStyleBackColor = True
@@ -223,9 +235,10 @@ Partial Class fFileEdit
         '
         Me.rbReplaceText.AutoSize = True
         Me.rbReplaceText.Checked = True
-        Me.rbReplaceText.Location = New System.Drawing.Point(33, 20)
+        Me.rbReplaceText.Location = New System.Drawing.Point(38, 25)
+        Me.rbReplaceText.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbReplaceText.Name = "rbReplaceText"
-        Me.rbReplaceText.Size = New System.Drawing.Size(158, 16)
+        Me.rbReplaceText.Size = New System.Drawing.Size(188, 19)
         Me.rbReplaceText.TabIndex = 6
         Me.rbReplaceText.TabStop = True
         Me.rbReplaceText.Text = "Relpace text in text files"
@@ -234,9 +247,10 @@ Partial Class fFileEdit
         'btClose
         '
         Me.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btClose.Location = New System.Drawing.Point(709, 635)
+        Me.btClose.Location = New System.Drawing.Point(810, 818)
+        Me.btClose.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btClose.Name = "btClose"
-        Me.btClose.Size = New System.Drawing.Size(152, 28)
+        Me.btClose.Size = New System.Drawing.Size(174, 35)
         Me.btClose.TabIndex = 33
         Me.btClose.Text = "Close"
         Me.btClose.UseVisualStyleBackColor = True
@@ -244,9 +258,10 @@ Partial Class fFileEdit
         'btStartProcess
         '
         Me.btStartProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btStartProcess.Location = New System.Drawing.Point(709, 587)
+        Me.btStartProcess.Location = New System.Drawing.Point(810, 758)
+        Me.btStartProcess.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btStartProcess.Name = "btStartProcess"
-        Me.btStartProcess.Size = New System.Drawing.Size(152, 43)
+        Me.btStartProcess.Size = New System.Drawing.Size(174, 54)
         Me.btStartProcess.TabIndex = 32
         Me.btStartProcess.Text = "Start"
         Me.btStartProcess.UseVisualStyleBackColor = True
@@ -259,9 +274,11 @@ Partial Class fFileEdit
         Me.GroupBox1.Controls.Add(Me.txtResultFileTag)
         Me.GroupBox1.Controls.Add(Me.txtResultFilePrefix)
         Me.GroupBox1.Controls.Add(Me.btOpenDestinationFolder)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 580)
+        Me.GroupBox1.Location = New System.Drawing.Point(14, 749)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(691, 84)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(790, 105)
         Me.GroupBox1.TabIndex = 37
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Result files"
@@ -269,18 +286,18 @@ Partial Class fFileEdit
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(400, 25)
+        Me.Label5.Location = New System.Drawing.Point(457, 31)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(128, 12)
+        Me.Label5.Size = New System.Drawing.Size(150, 15)
         Me.Label5.TabIndex = 228
         Me.Label5.Text = "Tail text of file name :"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(92, 25)
+        Me.Label4.Location = New System.Drawing.Point(105, 31)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(136, 12)
+        Me.Label4.Size = New System.Drawing.Size(162, 15)
         Me.Label4.TabIndex = 229
         Me.Label4.Text = "Head text of file name :"
         '
@@ -288,35 +305,39 @@ Partial Class fFileEdit
         '
         Me.txtDestinationFolderPath.BackColor = System.Drawing.SystemColors.Window
         Me.txtDestinationFolderPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDestinationFolderPath.Location = New System.Drawing.Point(146, 50)
+        Me.txtDestinationFolderPath.Location = New System.Drawing.Point(167, 62)
+        Me.txtDestinationFolderPath.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDestinationFolderPath.Name = "txtDestinationFolderPath"
-        Me.txtDestinationFolderPath.Size = New System.Drawing.Size(539, 21)
+        Me.txtDestinationFolderPath.Size = New System.Drawing.Size(616, 25)
         Me.txtDestinationFolderPath.TabIndex = 30
         '
         'txtResultFileTag
         '
         Me.txtResultFileTag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtResultFileTag.Location = New System.Drawing.Point(532, 20)
+        Me.txtResultFileTag.Location = New System.Drawing.Point(608, 25)
+        Me.txtResultFileTag.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtResultFileTag.Multiline = True
         Me.txtResultFileTag.Name = "txtResultFileTag"
-        Me.txtResultFileTag.Size = New System.Drawing.Size(152, 21)
+        Me.txtResultFileTag.Size = New System.Drawing.Size(173, 26)
         Me.txtResultFileTag.TabIndex = 26
         '
         'txtResultFilePrefix
         '
         Me.txtResultFilePrefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtResultFilePrefix.Location = New System.Drawing.Point(232, 20)
+        Me.txtResultFilePrefix.Location = New System.Drawing.Point(265, 25)
+        Me.txtResultFilePrefix.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtResultFilePrefix.Multiline = True
         Me.txtResultFilePrefix.Name = "txtResultFilePrefix"
-        Me.txtResultFilePrefix.Size = New System.Drawing.Size(158, 21)
+        Me.txtResultFilePrefix.Size = New System.Drawing.Size(180, 26)
         Me.txtResultFilePrefix.TabIndex = 25
         '
         'btOpenDestinationFolder
         '
         Me.btOpenDestinationFolder.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btOpenDestinationFolder.Location = New System.Drawing.Point(18, 49)
+        Me.btOpenDestinationFolder.Location = New System.Drawing.Point(21, 61)
+        Me.btOpenDestinationFolder.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btOpenDestinationFolder.Name = "btOpenDestinationFolder"
-        Me.btOpenDestinationFolder.Size = New System.Drawing.Size(122, 21)
+        Me.btOpenDestinationFolder.Size = New System.Drawing.Size(139, 26)
         Me.btOpenDestinationFolder.TabIndex = 29
         Me.btOpenDestinationFolder.Text = "Destination folder"
         Me.btOpenDestinationFolder.UseVisualStyleBackColor = True
@@ -333,60 +354,67 @@ Partial Class fFileEdit
         Me.GroupBox2.Controls.Add(Me.btAddAllFiles)
         Me.GroupBox2.Controls.Add(Me.btAddSelectedFile)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox2.Location = New System.Drawing.Point(14, 100)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 125)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 279)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(491, 349)
         Me.GroupBox2.TabIndex = 35
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
         '
         'tbFileNameFilter
         '
-        Me.tbFileNameFilter.Location = New System.Drawing.Point(197, 48)
+        Me.tbFileNameFilter.Location = New System.Drawing.Point(225, 60)
+        Me.tbFileNameFilter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbFileNameFilter.Name = "tbFileNameFilter"
-        Me.tbFileNameFilter.Size = New System.Drawing.Size(73, 21)
+        Me.tbFileNameFilter.Size = New System.Drawing.Size(83, 25)
         Me.tbFileNameFilter.TabIndex = 204
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(98, 52)
+        Me.Label11.Location = New System.Drawing.Point(112, 65)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(96, 12)
+        Me.Label11.Size = New System.Drawing.Size(110, 15)
         Me.Label11.TabIndex = 205
         Me.Label11.Text = "File name filter :"
         '
         'tbExtensionFilter
         '
-        Me.tbExtensionFilter.Location = New System.Drawing.Point(378, 48)
+        Me.tbExtensionFilter.Location = New System.Drawing.Point(432, 60)
+        Me.tbExtensionFilter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbExtensionFilter.Name = "tbExtensionFilter"
-        Me.tbExtensionFilter.Size = New System.Drawing.Size(42, 21)
+        Me.tbExtensionFilter.Size = New System.Drawing.Size(47, 25)
         Me.tbExtensionFilter.TabIndex = 40
         '
         'lstFiles
         '
         Me.lstFiles.FormattingEnabled = True
         Me.lstFiles.HorizontalScrollbar = True
-        Me.lstFiles.ItemHeight = 12
-        Me.lstFiles.Location = New System.Drawing.Point(10, 75)
+        Me.lstFiles.ItemHeight = 15
+        Me.lstFiles.Location = New System.Drawing.Point(11, 94)
+        Me.lstFiles.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.lstFiles.Name = "lstFiles"
         Me.lstFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstFiles.Size = New System.Drawing.Size(410, 148)
+        Me.lstFiles.Size = New System.Drawing.Size(468, 184)
         Me.lstFiles.TabIndex = 39
         '
         'txtFolderPathSource
         '
         Me.txtFolderPathSource.BackColor = System.Drawing.SystemColors.Window
-        Me.txtFolderPathSource.Location = New System.Drawing.Point(101, 23)
+        Me.txtFolderPathSource.Location = New System.Drawing.Point(115, 29)
+        Me.txtFolderPathSource.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtFolderPathSource.Name = "txtFolderPathSource"
-        Me.txtFolderPathSource.Size = New System.Drawing.Size(319, 21)
+        Me.txtFolderPathSource.Size = New System.Drawing.Size(364, 25)
         Me.txtFolderPathSource.TabIndex = 1
         '
         'btOpenFolder
         '
-        Me.btOpenFolder.Location = New System.Drawing.Point(10, 23)
+        Me.btOpenFolder.Location = New System.Drawing.Point(11, 29)
+        Me.btOpenFolder.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btOpenFolder.Name = "btOpenFolder"
-        Me.btOpenFolder.Size = New System.Drawing.Size(85, 21)
+        Me.btOpenFolder.Size = New System.Drawing.Size(97, 26)
         Me.btOpenFolder.TabIndex = 37
         Me.btOpenFolder.Text = "Select folder"
         Me.btOpenFolder.UseVisualStyleBackColor = True
@@ -394,18 +422,19 @@ Partial Class fFileEdit
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(276, 52)
+        Me.Label14.Location = New System.Drawing.Point(315, 65)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(99, 12)
+        Me.Label14.Size = New System.Drawing.Size(118, 15)
         Me.Label14.TabIndex = 203
         Me.Label14.Text = "Extenstion filter :"
         '
         'btAddAllFiles
         '
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 244)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(145, 305)
+        Me.btAddAllFiles.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btAddAllFiles.Name = "btAddAllFiles"
-        Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
+        Me.btAddAllFiles.Size = New System.Drawing.Size(169, 31)
         Me.btAddAllFiles.TabIndex = 13
         Me.btAddAllFiles.Text = "Add all"
         Me.btAddAllFiles.UseVisualStyleBackColor = True
@@ -413,9 +442,10 @@ Partial Class fFileEdit
         'btAddSelectedFile
         '
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 244)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(321, 305)
+        Me.btAddSelectedFile.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
-        Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
+        Me.btAddSelectedFile.Size = New System.Drawing.Size(159, 31)
         Me.btAddSelectedFile.TabIndex = 14
         Me.btAddSelectedFile.Text = "Add selected"
         Me.btAddSelectedFile.UseVisualStyleBackColor = True
@@ -428,60 +458,65 @@ Partial Class fFileEdit
         Me.GroupBox5.Controls.Add(Me.tbTextToFind)
         Me.GroupBox5.Controls.Add(Me.lbTextToReplace)
         Me.GroupBox5.Controls.Add(Me.lbTextToFind)
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 507)
+        Me.GroupBox5.Location = New System.Drawing.Point(14, 634)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(849, 59)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox5.Size = New System.Drawing.Size(970, 94)
         Me.GroupBox5.TabIndex = 209
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Contents"
         '
         'tbDecimalPartN
         '
-        Me.tbDecimalPartN.Location = New System.Drawing.Point(799, 23)
+        Me.tbDecimalPartN.Location = New System.Drawing.Point(913, 29)
+        Me.tbDecimalPartN.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbDecimalPartN.Name = "tbDecimalPartN"
-        Me.tbDecimalPartN.Size = New System.Drawing.Size(40, 21)
+        Me.tbDecimalPartN.Size = New System.Drawing.Size(45, 25)
         Me.tbDecimalPartN.TabIndex = 207
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(671, 28)
+        Me.Label3.Location = New System.Drawing.Point(767, 35)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(126, 12)
+        Me.Label3.Size = New System.Drawing.Size(146, 15)
         Me.Label3.TabIndex = 208
         Me.Label3.Text = "Decimal part length : "
         '
         'tbTextToReplace
         '
-        Me.tbTextToReplace.Location = New System.Drawing.Point(429, 23)
+        Me.tbTextToReplace.Location = New System.Drawing.Point(133, 61)
+        Me.tbTextToReplace.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTextToReplace.Multiline = True
         Me.tbTextToReplace.Name = "tbTextToReplace"
-        Me.tbTextToReplace.Size = New System.Drawing.Size(199, 21)
+        Me.tbTextToReplace.Size = New System.Drawing.Size(616, 25)
         Me.tbTextToReplace.TabIndex = 204
         '
         'tbTextToFind
         '
-        Me.tbTextToFind.Location = New System.Drawing.Point(95, 23)
+        Me.tbTextToFind.Location = New System.Drawing.Point(133, 29)
+        Me.tbTextToFind.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTextToFind.Multiline = True
         Me.tbTextToFind.Name = "tbTextToFind"
-        Me.tbTextToFind.Size = New System.Drawing.Size(209, 21)
+        Me.tbTextToFind.Size = New System.Drawing.Size(616, 25)
         Me.tbTextToFind.TabIndex = 203
         '
         'lbTextToReplace
         '
         Me.lbTextToReplace.AutoSize = True
-        Me.lbTextToReplace.Location = New System.Drawing.Point(322, 28)
+        Me.lbTextToReplace.Location = New System.Drawing.Point(14, 67)
         Me.lbTextToReplace.Name = "lbTextToReplace"
-        Me.lbTextToReplace.Size = New System.Drawing.Size(98, 12)
+        Me.lbTextToReplace.Size = New System.Drawing.Size(116, 15)
         Me.lbTextToReplace.TabIndex = 205
         Me.lbTextToReplace.Text = "Text to repalce :"
         '
         'lbTextToFind
         '
         Me.lbTextToFind.AutoSize = True
-        Me.lbTextToFind.Location = New System.Drawing.Point(11, 28)
+        Me.lbTextToFind.Location = New System.Drawing.Point(38, 35)
         Me.lbTextToFind.Name = "lbTextToFind"
-        Me.lbTextToFind.Size = New System.Drawing.Size(76, 12)
+        Me.lbTextToFind.Size = New System.Drawing.Size(92, 15)
         Me.lbTextToFind.TabIndex = 206
         Me.lbTextToFind.Text = "Text to find :"
         '
@@ -493,9 +528,11 @@ Partial Class fFileEdit
         Me.gbLineConditions.Controls.Add(Me.tbStartingLineidx)
         Me.gbLineConditions.Controls.Add(Me.Label6)
         Me.gbLineConditions.Controls.Add(Me.Label1)
-        Me.gbLineConditions.Location = New System.Drawing.Point(12, 394)
+        Me.gbLineConditions.Location = New System.Drawing.Point(14, 492)
+        Me.gbLineConditions.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbLineConditions.Name = "gbLineConditions"
-        Me.gbLineConditions.Size = New System.Drawing.Size(432, 99)
+        Me.gbLineConditions.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbLineConditions.Size = New System.Drawing.Size(494, 124)
         Me.gbLineConditions.TabIndex = 210
         Me.gbLineConditions.TabStop = False
         Me.gbLineConditions.Text = "Line conditions"
@@ -503,50 +540,52 @@ Partial Class fFileEdit
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(19, 43)
+        Me.Label9.Location = New System.Drawing.Point(22, 54)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(314, 12)
+        Me.Label9.Size = New System.Drawing.Size(361, 15)
         Me.Label9.TabIndex = 214
         Me.Label9.Text = "Defined line indices are included in the sanning range."
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(19, 26)
+        Me.Label7.Location = New System.Drawing.Point(22, 32)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(227, 12)
+        Me.Label7.Size = New System.Drawing.Size(262, 15)
         Me.Label7.TabIndex = 215
         Me.Label7.Text = "If not defined, all lines will be scanned."
         '
         'tbEndingLineidx
         '
-        Me.tbEndingLineidx.Location = New System.Drawing.Point(378, 67)
+        Me.tbEndingLineidx.Location = New System.Drawing.Point(432, 84)
+        Me.tbEndingLineidx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbEndingLineidx.Name = "tbEndingLineidx"
-        Me.tbEndingLineidx.Size = New System.Drawing.Size(42, 21)
+        Me.tbEndingLineidx.Size = New System.Drawing.Size(47, 25)
         Me.tbEndingLineidx.TabIndex = 212
         '
         'tbStartingLineidx
         '
-        Me.tbStartingLineidx.Location = New System.Drawing.Point(203, 67)
+        Me.tbStartingLineidx.Location = New System.Drawing.Point(232, 84)
+        Me.tbStartingLineidx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbStartingLineidx.Name = "tbStartingLineidx"
-        Me.tbStartingLineidx.Size = New System.Drawing.Size(42, 21)
+        Me.tbStartingLineidx.Size = New System.Drawing.Size(47, 25)
         Me.tbStartingLineidx.TabIndex = 211
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(263, 72)
+        Me.Label6.Location = New System.Drawing.Point(301, 90)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(111, 12)
+        Me.Label6.Size = New System.Drawing.Size(129, 15)
         Me.Label6.TabIndex = 209
         Me.Label6.Text = "Ending line index :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(41, 72)
+        Me.Label1.Location = New System.Drawing.Point(47, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 12)
+        Me.Label1.Size = New System.Drawing.Size(187, 15)
         Me.Label1.TabIndex = 210
         Me.Label1.Text = "Starting line index(from 0) :"
         '
@@ -559,9 +598,11 @@ Partial Class fFileEdit
         Me.gbASCIIRangeConditions.Controls.Add(Me.tbAscTLyRow)
         Me.gbASCIIRangeConditions.Controls.Add(Me.tbAscTLxCol)
         Me.gbASCIIRangeConditions.Controls.Add(Me.Label10)
-        Me.gbASCIIRangeConditions.Location = New System.Drawing.Point(450, 394)
+        Me.gbASCIIRangeConditions.Location = New System.Drawing.Point(514, 492)
+        Me.gbASCIIRangeConditions.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbASCIIRangeConditions.Name = "gbASCIIRangeConditions"
-        Me.gbASCIIRangeConditions.Size = New System.Drawing.Size(411, 99)
+        Me.gbASCIIRangeConditions.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbASCIIRangeConditions.Size = New System.Drawing.Size(470, 124)
         Me.gbASCIIRangeConditions.TabIndex = 211
         Me.gbASCIIRangeConditions.TabStop = False
         Me.gbASCIIRangeConditions.Text = "ASCII raster range conditions"
@@ -569,63 +610,67 @@ Partial Class fFileEdit
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(14, 20)
+        Me.Label12.Location = New System.Drawing.Point(16, 25)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(300, 12)
+        Me.Label12.Size = New System.Drawing.Size(348, 15)
         Me.Label12.TabIndex = 217
         Me.Label12.Text = "Defined positions are included in the sanning range."
         '
         'tbAscLRyRow
         '
-        Me.tbAscLRyRow.Location = New System.Drawing.Point(345, 68)
+        Me.tbAscLRyRow.Location = New System.Drawing.Point(394, 85)
+        Me.tbAscLRyRow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbAscLRyRow.Name = "tbAscLRyRow"
-        Me.tbAscLRyRow.Size = New System.Drawing.Size(56, 21)
+        Me.tbAscLRyRow.Size = New System.Drawing.Size(63, 25)
         Me.tbAscLRyRow.TabIndex = 216
         '
         'tbAscLRxCol
         '
-        Me.tbAscLRxCol.Location = New System.Drawing.Point(283, 68)
+        Me.tbAscLRxCol.Location = New System.Drawing.Point(323, 85)
+        Me.tbAscLRxCol.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbAscLRxCol.Name = "tbAscLRxCol"
-        Me.tbAscLRxCol.Size = New System.Drawing.Size(56, 21)
+        Me.tbAscLRxCol.Size = New System.Drawing.Size(63, 25)
         Me.tbAscLRxCol.TabIndex = 215
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(73, 72)
+        Me.Label8.Location = New System.Drawing.Point(83, 90)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(199, 12)
+        Me.Label8.Size = New System.Drawing.Size(235, 15)
         Me.Label8.TabIndex = 214
         Me.Label8.Text = "Low right position [xCol, yRow] : "
         '
         'tbAscTLyRow
         '
-        Me.tbAscTLyRow.Location = New System.Drawing.Point(345, 41)
+        Me.tbAscTLyRow.Location = New System.Drawing.Point(394, 51)
+        Me.tbAscTLyRow.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbAscTLyRow.Name = "tbAscTLyRow"
-        Me.tbAscTLyRow.Size = New System.Drawing.Size(56, 21)
+        Me.tbAscTLyRow.Size = New System.Drawing.Size(63, 25)
         Me.tbAscTLyRow.TabIndex = 213
         '
         'tbAscTLxCol
         '
-        Me.tbAscTLxCol.Location = New System.Drawing.Point(283, 41)
+        Me.tbAscTLxCol.Location = New System.Drawing.Point(323, 51)
+        Me.tbAscTLxCol.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbAscTLxCol.Name = "tbAscTLxCol"
-        Me.tbAscTLxCol.Size = New System.Drawing.Size(56, 21)
+        Me.tbAscTLxCol.Size = New System.Drawing.Size(63, 25)
         Me.tbAscTLxCol.TabIndex = 211
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 46)
+        Me.Label10.Location = New System.Drawing.Point(16, 58)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(260, 12)
+        Me.Label10.Size = New System.Drawing.Size(310, 15)
         Me.Label10.TabIndex = 210
         Me.Label10.Text = "Top left position [xCol, yRow](from [0, 0]) : "
         '
         'fFileEdit
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(874, 671)
+        Me.ClientSize = New System.Drawing.Size(997, 863)
         Me.Controls.Add(Me.gbASCIIRangeConditions)
         Me.Controls.Add(Me.gbLineConditions)
         Me.Controls.Add(Me.GroupBox5)
@@ -635,12 +680,13 @@ Partial Class fFileEdit
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btStartProcess)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(890, 710)
-        Me.MinimumSize = New System.Drawing.Size(890, 710)
+        Me.MaximumSize = New System.Drawing.Size(1015, 910)
+        Me.MinimumSize = New System.Drawing.Size(1015, 910)
         Me.Name = "fFileEdit"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "Edit Text files"
+        Me.Text = "Edit text files"
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.dgvRainfallFileList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
