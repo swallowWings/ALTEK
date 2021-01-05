@@ -22,9 +22,9 @@ Partial Class fFileEdit
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dgvRainfallFileList = New System.Windows.Forms.DataGridView()
         Me.btRemoveAll = New System.Windows.Forms.Button()
@@ -104,34 +104,34 @@ Partial Class fFileEdit
         'dgvRainfallFileList
         '
         Me.dgvRainfallFileList.AllowUserToAddRows = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRainfallFileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRainfallFileList.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvRainfallFileList.Location = New System.Drawing.Point(10, 28)
         Me.dgvRainfallFileList.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvRainfallFileList.Name = "dgvRainfallFileList"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRainfallFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvRainfallFileList.RowHeadersVisible = False
         Me.dgvRainfallFileList.RowTemplate.Height = 23
         Me.dgvRainfallFileList.Size = New System.Drawing.Size(448, 262)
@@ -295,7 +295,7 @@ Partial Class fFileEdit
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(105, 31)
+        Me.Label4.Location = New System.Drawing.Point(102, 31)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(162, 15)
         Me.Label4.TabIndex = 229
@@ -458,18 +458,18 @@ Partial Class fFileEdit
         Me.GroupBox5.Controls.Add(Me.tbTextToFind)
         Me.GroupBox5.Controls.Add(Me.lbTextToReplace)
         Me.GroupBox5.Controls.Add(Me.lbTextToFind)
-        Me.GroupBox5.Location = New System.Drawing.Point(14, 634)
+        Me.GroupBox5.Location = New System.Drawing.Point(14, 619)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox5.Size = New System.Drawing.Size(970, 94)
+        Me.GroupBox5.Size = New System.Drawing.Size(970, 122)
         Me.GroupBox5.TabIndex = 209
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Contents"
         '
         'tbDecimalPartN
         '
-        Me.tbDecimalPartN.Location = New System.Drawing.Point(913, 29)
+        Me.tbDecimalPartN.Location = New System.Drawing.Point(912, 32)
         Me.tbDecimalPartN.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbDecimalPartN.Name = "tbDecimalPartN"
         Me.tbDecimalPartN.Size = New System.Drawing.Size(45, 25)
@@ -478,19 +478,20 @@ Partial Class fFileEdit
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(767, 35)
+        Me.Label3.Location = New System.Drawing.Point(769, 38)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(146, 15)
+        Me.Label3.Size = New System.Drawing.Size(141, 15)
         Me.Label3.TabIndex = 208
-        Me.Label3.Text = "Decimal part length : "
+        Me.Label3.Text = "Decimal part length :"
         '
         'tbTextToReplace
         '
-        Me.tbTextToReplace.Location = New System.Drawing.Point(133, 61)
+        Me.tbTextToReplace.Location = New System.Drawing.Point(133, 74)
         Me.tbTextToReplace.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTextToReplace.Multiline = True
         Me.tbTextToReplace.Name = "tbTextToReplace"
-        Me.tbTextToReplace.Size = New System.Drawing.Size(616, 25)
+        Me.tbTextToReplace.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.tbTextToReplace.Size = New System.Drawing.Size(616, 37)
         Me.tbTextToReplace.TabIndex = 204
         '
         'tbTextToFind
@@ -499,13 +500,14 @@ Partial Class fFileEdit
         Me.tbTextToFind.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTextToFind.Multiline = True
         Me.tbTextToFind.Name = "tbTextToFind"
-        Me.tbTextToFind.Size = New System.Drawing.Size(616, 25)
+        Me.tbTextToFind.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.tbTextToFind.Size = New System.Drawing.Size(616, 37)
         Me.tbTextToFind.TabIndex = 203
         '
         'lbTextToReplace
         '
         Me.lbTextToReplace.AutoSize = True
-        Me.lbTextToReplace.Location = New System.Drawing.Point(14, 67)
+        Me.lbTextToReplace.Location = New System.Drawing.Point(14, 76)
         Me.lbTextToReplace.Name = "lbTextToReplace"
         Me.lbTextToReplace.Size = New System.Drawing.Size(116, 15)
         Me.lbTextToReplace.TabIndex = 205
@@ -514,7 +516,7 @@ Partial Class fFileEdit
         'lbTextToFind
         '
         Me.lbTextToFind.AutoSize = True
-        Me.lbTextToFind.Location = New System.Drawing.Point(38, 35)
+        Me.lbTextToFind.Location = New System.Drawing.Point(38, 31)
         Me.lbTextToFind.Name = "lbTextToFind"
         Me.lbTextToFind.Size = New System.Drawing.Size(92, 15)
         Me.lbTextToFind.TabIndex = 206
@@ -528,7 +530,7 @@ Partial Class fFileEdit
         Me.gbLineConditions.Controls.Add(Me.tbStartingLineidx)
         Me.gbLineConditions.Controls.Add(Me.Label6)
         Me.gbLineConditions.Controls.Add(Me.Label1)
-        Me.gbLineConditions.Location = New System.Drawing.Point(14, 492)
+        Me.gbLineConditions.Location = New System.Drawing.Point(14, 487)
         Me.gbLineConditions.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbLineConditions.Name = "gbLineConditions"
         Me.gbLineConditions.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -598,7 +600,7 @@ Partial Class fFileEdit
         Me.gbASCIIRangeConditions.Controls.Add(Me.tbAscTLyRow)
         Me.gbASCIIRangeConditions.Controls.Add(Me.tbAscTLxCol)
         Me.gbASCIIRangeConditions.Controls.Add(Me.Label10)
-        Me.gbASCIIRangeConditions.Location = New System.Drawing.Point(514, 492)
+        Me.gbASCIIRangeConditions.Location = New System.Drawing.Point(514, 487)
         Me.gbASCIIRangeConditions.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbASCIIRangeConditions.Name = "gbASCIIRangeConditions"
         Me.gbASCIIRangeConditions.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)

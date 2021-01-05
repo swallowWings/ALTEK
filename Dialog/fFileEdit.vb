@@ -9,8 +9,8 @@ Public Class fFileEdit
     Private mdtSourceFile As New FilesDS.FilesDataTable
     Private meProcessingType As cVars.ProcessingType
     'Private mFilePattern As cFile.FilePattern
-    Private mLidxStarting As Integer = 0
-    Private mLidxEnding As Integer = 0
+    Private mLidxStarting As Integer = -1
+    Private mLidxEnding As Integer = -1
     Private mTxtToFind As String = ""
     Private mTxtToReplace As String = ""
     Private mTLxCol As Integer = 0
@@ -46,18 +46,18 @@ Public Class fFileEdit
         If Me.rbReplaceText.Checked OrElse Me.rbRemoveLines.Checked OrElse
                 Me.rbReplaceLineByLine.Checked OrElse Me.rbInsertALine.Checked Then
             If Me.tbStartingLineidx.Text.Trim <> "" Then
-                mLidxStarting = Me.tbStartingLineidx.Text.Trim
+                mLidxStarting = CInt(Me.tbStartingLineidx.Text.Trim)
             Else
-                mLidxStarting = 0
+                mLidxStarting = -1
             End If
             If Me.tbEndingLineidx.Text.Trim <> "" Then
-                mLidxEnding = Me.tbEndingLineidx.Text.Trim
+                mLidxEnding = CInt(Me.tbEndingLineidx.Text.Trim)
                 If mLidxEnding < mLidxStarting Then
                     MsgBox("Ending line index is smaller than starting line index.   ", MsgBoxStyle.Information)
                     Exit Sub
                 End If
             Else
-                mLidxEnding = 0
+                mLidxEnding = -1
             End If
             mTLxCol = 0
             mTLyRow = 0
@@ -70,8 +70,8 @@ Public Class fFileEdit
             mTLyRow = Me.tbAscTLyRow.Text.Trim
             mLRxCol = Me.tbAscLRxCol.Text.Trim
             mLRyRow = Me.tbAscLRyRow.Text.Trim
-            mLidxStarting = 0
-            mLidxEnding = 0
+            mLidxStarting = -1
+            mLidxEnding = -1
             If mTLxCol > mLRxCol OrElse mTLyRow > mLRyRow Then
                 MsgBox("Cell ranges are invalid.   ", MsgBoxStyle.Information)
                 Exit Sub
@@ -138,7 +138,7 @@ Public Class fFileEdit
                         Call cTextFile.InsertAlineIntoTextFile(sourceFPN, resultFPN, mTxtToReplace, mLidxStarting)
                     Case cVars.ProcessingType.RemoveLines
                         strProcessingMsg = "Remove a line from files"
-                        Call cTextFile.RemoveAlineFromTextFile(sourceFPN, resultFPN, mLidxStarting, mLidxEnding)
+                        Call cTextFile.RemoveLinesFromTextFile(sourceFPN, resultFPN, mLidxStarting, mLidxEnding)
                     Case cVars.ProcessingType.ReplaceInAscRange
                         strProcessingMsg = "Replace in files"
                         Dim ascDS As New cAscRasterReader(sourceFPN)

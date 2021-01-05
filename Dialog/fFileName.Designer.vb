@@ -83,9 +83,9 @@ Partial Class fFileName
         'lbTimeStart
         '
         Me.lbTimeStart.AutoSize = True
-        Me.lbTimeStart.Location = New System.Drawing.Point(251, 51)
+        Me.lbTimeStart.Location = New System.Drawing.Point(287, 64)
         Me.lbTimeStart.Name = "lbTimeStart"
-        Me.lbTimeStart.Size = New System.Drawing.Size(83, 12)
+        Me.lbTimeStart.Size = New System.Drawing.Size(97, 15)
         Me.lbTimeStart.TabIndex = 211
         Me.lbTimeStart.Text = "Starting time :"
         '
@@ -94,27 +94,29 @@ Partial Class fFileName
         Me.dtpResultStarting.CustomFormat = "yyyy/MM/dd HH:mm"
         Me.dtpResultStarting.Enabled = False
         Me.dtpResultStarting.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpResultStarting.Location = New System.Drawing.Point(337, 47)
+        Me.dtpResultStarting.Location = New System.Drawing.Point(385, 59)
+        Me.dtpResultStarting.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpResultStarting.Name = "dtpResultStarting"
         Me.dtpResultStarting.ShowUpDown = True
-        Me.dtpResultStarting.Size = New System.Drawing.Size(145, 21)
+        Me.dtpResultStarting.Size = New System.Drawing.Size(165, 25)
         Me.dtpResultStarting.TabIndex = 226
         '
         'lbTimeStep
         '
         Me.lbTimeStep.AutoSize = True
-        Me.lbTimeStep.Location = New System.Drawing.Point(497, 52)
+        Me.lbTimeStep.Location = New System.Drawing.Point(568, 65)
         Me.lbTimeStep.Name = "lbTimeStep"
-        Me.lbTimeStep.Size = New System.Drawing.Size(103, 12)
+        Me.lbTimeStep.Size = New System.Drawing.Size(116, 15)
         Me.lbTimeStep.TabIndex = 227
         Me.lbTimeStep.Text = "Time step[min] :"
         '
         'tbTimeStep
         '
         Me.tbTimeStep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbTimeStep.Location = New System.Drawing.Point(602, 46)
+        Me.tbTimeStep.Location = New System.Drawing.Point(688, 58)
+        Me.tbTimeStep.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTimeStep.Name = "tbTimeStep"
-        Me.tbTimeStep.Size = New System.Drawing.Size(139, 21)
+        Me.tbTimeStep.Size = New System.Drawing.Size(157, 25)
         Me.tbTimeStep.TabIndex = 225
         Me.tbTimeStep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -124,9 +126,10 @@ Partial Class fFileName
         Me.chkUsingSourceFileName.Checked = True
         Me.chkUsingSourceFileName.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkUsingSourceFileName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkUsingSourceFileName.Location = New System.Drawing.Point(17, 22)
+        Me.chkUsingSourceFileName.Location = New System.Drawing.Point(19, 28)
+        Me.chkUsingSourceFileName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chkUsingSourceFileName.Name = "chkUsingSourceFileName"
-        Me.chkUsingSourceFileName.Size = New System.Drawing.Size(594, 16)
+        Me.chkUsingSourceFileName.Size = New System.Drawing.Size(684, 19)
         Me.chkUsingSourceFileName.TabIndex = 214
         Me.chkUsingSourceFileName.Text = "Using source file name as output file name (if not selected, serial numbers are a" &
     "pplied to file names)"
@@ -135,37 +138,41 @@ Partial Class fFileName
         'tbTextToReplace
         '
         Me.tbTextToReplace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbTextToReplace.Location = New System.Drawing.Point(602, 74)
+        Me.tbTextToReplace.Location = New System.Drawing.Point(594, 92)
+        Me.tbTextToReplace.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTextToReplace.Multiline = True
         Me.tbTextToReplace.Name = "tbTextToReplace"
-        Me.tbTextToReplace.Size = New System.Drawing.Size(139, 21)
+        Me.tbTextToReplace.Size = New System.Drawing.Size(251, 26)
         Me.tbTextToReplace.TabIndex = 218
         '
         'tbTextToFind
         '
         Me.tbTextToFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbTextToFind.Location = New System.Drawing.Point(337, 74)
+        Me.tbTextToFind.Location = New System.Drawing.Point(190, 92)
+        Me.tbTextToFind.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbTextToFind.Multiline = True
         Me.tbTextToFind.Name = "tbTextToFind"
-        Me.tbTextToFind.Size = New System.Drawing.Size(145, 21)
+        Me.tbTextToFind.Size = New System.Drawing.Size(266, 26)
         Me.tbTextToFind.TabIndex = 217
         '
         'tbFileTail
         '
         Me.tbFileTail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbFileTail.Location = New System.Drawing.Point(602, 20)
+        Me.tbFileTail.Location = New System.Drawing.Point(688, 25)
+        Me.tbFileTail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbFileTail.Multiline = True
         Me.tbFileTail.Name = "tbFileTail"
-        Me.tbFileTail.Size = New System.Drawing.Size(139, 21)
+        Me.tbFileTail.Size = New System.Drawing.Size(159, 26)
         Me.tbFileTail.TabIndex = 216
         '
         'tbFileHead
         '
         Me.tbFileHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbFileHead.Location = New System.Drawing.Point(310, 20)
+        Me.tbFileHead.Location = New System.Drawing.Point(354, 25)
+        Me.tbFileHead.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbFileHead.Multiline = True
         Me.tbFileHead.Name = "tbFileHead"
-        Me.tbFileHead.Size = New System.Drawing.Size(145, 21)
+        Me.tbFileHead.Size = New System.Drawing.Size(165, 26)
         Me.tbFileHead.TabIndex = 215
         '
         'GroupBox2
@@ -180,60 +187,67 @@ Partial Class fFileName
         Me.GroupBox2.Controls.Add(Me.btAddAllFiles)
         Me.GroupBox2.Controls.Add(Me.btAddSelectedFile)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 106)
+        Me.GroupBox2.Location = New System.Drawing.Point(14, 132)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 296)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(491, 345)
         Me.GroupBox2.TabIndex = 209
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search source files"
         '
         'tbFileNameFilter
         '
-        Me.tbFileNameFilter.Location = New System.Drawing.Point(198, 48)
+        Me.tbFileNameFilter.Location = New System.Drawing.Point(226, 60)
+        Me.tbFileNameFilter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbFileNameFilter.Name = "tbFileNameFilter"
-        Me.tbFileNameFilter.Size = New System.Drawing.Size(73, 21)
+        Me.tbFileNameFilter.Size = New System.Drawing.Size(83, 25)
         Me.tbFileNameFilter.TabIndex = 206
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(99, 52)
+        Me.Label11.Location = New System.Drawing.Point(113, 65)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(96, 12)
+        Me.Label11.Size = New System.Drawing.Size(110, 15)
         Me.Label11.TabIndex = 207
         Me.Label11.Text = "File name filter :"
         '
         'tbExtensionFilter
         '
-        Me.tbExtensionFilter.Location = New System.Drawing.Point(378, 48)
+        Me.tbExtensionFilter.Location = New System.Drawing.Point(432, 60)
+        Me.tbExtensionFilter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbExtensionFilter.Name = "tbExtensionFilter"
-        Me.tbExtensionFilter.Size = New System.Drawing.Size(42, 21)
+        Me.tbExtensionFilter.Size = New System.Drawing.Size(47, 25)
         Me.tbExtensionFilter.TabIndex = 40
         '
         'lstFiles
         '
         Me.lstFiles.FormattingEnabled = True
         Me.lstFiles.HorizontalScrollbar = True
-        Me.lstFiles.ItemHeight = 12
-        Me.lstFiles.Location = New System.Drawing.Point(10, 75)
+        Me.lstFiles.ItemHeight = 15
+        Me.lstFiles.Location = New System.Drawing.Point(11, 94)
+        Me.lstFiles.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.lstFiles.Name = "lstFiles"
         Me.lstFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lstFiles.Size = New System.Drawing.Size(410, 172)
+        Me.lstFiles.Size = New System.Drawing.Size(468, 199)
         Me.lstFiles.TabIndex = 39
         '
         'txtFolderPathSource
         '
         Me.txtFolderPathSource.BackColor = System.Drawing.SystemColors.Window
-        Me.txtFolderPathSource.Location = New System.Drawing.Point(101, 23)
+        Me.txtFolderPathSource.Location = New System.Drawing.Point(115, 29)
+        Me.txtFolderPathSource.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtFolderPathSource.Name = "txtFolderPathSource"
-        Me.txtFolderPathSource.Size = New System.Drawing.Size(319, 21)
+        Me.txtFolderPathSource.Size = New System.Drawing.Size(364, 25)
         Me.txtFolderPathSource.TabIndex = 38
         '
         'btOpenRfFolder
         '
-        Me.btOpenRfFolder.Location = New System.Drawing.Point(10, 23)
+        Me.btOpenRfFolder.Location = New System.Drawing.Point(11, 29)
+        Me.btOpenRfFolder.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btOpenRfFolder.Name = "btOpenRfFolder"
-        Me.btOpenRfFolder.Size = New System.Drawing.Size(85, 21)
+        Me.btOpenRfFolder.Size = New System.Drawing.Size(97, 26)
         Me.btOpenRfFolder.TabIndex = 37
         Me.btOpenRfFolder.Text = "Select folder"
         Me.btOpenRfFolder.UseVisualStyleBackColor = True
@@ -241,18 +255,19 @@ Partial Class fFileName
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(279, 53)
+        Me.Label14.Location = New System.Drawing.Point(319, 66)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(96, 12)
+        Me.Label14.Size = New System.Drawing.Size(114, 15)
         Me.Label14.TabIndex = 203
         Me.Label14.Text = "Extension filter :"
         '
         'btAddAllFiles
         '
         Me.btAddAllFiles.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddAllFiles.Location = New System.Drawing.Point(127, 258)
+        Me.btAddAllFiles.Location = New System.Drawing.Point(145, 302)
+        Me.btAddAllFiles.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btAddAllFiles.Name = "btAddAllFiles"
-        Me.btAddAllFiles.Size = New System.Drawing.Size(148, 25)
+        Me.btAddAllFiles.Size = New System.Drawing.Size(169, 31)
         Me.btAddAllFiles.TabIndex = 13
         Me.btAddAllFiles.Text = "Add all"
         Me.btAddAllFiles.UseVisualStyleBackColor = True
@@ -260,9 +275,10 @@ Partial Class fFileName
         'btAddSelectedFile
         '
         Me.btAddSelectedFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btAddSelectedFile.Location = New System.Drawing.Point(281, 258)
+        Me.btAddSelectedFile.Location = New System.Drawing.Point(321, 302)
+        Me.btAddSelectedFile.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btAddSelectedFile.Name = "btAddSelectedFile"
-        Me.btAddSelectedFile.Size = New System.Drawing.Size(139, 25)
+        Me.btAddSelectedFile.Size = New System.Drawing.Size(159, 31)
         Me.btAddSelectedFile.TabIndex = 14
         Me.btAddSelectedFile.Text = "Add selected"
         Me.btAddSelectedFile.UseVisualStyleBackColor = True
@@ -270,9 +286,10 @@ Partial Class fFileName
         'rbRenameToDateTimeFormat
         '
         Me.rbRenameToDateTimeFormat.AutoSize = True
-        Me.rbRenameToDateTimeFormat.Location = New System.Drawing.Point(136, 20)
+        Me.rbRenameToDateTimeFormat.Location = New System.Drawing.Point(155, 25)
+        Me.rbRenameToDateTimeFormat.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbRenameToDateTimeFormat.Name = "rbRenameToDateTimeFormat"
-        Me.rbRenameToDateTimeFormat.Size = New System.Drawing.Size(324, 16)
+        Me.rbRenameToDateTimeFormat.Size = New System.Drawing.Size(371, 19)
         Me.rbRenameToDateTimeFormat.TabIndex = 213
         Me.rbRenameToDateTimeFormat.Text = "Rename files to DateTime format (yyyymmddHHMM)"
         Me.rbRenameToDateTimeFormat.UseVisualStyleBackColor = True
@@ -282,9 +299,11 @@ Partial Class fFileName
         Me.GroupBox4.Controls.Add(Me.dgvFileList)
         Me.GroupBox4.Controls.Add(Me.btRemoveAll)
         Me.GroupBox4.Controls.Add(Me.btRemoveSelected)
-        Me.GroupBox4.Location = New System.Drawing.Point(448, 106)
+        Me.GroupBox4.Location = New System.Drawing.Point(512, 132)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(411, 296)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox4.Size = New System.Drawing.Size(470, 345)
         Me.GroupBox4.TabIndex = 210
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Selected source files"
@@ -309,7 +328,8 @@ Partial Class fFileName
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvFileList.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvFileList.Location = New System.Drawing.Point(10, 22)
+        Me.dgvFileList.Location = New System.Drawing.Point(11, 28)
+        Me.dgvFileList.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvFileList.Name = "dgvFileList"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
@@ -321,15 +341,16 @@ Partial Class fFileName
         Me.dgvFileList.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFileList.RowHeadersVisible = False
         Me.dgvFileList.RowTemplate.Height = 23
-        Me.dgvFileList.Size = New System.Drawing.Size(392, 225)
+        Me.dgvFileList.Size = New System.Drawing.Size(448, 265)
         Me.dgvFileList.TabIndex = 16
         '
         'btRemoveAll
         '
         Me.btRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveAll.Location = New System.Drawing.Point(112, 258)
+        Me.btRemoveAll.Location = New System.Drawing.Point(128, 302)
+        Me.btRemoveAll.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btRemoveAll.Name = "btRemoveAll"
-        Me.btRemoveAll.Size = New System.Drawing.Size(142, 25)
+        Me.btRemoveAll.Size = New System.Drawing.Size(162, 31)
         Me.btRemoveAll.TabIndex = 17
         Me.btRemoveAll.Text = "Remove all"
         Me.btRemoveAll.UseVisualStyleBackColor = True
@@ -337,9 +358,10 @@ Partial Class fFileName
         'btRemoveSelected
         '
         Me.btRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btRemoveSelected.Location = New System.Drawing.Point(260, 258)
+        Me.btRemoveSelected.Location = New System.Drawing.Point(297, 302)
+        Me.btRemoveSelected.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btRemoveSelected.Name = "btRemoveSelected"
-        Me.btRemoveSelected.Size = New System.Drawing.Size(142, 25)
+        Me.btRemoveSelected.Size = New System.Drawing.Size(162, 31)
         Me.btRemoveSelected.TabIndex = 18
         Me.btRemoveSelected.Text = "Remove selected"
         Me.btRemoveSelected.UseVisualStyleBackColor = True
@@ -348,9 +370,10 @@ Partial Class fFileName
         '
         Me.rbRename.AutoSize = True
         Me.rbRename.Checked = True
-        Me.rbRename.Location = New System.Drawing.Point(16, 20)
+        Me.rbRename.Location = New System.Drawing.Point(18, 25)
+        Me.rbRename.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbRename.Name = "rbRename"
-        Me.rbRename.Size = New System.Drawing.Size(97, 16)
+        Me.rbRename.Size = New System.Drawing.Size(112, 19)
         Me.rbRename.TabIndex = 208
         Me.rbRename.TabStop = True
         Me.rbRename.Text = "Rename files"
@@ -363,9 +386,11 @@ Partial Class fFileName
         Me.GroupBox1.Controls.Add(Me.rbChangeFileExt)
         Me.GroupBox1.Controls.Add(Me.rbRenameToDateTimeFormat)
         Me.GroupBox1.Controls.Add(Me.rbRename)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 17)
+        Me.GroupBox1.Location = New System.Drawing.Point(14, 21)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(847, 74)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(968, 92)
         Me.GroupBox1.TabIndex = 228
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select processing"
@@ -373,9 +398,10 @@ Partial Class fFileName
         'rbMakeBatchFile
         '
         Me.rbMakeBatchFile.AutoSize = True
-        Me.rbMakeBatchFile.Location = New System.Drawing.Point(507, 42)
+        Me.rbMakeBatchFile.Location = New System.Drawing.Point(579, 52)
+        Me.rbMakeBatchFile.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbMakeBatchFile.Name = "rbMakeBatchFile"
-        Me.rbMakeBatchFile.Size = New System.Drawing.Size(231, 16)
+        Me.rbMakeBatchFile.Size = New System.Drawing.Size(266, 19)
         Me.rbMakeBatchFile.TabIndex = 216
         Me.rbMakeBatchFile.Text = "Make a batch file using file name list"
         Me.rbMakeBatchFile.UseVisualStyleBackColor = True
@@ -383,9 +409,10 @@ Partial Class fFileName
         'rbSaveFileList
         '
         Me.rbSaveFileList.AutoSize = True
-        Me.rbSaveFileList.Location = New System.Drawing.Point(16, 45)
+        Me.rbSaveFileList.Location = New System.Drawing.Point(18, 56)
+        Me.rbSaveFileList.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbSaveFileList.Name = "rbSaveFileList"
-        Me.rbSaveFileList.Size = New System.Drawing.Size(255, 16)
+        Me.rbSaveFileList.Size = New System.Drawing.Size(299, 19)
         Me.rbSaveFileList.TabIndex = 215
         Me.rbSaveFileList.Text = "Save file list (full path and name) to a file"
         Me.rbSaveFileList.UseVisualStyleBackColor = True
@@ -393,9 +420,10 @@ Partial Class fFileName
         'rbChangeFileExt
         '
         Me.rbChangeFileExt.AutoSize = True
-        Me.rbChangeFileExt.Location = New System.Drawing.Point(507, 20)
+        Me.rbChangeFileExt.Location = New System.Drawing.Point(579, 25)
+        Me.rbChangeFileExt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbChangeFileExt.Name = "rbChangeFileExt"
-        Me.rbChangeFileExt.Size = New System.Drawing.Size(153, 16)
+        Me.rbChangeFileExt.Size = New System.Drawing.Size(179, 19)
         Me.rbChangeFileExt.TabIndex = 214
         Me.rbChangeFileExt.Text = "Change file extensions"
         Me.rbChangeFileExt.UseVisualStyleBackColor = True
@@ -419,9 +447,11 @@ Partial Class fFileName
         Me.gbConditions.Controls.Add(Me.chkUsingSourceFileName)
         Me.gbConditions.Controls.Add(Me.tbTextToFind)
         Me.gbConditions.Controls.Add(Me.lbTextToReplace)
-        Me.gbConditions.Location = New System.Drawing.Point(12, 415)
+        Me.gbConditions.Location = New System.Drawing.Point(14, 485)
+        Me.gbConditions.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbConditions.Name = "gbConditions"
-        Me.gbConditions.Size = New System.Drawing.Size(747, 159)
+        Me.gbConditions.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbConditions.Size = New System.Drawing.Size(854, 237)
         Me.gbConditions.TabIndex = 229
         Me.gbConditions.TabStop = False
         Me.gbConditions.Text = "Conditions"
@@ -429,72 +459,75 @@ Partial Class fFileName
         'lbBatchFile
         '
         Me.lbBatchFile.AutoSize = True
-        Me.lbBatchFile.Location = New System.Drawing.Point(14, 134)
+        Me.lbBatchFile.Location = New System.Drawing.Point(16, 168)
         Me.lbBatchFile.Name = "lbBatchFile"
-        Me.lbBatchFile.Size = New System.Drawing.Size(124, 12)
+        Me.lbBatchFile.Size = New System.Drawing.Size(146, 15)
         Me.lbBatchFile.TabIndex = 235
         Me.lbBatchFile.Text = "Batch file statement :"
         '
         'tbBatchTail
         '
         Me.tbBatchTail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbBatchTail.Location = New System.Drawing.Point(468, 132)
+        Me.tbBatchTail.Location = New System.Drawing.Point(165, 199)
+        Me.tbBatchTail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbBatchTail.Multiline = True
         Me.tbBatchTail.Name = "tbBatchTail"
-        Me.tbBatchTail.Size = New System.Drawing.Size(273, 21)
+        Me.tbBatchTail.Size = New System.Drawing.Size(680, 26)
         Me.tbBatchTail.TabIndex = 234
         '
         'tbBatchHead
         '
         Me.tbBatchHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbBatchHead.Location = New System.Drawing.Point(144, 132)
+        Me.tbBatchHead.Location = New System.Drawing.Point(165, 165)
+        Me.tbBatchHead.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbBatchHead.Multiline = True
         Me.tbBatchHead.Name = "tbBatchHead"
-        Me.tbBatchHead.Size = New System.Drawing.Size(242, 21)
+        Me.tbBatchHead.Size = New System.Drawing.Size(583, 26)
         Me.tbBatchHead.TabIndex = 234
         '
         'lbBatchFileList
         '
         Me.lbBatchFileList.AutoSize = True
-        Me.lbBatchFileList.Location = New System.Drawing.Point(388, 136)
+        Me.lbBatchFileList.Location = New System.Drawing.Point(754, 170)
         Me.lbBatchFileList.Name = "lbBatchFileList"
-        Me.lbBatchFileList.Size = New System.Drawing.Size(77, 12)
+        Me.lbBatchFileList.Size = New System.Drawing.Size(91, 15)
         Me.lbBatchFileList.TabIndex = 233
         Me.lbBatchFileList.Text = "+ file name +"
         '
         'lbFileExt
         '
         Me.lbFileExt.AutoSize = True
-        Me.lbFileExt.Location = New System.Drawing.Point(571, 106)
+        Me.lbFileExt.Location = New System.Drawing.Point(649, 132)
         Me.lbFileExt.Name = "lbFileExt"
-        Me.lbFileExt.Size = New System.Drawing.Size(92, 12)
+        Me.lbFileExt.Size = New System.Drawing.Size(109, 15)
         Me.lbFileExt.TabIndex = 233
         Me.lbFileExt.Text = "File extension :"
         '
         'tbExtToChange
         '
         Me.tbExtToChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbExtToChange.Location = New System.Drawing.Point(666, 101)
+        Me.tbExtToChange.Location = New System.Drawing.Point(761, 126)
+        Me.tbExtToChange.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbExtToChange.Name = "tbExtToChange"
-        Me.tbExtToChange.Size = New System.Drawing.Size(75, 21)
+        Me.tbExtToChange.Size = New System.Drawing.Size(85, 25)
         Me.tbExtToChange.TabIndex = 232
         Me.tbExtToChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lbSetTime
         '
         Me.lbSetTime.AutoSize = True
-        Me.lbSetTime.Location = New System.Drawing.Point(76, 50)
+        Me.lbSetTime.Location = New System.Drawing.Point(87, 62)
         Me.lbSetTime.Name = "lbSetTime"
-        Me.lbSetTime.Size = New System.Drawing.Size(159, 12)
+        Me.lbSetTime.Size = New System.Drawing.Size(188, 15)
         Me.lbSetTime.TabIndex = 212
         Me.lbSetTime.Text = "Set time condition to apply."
         '
         'lbTextToFind
         '
         Me.lbTextToFind.AutoSize = True
-        Me.lbTextToFind.Location = New System.Drawing.Point(189, 79)
+        Me.lbTextToFind.Location = New System.Drawing.Point(16, 99)
         Me.lbTextToFind.Name = "lbTextToFind"
-        Me.lbTextToFind.Size = New System.Drawing.Size(146, 12)
+        Me.lbTextToFind.Size = New System.Drawing.Size(171, 15)
         Me.lbTextToFind.TabIndex = 224
         Me.lbTextToFind.Text = "Text in file name to find :"
         '
@@ -502,9 +535,10 @@ Partial Class fFileName
         '
         Me.chkSetDestinationFolder.AutoSize = True
         Me.chkSetDestinationFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkSetDestinationFolder.Location = New System.Drawing.Point(17, 102)
+        Me.chkSetDestinationFolder.Location = New System.Drawing.Point(19, 128)
+        Me.chkSetDestinationFolder.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chkSetDestinationFolder.Name = "chkSetDestinationFolder"
-        Me.chkSetDestinationFolder.Size = New System.Drawing.Size(387, 16)
+        Me.chkSetDestinationFolder.Size = New System.Drawing.Size(451, 19)
         Me.chkSetDestinationFolder.TabIndex = 214
         Me.chkSetDestinationFolder.Text = "Set desination folder (if not selected, the files will be overwritten)"
         Me.chkSetDestinationFolder.UseVisualStyleBackColor = True
@@ -512,36 +546,37 @@ Partial Class fFileName
         'lbTextToReplace
         '
         Me.lbTextToReplace.AutoSize = True
-        Me.lbTextToReplace.Location = New System.Drawing.Point(502, 79)
+        Me.lbTextToReplace.Location = New System.Drawing.Point(477, 99)
         Me.lbTextToReplace.Name = "lbTextToReplace"
-        Me.lbTextToReplace.Size = New System.Drawing.Size(98, 12)
+        Me.lbTextToReplace.Size = New System.Drawing.Size(116, 15)
         Me.lbTextToReplace.TabIndex = 221
         Me.lbTextToReplace.Text = "Text to repalce :"
         '
         'lbTail
         '
         Me.lbTail.AutoSize = True
-        Me.lbTail.Location = New System.Drawing.Point(472, 25)
+        Me.lbTail.Location = New System.Drawing.Point(537, 31)
         Me.lbTail.Name = "lbTail"
-        Me.lbTail.Size = New System.Drawing.Size(128, 12)
+        Me.lbTail.Size = New System.Drawing.Size(150, 15)
         Me.lbTail.TabIndex = 230
         Me.lbTail.Text = "Tail text of file name :"
         '
         'lbHead
         '
         Me.lbHead.AutoSize = True
-        Me.lbHead.Location = New System.Drawing.Point(171, 25)
+        Me.lbHead.Location = New System.Drawing.Point(190, 31)
         Me.lbHead.Name = "lbHead"
-        Me.lbHead.Size = New System.Drawing.Size(136, 12)
+        Me.lbHead.Size = New System.Drawing.Size(162, 15)
         Me.lbHead.TabIndex = 231
         Me.lbHead.Text = "Head text of file name :"
         '
         'btClose
         '
         Me.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btClose.Location = New System.Drawing.Point(765, 605)
+        Me.btClose.Location = New System.Drawing.Point(874, 740)
+        Me.btClose.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btClose.Name = "btClose"
-        Me.btClose.Size = New System.Drawing.Size(97, 61)
+        Me.btClose.Size = New System.Drawing.Size(111, 90)
         Me.btClose.TabIndex = 231
         Me.btClose.Text = "Close"
         Me.btClose.UseVisualStyleBackColor = True
@@ -549,9 +584,10 @@ Partial Class fFileName
         'btStartProcess
         '
         Me.btStartProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btStartProcess.Location = New System.Drawing.Point(765, 422)
+        Me.btStartProcess.Location = New System.Drawing.Point(874, 493)
+        Me.btStartProcess.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btStartProcess.Name = "btStartProcess"
-        Me.btStartProcess.Size = New System.Drawing.Size(97, 177)
+        Me.btStartProcess.Size = New System.Drawing.Size(111, 229)
         Me.btStartProcess.TabIndex = 230
         Me.btStartProcess.Text = "Start"
         Me.btStartProcess.UseVisualStyleBackColor = True
@@ -560,9 +596,10 @@ Partial Class fFileName
         '
         Me.btResultFPN.Enabled = False
         Me.btResultFPN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btResultFPN.Location = New System.Drawing.Point(11, 47)
+        Me.btResultFPN.Location = New System.Drawing.Point(13, 59)
+        Me.btResultFPN.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btResultFPN.Name = "btResultFPN"
-        Me.btResultFPN.Size = New System.Drawing.Size(135, 21)
+        Me.btResultFPN.Size = New System.Drawing.Size(154, 26)
         Me.btResultFPN.TabIndex = 235
         Me.btResultFPN.Text = "Destination folder"
         Me.btResultFPN.UseVisualStyleBackColor = True
@@ -570,9 +607,10 @@ Partial Class fFileName
         'tbResultFPN
         '
         Me.tbResultFPN.Enabled = False
-        Me.tbResultFPN.Location = New System.Drawing.Point(152, 47)
+        Me.tbResultFPN.Location = New System.Drawing.Point(174, 59)
+        Me.tbResultFPN.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbResultFPN.Name = "tbResultFPN"
-        Me.tbResultFPN.Size = New System.Drawing.Size(589, 21)
+        Me.tbResultFPN.Size = New System.Drawing.Size(673, 25)
         Me.tbResultFPN.TabIndex = 234
         '
         'GroupBox3
@@ -583,18 +621,20 @@ Partial Class fFileName
         Me.GroupBox3.Controls.Add(Me.tbFileTail)
         Me.GroupBox3.Controls.Add(Me.lbHead)
         Me.GroupBox3.Controls.Add(Me.tbFileHead)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 586)
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 730)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(747, 80)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(854, 100)
         Me.GroupBox3.TabIndex = 236
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Result"
         '
         'fFileName
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(874, 676)
+        Me.ClientSize = New System.Drawing.Size(997, 835)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btClose)
         Me.Controls.Add(Me.btStartProcess)
@@ -602,9 +642,10 @@ Partial Class fFileName
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox4)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(890, 715)
-        Me.MinimumSize = New System.Drawing.Size(890, 715)
+        Me.MaximumSize = New System.Drawing.Size(1015, 882)
+        Me.MinimumSize = New System.Drawing.Size(1015, 882)
         Me.Name = "fFileName"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "File name processing"

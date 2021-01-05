@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2020.09.11.0")>
-<Assembly: AssemblyFileVersion("2020.09.11.0")>
+<Assembly: AssemblyVersion("2021.01.05.0")>
+<Assembly: AssemblyFileVersion("2021.01.05.0")>
