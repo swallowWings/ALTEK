@@ -42,3 +42,9 @@ O File name processor
    - Change the extensions of files
    - Save file list (full path and name) to a file
    - Make a batch file using file list
+   
+   
+# Update history
+O 2021.01.05
+   - Text files editor에서 라인 인덱스 적용 버그 수정
+   - Text files editor에서 처리 속도 향상
