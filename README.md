@@ -54,7 +54,9 @@ O File name processor
          d:\ALTEKtool\gdal\(gdal files.....)  
        
 # Update history
-O 2018.08 처음 배포(Tok이라는 이름으로 처음 배포됨)  
+O 2018.08 
+ - Tok이라는 이름으로 처음 배포됨  
+ 
 O 2018.09
  - 모든 ascii 데이터가 소수점 2자리 까지 출력되는 현상 수정(원본 데이터들의 자리수 그대로 유지되게 수정)
  - raster calculator에서 버그 수정
