@@ -278,5 +278,7 @@
         Me.lb_ei_max.Text = lowBound.ToString("F2") + " ≤ x"
     End Sub
 
+    Private Sub Rb0_500_CheckedChanged(sender As Object, e As EventArgs) Handles rb0_500.CheckedChanged
 
+    End Sub
 End Class
