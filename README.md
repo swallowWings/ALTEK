@@ -56,32 +56,32 @@ O File name processor
 # Update history
 O 2018.08 처음 배포(Tok이라는 이름으로 처음 배포됨)  
 O 2018.09
-  - 모든 ascii 데이터가 소수점 2자리 까지 출력되는 현상 수정(원본 데이터들의 자리수 그대로 유지되게 수정)
-  - raster calculator에서 버그 수정
-  - 클리핑에서 실수형 셀사이즈 관련 버그 수정
-  - extension filter 관련 버그 수정
-  - converting format, resampling, clipping에서 xml 파일 안만들어지게 수정
-  - Progress bar stop 기능 관련 수정  
-  - Progress bar 버그 수정
-  - Search and replace line by line 기능 추가
-  - 텍스트 Line 추가 기능 추가
-  - 라인 삭제 기능 추가
-  - 파일 경로+이름 리스트 저장 기능 추가  
-  - 래스터 범위에서 값 수정하는 기능 버그 수정
-  - 래스터 값 소수점 자리수 줄이는 기능 추가
-  - 래스터 계산기에서 소수점 자리수 지정하는 기능 추가
-  - 매우 큰 텍스트 파일 처리 관련 오류 수정  
-  - 여러개 밴드를 가지는 GeoTIFF 파일에서 밴드를 지정해서 ASCII 파일로 변환하는 기능 추가
-  - 대용량 ascii 파일 적용 기능 확대
-  - Img 파일 만들때 renderer 에서 depth renderer 추가
-  - ASCII 파일을 image로 변환하는 기능 개선
+ - 모든 ascii 데이터가 소수점 2자리 까지 출력되는 현상 수정(원본 데이터들의 자리수 그대로 유지되게 수정)
+ - raster calculator에서 버그 수정
+ - 클리핑에서 실수형 셀사이즈 관련 버그 수정
+ - extension filter 관련 버그 수정
+ - converting format, resampling, clipping에서 xml 파일 안만들어지게 수정
+ - Progress bar stop 기능 관련 수정  
+ - Progress bar 버그 수정
+ - Search and replace line by line 기능 추가
+ - 텍스트 Line 추가 기능 추가
+ - 라인 삭제 기능 추가
+ - 파일 경로+이름 리스트 저장 기능 추가  
+ - 래스터 범위에서 값 수정하는 기능 버그 수정
+ - 래스터 값 소수점 자리수 줄이는 기능 추가
+ - 래스터 계산기에서 소수점 자리수 지정하는 기능 추가
+ - 매우 큰 텍스트 파일 처리 관련 오류 수정  
+ - 여러개 밴드를 가지는 GeoTIFF 파일에서 밴드를 지정해서 ASCII 파일로 변환하는 기능 추가
+ - 대용량 ascii 파일 적용 기능 확대
+ - Img 파일 만들때 renderer 에서 depth renderer 추가
+ - ASCII 파일을 image로 변환하는 기능 개선
 
 O 2018.10
-  - Grib/Grib2 파일을 ascii로 변환하는 기능 추가. 밴드 지정 가능
-  - gdalinfo를 이용해서 raster 파일의 다양한 정보를 추출해서 파일로 저장하는 기능 추가
-  - aggregate files 에 있는 버그 수정
-  - Bugs were fixed in the value extractor.
-  - Raster calculator에서 A, B, C 중 하나를 폴더 지정해서 여러개 파일을 적용할 수 있는 기능 추가
+ - Grib/Grib2 파일을 ascii로 변환하는 기능 추가. 밴드 지정 가능
+ - gdalinfo를 이용해서 raster 파일의 다양한 정보를 추출해서 파일로 저장하는 기능 추가
+ - aggregate files 에 있는 버그 수정
+ - Bugs were fixed in the value extractor.
+ - Raster calculator에서 A, B, C 중 하나를 폴더 지정해서 여러개 파일을 적용할 수 있는 기능 추가
 
 O 2018.12
   - Raster calculator에서 공백으로 구분하는 조건 삭제. 즉, 수식에서 공백으로 구분하지 않아도 됨
@@ -98,9 +98,9 @@ O 2019.07
   - Text file을 appending 하는 기능 추가. 행방향, 열방향.
   - file 이름 변경시 폴더 지정 기능 추가
   - 파일리스트에서 natural comparer 기능 추가
-  -calculator에서 '-' 값을 가지는 숫자나 문자가 맨 앞에 있을 경우, '+' 값으로 계산되는 버그 수정
-  -raster file converter에서 ascii 파일의 소수점 자리수를 줄일 수 있는 기능 추가(ascii 파일 용량을 작게 하기 위해서)
-  -[Get values from text files]의 [Extract texts in text file] 에서 여러개의 열을 추출할 수 있도록 기능 확장
+  - calculator에서 '-' 값을 가지는 숫자나 문자가 맨 앞에 있을 경우, '+' 값으로 계산되는 버그 수정
+  - raster file converter에서 ascii 파일의 소수점 자리수를 줄일 수 있는 기능 추가(ascii 파일 용량을 작게 하기 위해서)
+  - [Get values from text files]의 [Extract texts in text file] 에서 여러개의 열을 추출할 수 있도록 기능 확장
 
 O 2019.08
   - raster file converter에서 ascii 파일 생성시, prj 파일 누락되는 버그 수정
