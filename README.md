@@ -49,9 +49,9 @@ O File name processor
    gdal.zip과 ALTEK_ALL.zip을 다운로드 하고, 각 파일의 속성(마우스 우클릭>속성)에서 차단해제 
  - 압축파일을 풀고, gdal 폴더는 Tok.exe와 같은 폴더에 배치해서 사용  
    (ex,  d:\ALTEKtool\ALTEK.exe  
-      d:\ALTEKtool\ALTEK.exe.config  
-       d:\ALTEKtool\gentle.exe  
-       d:\ALTEKtool\gdal\(gdal files.....)  
+         d:\ALTEKtool\ALTEK.exe.config  
+         d:\ALTEKtool\gentle.exe  
+         d:\ALTEKtool\gdal\(gdal files.....)  
        
 # Update history
 O 2018.08 처음 배포(Tok이라는 이름으로 처음 배포됨)  
@@ -84,40 +84,40 @@ O 2018.10
  - Raster calculator에서 A, B, C 중 하나를 폴더 지정해서 여러개 파일을 적용할 수 있는 기능 추가
 
 O 2018.12
-  - Raster calculator에서 공백으로 구분하는 조건 삭제. 즉, 수식에서 공백으로 구분하지 않아도 됨
-  - 거듭제곱 연산 추가
+ - Raster calculator에서 공백으로 구분하는 조건 삭제. 즉, 수식에서 공백으로 구분하지 않아도 됨
+ - 거듭제곱 연산 추가
 
 O 2019.4
-  - 조건 연산자에서 +, - 기호를 포함한 숫자에 관한 버그 수정
+ - 조건 연산자에서 +, - 기호를 포함한 숫자에 관한 버그 수정
 
 O 2019.5
-  - 다수의 파일의 좌표계를 변경하는 기능 추가
+ - 다수의 파일의 좌표계를 변경하는 기능 추가
 
 O 2019.07
-  - 'Tok'을 'ALTEK'으로 이름 수정
-  - Text file을 appending 하는 기능 추가. 행방향, 열방향.
-  - file 이름 변경시 폴더 지정 기능 추가
-  - 파일리스트에서 natural comparer 기능 추가
-  - calculator에서 '-' 값을 가지는 숫자나 문자가 맨 앞에 있을 경우, '+' 값으로 계산되는 버그 수정
-  - raster file converter에서 ascii 파일의 소수점 자리수를 줄일 수 있는 기능 추가(ascii 파일 용량을 작게 하기 위해서)
-  - [Get values from text files]의 [Extract texts in text file] 에서 여러개의 열을 추출할 수 있도록 기능 확장
+ - 'Tok'을 'ALTEK'으로 이름 수정
+ - Text file을 appending 하는 기능 추가. 행방향, 열방향.
+ - file 이름 변경시 폴더 지정 기능 추가
+ - 파일리스트에서 natural comparer 기능 추가
+ - calculator에서 '-' 값을 가지는 숫자나 문자가 맨 앞에 있을 경우, '+' 값으로 계산되는 버그 수정
+ - raster file converter에서 ascii 파일의 소수점 자리수를 줄일 수 있는 기능 추가(ascii 파일 용량을 작게 하기 위해서)
+ - [Get values from text files]의 [Extract texts in text file] 에서 여러개의 열을 추출할 수 있도록 기능 확장
 
 O 2019.08
-  - raster file converter에서 ascii 파일 생성시, prj 파일 누락되는 버그 수정
-  - gdal 업데이트  
-    기존 : 2017.8.14 빌드 버전  
-    신규 : 2019.3.23 빌드 버전  
+ - raster file converter에서 ascii 파일 생성시, prj 파일 누락되는 버그 수정
+ - gdal 업데이트  
+   기존 : 2017.8.14 빌드 버전  
+   신규 : 2019.3.23 빌드 버전  
 
 O 2019.11
-  - 파일 리스트를 이용해서 배치파일 만드는 기능 추가
+ - 파일 리스트를 이용해서 배치파일 만드는 기능 추가
 
 O 2020.02
-  - 파일 리스트를 정렬 버그 수정
-  - ASCII 래스터 파일에서 기본적인 통계값 계산 기능 추가
+ - 파일 리스트를 정렬 버그 수정
+ - ASCII 래스터 파일에서 기본적인 통계값 계산 기능 추가
 
 O 2020.04
-  - ASCII 파일 calculator에서 수학함수(math, abs) 추가  
+ - ASCII 파일 calculator에서 수학함수(math, abs) 추가  
   
 O 2021.01
-   - Text files editor에서 라인 인덱스 적용 버그 수정
-   - Text files editor에서 처리 속도 향상
+ - Text files editor에서 라인 인덱스 적용 버그 수정
+ - Text files editor에서 처리 속도 향상
