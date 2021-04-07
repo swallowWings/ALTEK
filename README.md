@@ -19,9 +19,9 @@ O Coordinate system converter(using GDAL tool)
 
 O Get values from text files
    - Extract values in a cell of ASCII raster files
-   - Calculate average values of ASCII raster files
-   - Accumulate all ASCII raster files
-   - Aggregate ASCII raster files in some interval
+   - Calculate average, min, max, sum values of ASCII raster files
+   - Calculate average, min, max, sum values of all cells in ASCII raster files
+   - Aggregate ASCII raster files in some interval   
    - Extract values in a certain column of text files
 
 O Append text files 
@@ -50,8 +50,8 @@ O File name processor
  - 압축파일을 풀고, gdal 폴더는 Tok.exe와 같은 폴더에 배치해서 사용  
    (ex, d:\ALTEKtool\ALTEK.exe             
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\ALTEK.exe.config  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gentle.exe  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\(gdal files.....)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gentle.dll  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\ (gdal files.....)  
        
 # Update history
 O 2018.08 
@@ -123,3 +123,6 @@ O 2020.04
 O 2021.01
  - Text files editor에서 라인 인덱스 적용 버그 수정
  - Text files editor에서 처리 속도 향상
+
+O 2021.04
+ - 다수의 ASCII raster file에서 셀별 최대값, 최소값, 합, 평균 등을 계산하고 하나의 래스터 파일을 만드는 기능 
