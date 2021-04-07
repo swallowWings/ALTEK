@@ -50,7 +50,7 @@ O File name processor
  - 압축파일을 풀고, gdal 폴더는 Tok.exe와 같은 폴더에 배치해서 사용  
    (ex, d:\ALTEKtool\ALTEK.exe             
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\ALTEK.exe.config  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gentle.exe  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gentle.dll  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\(gdal files.....)  
        
 # Update history
