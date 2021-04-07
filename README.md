@@ -51,7 +51,7 @@ O File name processor
    (ex, d:\ALTEKtool\ALTEK.exe             
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\ALTEK.exe.config  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gentle.dll  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\(gdal files.....)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\ (gdal files.....)  
        
 # Update history
 O 2018.08 
