@@ -19,9 +19,9 @@ O Coordinate system converter(using GDAL tool)
 
 O Get values from text files
    - Extract values in a cell of ASCII raster files
-   - Calculate average values of ASCII raster files
-   - Accumulate all ASCII raster files
-   - Aggregate ASCII raster files in some interval
+   - Calculate average, min, max, sum values of ASCII raster files
+   - Calculate average, min, max, sum values of all cells in ASCII raster files
+   - Aggregate ASCII raster files in some interval   
    - Extract values in a certain column of text files
 
 O Append text files 
