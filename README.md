@@ -31,7 +31,7 @@ O Append text files
 O Text files editor
    - Replace text in text files
    - Search and replace lines in text files
-   - Insert a line to text files
+   - Insert texts at a line index in text files
    - Remove lines from text files
    - Replace values in certain region of ASCII raster files
    - Cut decimal parts in ASCII raster files
