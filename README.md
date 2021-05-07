@@ -127,3 +127,6 @@ O 2021.01
 O 2021.04
  - 다수의 ASCII raster file에서 셀별 최대값, 최소값, 합, 평균 등을 계산하고 하나의 래스터 파일을 만드는 기능 
  - Minor GUI 수정
+
+O 2021.05
+ - Minor bug fix about cutting decimal parts.
