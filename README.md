@@ -2,7 +2,7 @@
 ALTEK will help you processing ASCII rater files and text files.   
 ALTEK can process a lot of files in a batch process. The main features of the ALTEK are as below.
 
-  ![](https://github.com/floodmodel/ALTEK/blob/master/Wiki/MainGUI.JPG)
+  ![](https://github.com/swallowWings/ALTEK/tree/master/Wiki/MainGUI.JPG)
 
 O Raster files converter(using GDAL tool)
    - Convert GTiff files <-> ASCII raster files
@@ -45,7 +45,7 @@ O File name processor
    
 
 # Using ALTEK
- - 파일 다운로드와 세팅 가이드는 https://github.com/floodmodel/ALTEK/tree/master/DownloadStableVersion 에서  
+ - 파일 다운로드와 세팅 가이드는 https://github.com/swallowWings/ALTEK/tree/master/DownloadStableVersion 에서  
    gdal.zip과 ALTEK_ALL.zip을 다운로드 하고, 각 파일의 속성(마우스 우클릭>속성)에서 차단해제 
  - 압축파일을 풀고, gdal 폴더는 Tok.exe와 같은 폴더에 배치해서 사용  
    (ex, d:\ALTEKtool\ALTEK.exe             
