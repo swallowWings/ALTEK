@@ -1,6 +1,6 @@
 # ALTEK is a data processing tool
 ALTEK will help you processing ASCII rater files and text files.   
-ALTEK can process a lot of files in a batch process. The main features of the ALTEK are as below.
+ALTEK can process a lot of files in a batch process. The main features of the ALTEK are as below. 
 
   ![](https://github.com/floodmodel/ALTEK/blob/master/Wiki/MainGUI.JPG)
 
