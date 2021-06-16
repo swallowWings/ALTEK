@@ -132,7 +132,7 @@ O 2021.05
  - Minor bug fix about cutting decimal parts.
  - Repository transferred 
 
-O 2021.05
+O 2021.06
  - gentle.dll was embedded in ALTEK.exe file and gentle.dll file was removed.  
-
+ - The feature of extracting cell value was improved.  
  
