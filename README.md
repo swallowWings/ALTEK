@@ -136,4 +136,7 @@ O 2021.06
  - gentle.dll was embedded in ALTEK.exe file and gentle.dll file was removed.  
  - The feature of extracting cell value was improved.  
  - Minor bug fix in processing nodata value of ASCII file in the ASCII raster calculator.
+
+O 2022.05
+ - Revision in deleting temporary files.
  
