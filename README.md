@@ -139,4 +139,8 @@ O 2021.06
 
 O 2022.05
  - Revision in deleting temporary files.
+
+O 2022.07
+ - Bug revision in "Edit text files > Search and replace line by line" feature.
+
  
