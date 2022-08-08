@@ -141,6 +141,9 @@ O 2022.05
  - Revision in deleting temporary files.
 
 O 2022.07
- - Bug revision in "Edit text files > Search and replace line by line" feature.
+ - Bug fix in "Edit text files > Search and replace line by line" feature.
+
+O 2022.08
+ - Bug fix in "File name processor" for setting desitnation folder.  
 
  
