@@ -145,5 +145,6 @@ O 2022.07
 
 O 2022.08
  - Bug fix in "File name processor" for setting desitnation folder.  
+ - Add "not equal operator (!=)" to ASC raster calculator.   
 
  
