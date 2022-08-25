@@ -147,5 +147,6 @@ O 2022.08
  - Bug fix in "File name processor" for setting desitnation folder.  
  - Add "not equal operator (!=)" to ASC raster calculator.   
  - Add copying prjection files feature when making ASC file by "Get values from text files" menu.   
+ - Add the feature of deleting file name by character index to "File name processor" menu.   
 
  
