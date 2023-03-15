@@ -35,6 +35,7 @@ O Text files editor
    - Remove lines from text files
    - Replace values in certain region of ASCII raster files
    - Cut decimal parts in ASCII raster files
+   - Set texts between texts in a line  
 
 O File name processor
    - Rename files
@@ -148,5 +149,10 @@ O 2022.08
  - Add "not equal operator (!=)" to ASC raster calculator.   
  - Add copying prjection files feature when making ASC file by "Get values from text files" menu.   
  - Add the feature of deleting file name by character index to "File name processor" menu.   
+
+O 2023.03
+ - "Set texts between texts in a line" function was added.   
+
+
 
  
