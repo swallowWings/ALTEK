@@ -153,6 +153,9 @@ O 2022.08
 O 2023.03
  - "Set texts between texts in a line" function was added.   
 
+O 2023.06
+ - The function of removing columns from the text lines in the text files was added.   
+
 
 
  
