@@ -37,12 +37,13 @@ O Text files editor
    - Cut decimal parts in ASCII raster files
    - Set texts between texts in a line  
 
-O File name processor
-   - Rename files
-   - Rename files to DateTime format
-   - Change the extensions of files
-   - Save file list (full path and name) to a file
-   - Make a batch file using file list
+O File name processor  
+   - Rename files  
+   - Rename files to DateTime format  
+   - Copy files using the file name list  
+   - Change the extensions of files  
+   - Save file list (full path and name) to a file  
+   - Make a batch file using file list  
    
 
 # Using ALTEK
