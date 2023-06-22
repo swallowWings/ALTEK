@@ -48,11 +48,10 @@ O File name processor
 
 # Using ALTEK
  - 파일 다운로드와 세팅 가이드는 https://github.com/swallowWings/ALTEK/tree/master/DownloadStableVersion   
-   에서 gdal.zip과 ALTEK_ALL.zip을 다운로드 하고, 각 파일의 속성(마우스 우클릭>속성)에서 차단해제 
- - 압축파일을 풀고, gdal 폴더는 Tok.exe와 같은 폴더에 배치해서 사용  
+   에서 gdal.zip과 ALTEK.*을 다운로드 하고, 각 파일의 속성(마우스 우클릭>속성)에서 차단해제 
+ - 압축파일을 풀고, gdal 폴더는 ALTEK.exe와 같은 폴더에 배치해서 사용  
    (ex, d:\ALTEKtool\ALTEK.exe             
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\ALTEK.exe.config  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gentle.dll  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\ (gdal files.....)  
        
 # Update history
@@ -156,6 +155,7 @@ O 2023.03
 
 O 2023.06
  - The function of removing columns from the text lines in the text files was added.   
+ - The function of copying files using file name list was added.   
 
 
 
