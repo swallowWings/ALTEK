@@ -7,6 +7,7 @@ ALTEK can process a lot of files in a batch process. The main features of the AL
 O Raster files converter(using GDAL tool)
    - Convert GTiff files <-> ASCII raster files
    - Convert GRIB/GRIB2 files -> ASCII raster files
+   - Convert NetCDF files -> ASCII raster files
    - Convert ASC raster files -> image files
    - Clip and resample ASCII raster files
    - Get raster files information
@@ -150,12 +151,16 @@ O 2022.08
  - Add copying prjection files feature when making ASC file by "Get values from text files" menu.   
  - Add the feature of deleting file name by character index to "File name processor" menu.   
 
-O 2023.03
+O 2023.03  
  - "Set texts between texts in a line" function was added.   
 
-O 2023.06
+O 2023.06  
  - The function of removing columns from the text lines in the text files was added.   
  - The function of copying files using file name list was added.   
+
+O 2024.02  
+ - "Converting NetCDF files to ASCII raster files" function was added.   
+
 
 
 
