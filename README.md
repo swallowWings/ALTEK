@@ -30,13 +30,14 @@ O Append text files
    - Append text files in row mode
   
 O Text files editor
-   - Replace text in text files
-   - Search and replace lines in text files
-   - Insert texts at a line index in text files
-   - Remove lines from text files
-   - Replace values in certain region of ASCII raster files
-   - Cut decimal parts in ASCII raster files
-   - Set texts between texts in a line  
+   - Replace text in the text files
+   - Search and replace lines in the text files
+   - Insert texts at a line index in the text files
+   - Remove lines from the text files
+   - Remove empty lines in the text files
+   - Replace values in a certain region of the ASCII raster files
+   - Cut decimal parts in the ASCII raster files
+   - Set texts between texts in a line of the text files
 
 O File name processor  
    - Rename files  
@@ -161,6 +162,10 @@ O 2023.06
 O 2024.02  
  - "Converting NetCDF files to ASCII raster files" function was added.   
  
+O 2024.06  
+ - "Remove empty lines in the text files" function was added.   
+
+
 
 
 
