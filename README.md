@@ -57,11 +57,9 @@ O File name processor
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:\ALTEKtool\gdal\ (gdal files.....)  
        
 # Update history
-O 2018.08 
+O 2018   
  - Tok이라는 이름으로 처음 배포됨  
- 
-O 2018.09
- - 모든 ascii 데이터가 소수점 2자리 까지 출력되는 현상 수정(원본 데이터들의 자리수 그대로 유지되게 수정)
+  - 모든 ascii 데이터가 소수점 2자리 까지 출력되는 현상 수정(원본 데이터들의 자리수 그대로 유지되게 수정)
  - raster calculator에서 버그 수정
  - 클리핑에서 실수형 셀사이즈 관련 버그 수정
  - extension filter 관련 버그 수정
@@ -80,82 +78,56 @@ O 2018.09
  - 대용량 ascii 파일 적용 기능 확대
  - Img 파일 만들때 renderer 에서 depth renderer 추가
  - ASCII 파일을 image로 변환하는 기능 개선
-
-O 2018.10
  - Grib/Grib2 파일을 ascii로 변환하는 기능 추가. 밴드 지정 가능
  - gdalinfo를 이용해서 raster 파일의 다양한 정보를 추출해서 파일로 저장하는 기능 추가
  - aggregate files 에 있는 버그 수정
  - Bugs were fixed in the value extractor.
  - Raster calculator에서 A, B, C 중 하나를 폴더 지정해서 여러개 파일을 적용할 수 있는 기능 추가
-
-O 2018.12
  - Raster calculator에서 공백으로 구분하는 조건 삭제. 즉, 수식에서 공백으로 구분하지 않아도 됨
  - 거듭제곱 연산 추가
 
-O 2019.4
- - 조건 연산자에서 +, - 기호를 포함한 숫자에 관한 버그 수정
-
-O 2019.5
- - 다수의 파일의 좌표계를 변경하는 기능 추가
-
-O 2019.07
+O 2019   
  - 'Tok'을 'ALTEK'으로 이름 수정
+ - 조건 연산자에서 +, - 기호를 포함한 숫자에 관한 버그 수정
+ - 다수의 파일의 좌표계를 변경하는 기능 추가
  - Text file을 appending 하는 기능 추가. 행방향, 열방향.
  - file 이름 변경시 폴더 지정 기능 추가
  - 파일리스트에서 natural comparer 기능 추가
  - calculator에서 '-' 값을 가지는 숫자나 문자가 맨 앞에 있을 경우, '+' 값으로 계산되는 버그 수정
  - raster file converter에서 ascii 파일의 소수점 자리수를 줄일 수 있는 기능 추가(ascii 파일 용량을 작게 하기 위해서)
  - [Get values from text files]의 [Extract texts in text file] 에서 여러개의 열을 추출할 수 있도록 기능 확장
-
-O 2019.08
  - raster file converter에서 ascii 파일 생성시, prj 파일 누락되는 버그 수정
  - gdal 업데이트  
    기존 : 2017.8.14 빌드 버전  
    신규 : 2019.3.23 빌드 버전  
-
-O 2019.11
  - 파일 리스트를 이용해서 배치파일 만드는 기능 추가
 
-O 2020.02
+O 2020   
  - 파일 리스트를 정렬 버그 수정
  - ASCII 래스터 파일에서 기본적인 통계값 계산 기능 추가
-
-O 2020.04
  - ASCII 파일 calculator에서 수학함수(math, abs) 추가  
   
-O 2021.01
+O 2021  
  - Text files editor에서 라인 인덱스 적용 버그 수정
  - Text files editor에서 처리 속도 향상
-
-O 2021.04
  - 다수의 ASCII raster file에서 셀별 최대값, 최소값, 합, 평균 등을 계산하고 하나의 래스터 파일을 만드는 기능 
  - Minor GUI 수정
-
-O 2021.05
  - Minor bug fix about cutting decimal parts.
  - Repository transferred 
-
-O 2021.06
  - gentle.dll was embedded in ALTEK.exe file and gentle.dll file was removed.  
  - The feature of extracting cell value was improved.  
  - Minor bug fix in processing nodata value of ASCII file in the ASCII raster calculator.
 
-O 2022.05
+O 2022  
  - Revision in deleting temporary files.
-
-O 2022.07
  - Bug fix in "Edit text files > Search and replace line by line" feature.
-
-O 2022.08
  - Bug fix in "File name processor" for setting desitnation folder.  
  - Add "not equal operator (!=)" to ASC raster calculator.   
  - Add copying prjection files feature when making ASC file by "Get values from text files" menu.   
  - Add the feature of deleting file name by character index to "File name processor" menu.   
 
-O 2023.03  
+O 2023  
  - "Set texts between texts in a line" function was added.   
-
-O 2023.06  
  - The function of removing columns from the text lines in the text files was added.   
  - The function of copying files using file name list was added.   
 
@@ -164,6 +136,9 @@ O 2024.02
  
 O 2024.06  
  - "Remove empty lines in the text files" function was added.   
+
+O 2024.10  
+ - The column mode in "Append text files" was improved.   
 
 
 
