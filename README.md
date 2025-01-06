@@ -131,13 +131,9 @@ O 2023
  - The function of removing columns from the text lines in the text files was added.   
  - The function of copying files using file name list was added.   
 
-O 2024.02  
+O 2024
  - "Converting NetCDF files to ASCII raster files" function was added.   
- 
-O 2024.06  
  - "Remove empty lines in the text files" function was added.   
-
-O 2024.10  
  - The column mode in "Append text files" was improved.   
 
 
