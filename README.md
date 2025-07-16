@@ -136,6 +136,8 @@ O 2024
  - "Remove empty lines in the text files" function was added.   
  - The column mode in "Append text files" was improved.   
 
+O 2025
+ - The column mode in "Append text files" was improved.   
 
 
 
